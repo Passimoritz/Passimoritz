@@ -31,8 +31,7 @@ I am an **IT Specialist** with a strong focus on **Software Development and IT S
 
 ### 🎧 Now Playing / Recently Listened
 
-<!-- START_SECTION:spotify -->
-<!-- END_SECTION:spotify -->
+[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=passimoritz&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&profanity=false&hide_remaster=false)](https://github.com/kittinan/spotify-github-profile)
 
 ---
 
