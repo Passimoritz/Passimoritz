@@ -1,7 +1,9 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=200&section=header&text=Pascal%20Moritz&fontSize=80&animation=fadeIn&fontAlignY=35" />
 
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=Software+Developer+%7C+IT-Security;React+Native+%26+Expo+Enthusiast;Custom+PC+Builder;Garry's+Mod+Scripter" alt="Typing SVG" /></a>
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=800&lines=Software+Developer+%7C+IT-Security;React+Native+%26+Expo+Enthusiast;Custom+PC+Builder;Garry's+Mod+Scripter" alt="Typing SVG" />
+  </a>
 </div>
 
 ---
@@ -22,7 +24,7 @@ I am an **IT Specialist** with a strong focus on **Software Development and IT S
 <div align="center">
   <br />
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,docker,nginx,lua,js,ts,git,linux&perline=8" alt="Tech Stack" />
+    <img src="https://skillicons.dev/icons?i=react,docker,nginx,lua,js,ts,git,linux" alt="Tech Stack" height="50" />
   </a>
   <br />
 </div>
@@ -31,14 +33,18 @@ I am an **IT Specialist** with a strong focus on **Software Development and IT S
 
 ### 🎧 Now Playing / Recently Listened
 
-[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=passimoritz&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&profanity=false&hide_remaster=false)](https://github.com/kittinan/spotify-github-profile)
+<div align="center">
+  <a href="https://open.spotify.com/user/passimoritz" target="_blank">
+    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=passimoritz&cover_image=true&theme=natemoo-re&show_offline=false&background_color=1a1b27&interchange=true&bar_color=36bcf7&bar_color_cover=false" alt="Spotify Now Playing" />
+  </a>
+</div>
 
 ---
 
 ### 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Passimoritz&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Passimoritz&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&hide_rank=true" width="48%" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Passimoritz&theme=tokyonight&hide_border=true" width="48%" />
 </div>
 <br/>
