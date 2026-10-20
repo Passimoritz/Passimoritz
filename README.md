@@ -66,14 +66,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>just now</sub><br/>
-🚀 Released [v2.10.1](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.1) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
-🔀 Merged PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
-🔀 Opened PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
-🔀 Merged PR [#1](https://github.com/Passimoritz/Passimoritz/pull/1) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
-🔀 Opened PR [#1](https://github.com/Passimoritz/Passimoritz/pull/1) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
-🚀 Released [v2.10.0](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.0) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>19 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>2 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-file-share](https://github.com/Passimoritz/hostwerk-ext-file-share) · <sub>2 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>2 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>2 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>3 h ago</sub><br/>
+🚀 Released [v2.10.1](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.1) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 h ago</sub><br/>
+🔀 Merged PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>3 h ago</sub><br/>
+🔀 Opened PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>3 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
