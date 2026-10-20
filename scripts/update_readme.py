@@ -129,6 +129,7 @@ def describe(event: dict) -> str | None:
 
 def activity_block(user: str, token: str) -> str:
     events = request(f"{API}/users/{user}/events/public?per_page=100", token)
+    events.sort(key=lambda event: event["created_at"], reverse=True)
     lines, seen = [], set()
     for event in events:
         text = describe(event)
