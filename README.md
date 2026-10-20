@@ -17,7 +17,10 @@ I work where **IT management, project leadership and sales** meet: steering digi
 
 <img src="assets/stats.svg" alt="GitHub statistics" width="100%"/>
 
-## Repositories
+## Projects
+
+<!--HOSTWERK:START-->
+<!--HOSTWERK:END-->
 
 <!--REPOS:START-->
 <p align="center">
