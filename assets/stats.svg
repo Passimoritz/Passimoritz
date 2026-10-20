@@ -54,7 +54,7 @@
 <text x="348" y="254" class="t name">JavaScript</text>
 <text x="660" y="254" text-anchor="end" class="t lbl">91.5%</text></g>
 <rect x="330" y="262" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="262" width="301.8" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
+<rect x="330" y="262" width="302.0" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
 <g class="f" style="animation-delay:0.92s">
 <circle cx="335" cy="283" r="5" fill="#663399"/>
 <text x="348" y="288" class="t name">CSS</text>
@@ -70,9 +70,9 @@
 <g class="f" style="animation-delay:1.16s">
 <circle cx="335" cy="351" r="5" fill="#3572A5"/>
 <text x="348" y="356" class="t name">Python</text>
-<text x="660" y="356" text-anchor="end" class="t lbl">2.5%</text></g>
+<text x="660" y="356" text-anchor="end" class="t lbl">2.4%</text></g>
 <rect x="330" y="364" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="364" width="8.2" height="7" rx="3.5" fill="#3572A5" class="bar" style="animation-delay:1.26s"/>
+<rect x="330" y="364" width="8.1" height="7" rx="3.5" fill="#3572A5" class="bar" style="animation-delay:1.26s"/>
 <text x="720" y="222" class="t h f" style="animation-delay:.8s">Last 26 weeks</text>
 <rect x="720" y="240" width="14" height="14" rx="3" class="c l0" style="animation-delay:0.90s"><title>2026-04-26: 0</title></rect>
 <rect x="720" y="257" width="14" height="14" rx="3" class="c l0" style="animation-delay:0.92s"><title>2026-04-27: 0</title></rect>
