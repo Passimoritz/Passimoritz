@@ -58,7 +58,7 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes" title="Service notes – Notes and checklists for every service.&#10;Other · v1.1.0"><img src="assets/ext/service-notes.svg" width="56" height="56" alt="Service notes" title="Service notes – Notes and checklists for every service.&#10;Other · v1.1.0"/></a>
 </p>
 
-<p align="center"><a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><b>⬇️ Download Hostwerk v2.10.0</b></a></p>
+<p align="center"><a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><b>⬇️ Download Hostwerk v2.10.1</b></a></p>
 <!--HOSTWERK:END-->
 
 <details open>
@@ -66,14 +66,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>just now</sub><br/>
+🚀 Released [v2.10.1](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.1) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
 🔀 Merged PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🔀 Opened PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🔀 Merged PR [#1](https://github.com/Passimoritz/Passimoritz/pull/1) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🔀 Opened PR [#1](https://github.com/Passimoritz/Passimoritz/pull/1) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🚀 Released [v2.10.0](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.0) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>19 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-passwords](https://github.com/Passimoritz/hostwerk-ext-passwords) · <sub>21 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-status-wall](https://github.com/Passimoritz/hostwerk-ext-status-wall) · <sub>22 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>19 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
