@@ -3,14 +3,17 @@
 
 Blocks (replaced in place):
   <!--ACTIVITY:START--> ... <!--ACTIVITY:END-->   recent public activity
-  <!--REPOS:START-->    ... <!--REPOS:END-->      clickable, animated repository cards
-                                                  (pinned repositories first, else most recently pushed)
+  <!--HOSTWERK:START--> ... <!--HOSTWERK:END-->   Hostwerk spotlight card, links and the extension list
+                                                  (from the public catalogue in hostwerk-public)
+  <!--REPOS:START-->    ... <!--REPOS:END-->      clickable, animated cards for the other repositories
+                                                  (pinned first, else most recently pushed; Hostwerk repos excluded)
 
-Cards are written to assets/cards/<repo>.svg.
+Cards are written to assets/cards/<repo>.svg, the spotlight to assets/hostwerk.svg.
 
 Usage: GITHUB_TOKEN=... python scripts/update_readme.py <username> [README.md]
 Standard library only.
 """
+import base64
 import json
 import os
 import re
@@ -28,7 +31,7 @@ QUERY = f"""
 query($login: String!) {{
   user(login: $login) {{
     pinnedItems(first: {CARDS}, types: REPOSITORY) {{ nodes {{ ... on Repository {{ {REPO_FIELDS} }} }} }}
-    repositories(first: 30, ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false,
+    repositories(first: 100, ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false,
                  orderBy: {{field: PUSHED_AT, direction: DESC}}) {{ nodes {{ {REPO_FIELDS} }} }}
   }}
 }}
@@ -109,19 +112,33 @@ def describe(event: dict) -> str | None:
         # The events API no longer lists commits for pushes; fall back to the branch.
         return f"Pushed to `{branch}` in {link}" if branch else f"Pushed to {link}"
     if kind == "PullRequestEvent":
-        pr = payload["pull_request"]
-        action = "Merged" if payload["action"] == "closed" and pr.get("merged") else payload["action"].capitalize()
+        # Slim event payloads may lack html_url, title and merged – build what is missing.
+        pr = payload.get("pull_request") or {}
+        number = pr.get("number") or payload.get("number")
+        if not number:
+            return None
+        url = pr.get("html_url") or f"https://github.com/{repo}/pull/{number}"
+        action = payload.get("action", "updated")
+        action = "Merged" if action == "closed" and pr.get("merged") else action.capitalize()
         title = pr.get("title")
         suffix = f" – _{title[:72]}_" if title else ""
-        return f"{action} PR [#{pr['number']}]({pr['html_url']}) in {link}{suffix}"
+        return f"{action} PR [#{number}]({url}) in {link}{suffix}"
     if kind == "IssuesEvent":
-        issue = payload["issue"]
-        return f"{payload['action'].capitalize()} issue [#{issue['number']}]({issue['html_url']}) in {link}"
+        issue = payload.get("issue") or {}
+        number = issue.get("number")
+        if not number:
+            return None
+        url = issue.get("html_url") or f"https://github.com/{repo}/issues/{number}"
+        return f"{payload.get('action', 'updated').capitalize()} issue [#{number}]({url}) in {link}"
     if kind == "CreateEvent" and payload.get("ref_type") == "repository":
         return f"Created repository {link}"
     if kind == "ReleaseEvent":
-        release = payload["release"]
-        return f"Released [{release['tag_name']}]({release['html_url']}) in {link}"
+        release = payload.get("release") or {}
+        tag = release.get("tag_name")
+        if not tag:
+            return None
+        url = release.get("html_url") or f"https://github.com/{repo}/releases/tag/{tag}"
+        return f"Released [{tag}]({url}) in {link}"
     if kind == "PublicEvent":
         return f"Made {link} public"
     return None
@@ -201,6 +218,163 @@ def card(repo: dict, index: int) -> str:
     return "\n".join(parts)
 
 
+HOSTWERK_REPO = "hostwerk-public"
+HOSTWERK_CATEGORIES = [
+    ("games", "Games & Minecraft"),
+    ("network", "Network & machines"),
+    ("security", "Security & access"),
+    ("monitoring", "Monitoring & status"),
+    ("developer", "Developer tools"),
+    ("ai", "AI & media"),
+    ("communication", "Mail & communication"),
+    ("other", "Other"),
+]
+
+SPOT_STYLE = """<style>
+:root{--bg:#0d1117;--line:#30363d;--fg:#f0f6fc;--muted:#9198a1;--accent:#38bdf8;--tile:#161b22;--grid:#ffffff}
+@media (prefers-color-scheme:light){:root{--bg:#ffffff;--line:#d1d9e0;--fg:#1f2328;--muted:#59636e;--accent:#0969da;--tile:#f6f8fa;--grid:#000000}}
+.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
+.k{font-size:13px;font-weight:700;letter-spacing:2px;fill:var(--accent)}
+.h{font-size:56px;font-weight:800;letter-spacing:-1.5px}
+.s{font-size:18px;fill:var(--fg);opacity:.85}
+.p{font-size:14px;font-weight:600;fill:var(--fg)}
+.pill{fill:var(--tile);stroke:var(--line)}
+.u{font-size:13px;fill:var(--muted)}
+.tile{fill:var(--tile);stroke:var(--line)}
+.grid{stroke:var(--grid);stroke-opacity:.04}
+.f{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
+.fl{animation:float 5s ease-in-out infinite}
+.live{transform-box:fill-box;transform-origin:center;animation:live 2s ease-in-out infinite}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.3)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.8)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>"""
+
+
+def fetch_raw(url: str) -> bytes | None:
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "profile-readme"}), timeout=20) as resp:
+            return resp.read()
+    except OSError:
+        return None
+
+
+def text(value, lang: str = "en") -> str:
+    if isinstance(value, dict):
+        return value.get(lang) or next(iter(value.values()), "")
+    return value or ""
+
+
+def spotlight(exts: list[dict], version: str, downloads: int) -> str:
+    out = [
+        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="300" '
+        'viewBox="0 0 1200 300" role="img" aria-label="Hostwerk – the local server hub for Windows and Linux">',
+        '<defs><clipPath id="c"><rect width="1200" height="300" rx="14"/></clipPath>'
+        '<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/>'
+        '<stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/>'
+        '<animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/>'
+        '<animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/></linearGradient>'
+        '<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="grid"/></pattern>'
+        '<radialGradient id="r" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/>'
+        '<stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient></defs>',
+        SPOT_STYLE,
+        '<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/><rect width="1200" height="300" fill="url(#p)"/>',
+        '<circle cx="920" cy="150" r="300" fill="url(#r)"><animate attributeName="r" values="280;320;280" dur="7s" repeatCount="indefinite"/></circle>',
+        '<g class="t">',
+        '<text x="48" y="64" class="k f">FLAGSHIP PROJECT</text>',
+        '<text x="46" y="128" class="h f" fill="url(#g)" style="animation-delay:.1s">Hostwerk</text>',
+        '<text x="48" y="164" class="s f" style="animation-delay:.25s">The local server hub for Windows and Linux –</text>',
+        '<text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and an AI assistant.</text>',
+    ]
+    pills = [f"{len(exts)} extensions", version, "Windows · Linux"]
+    if downloads:
+        pills.insert(2, f"{downloads:,} downloads")
+    x = 48
+    for i, label in enumerate(pills):
+        w = 26 + len(label) * 8
+        out.append(
+            f'<g class="f" style="animation-delay:{0.45 + i * 0.1:.2f}s"><rect x="{x}" y="212" width="{w}" height="32" rx="16" class="pill"/>'
+            f'<text x="{x + w / 2:.0f}" y="233" text-anchor="middle" class="p">{escape(label)}</text></g>'
+        )
+        x += w + 10
+    out.append('<circle cx="54" cy="268" r="3.5" fill="#22c55e" class="live"/>')
+    out.append(f'<text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/{HOSTWERK_REPO}</text>')
+    out.append("</g>")
+
+    # icon wall of the official extensions
+    cols, size, gap, left, top = 6, 64, 14, 700, 36
+    for i, ext in enumerate(exts[: cols * 3]):
+        cx, cy = left + (i % cols) * (size + gap), top + (i // cols) * (size + gap)
+        delay = 0.3 + i * 0.06
+        out.append(f'<g class="fl" style="animation-delay:{-(i * 0.7) % 5:.1f}s"><g class="pop" style="animation-delay:{delay:.2f}s">')
+        out.append(f'<rect x="{cx}" y="{cy}" width="{size}" height="{size}" rx="14" class="tile"/>')
+        icon = fetch_raw(ext.get("icon") or "")
+        if icon and icon.lstrip().startswith(b"<"):
+            data = base64.b64encode(icon).decode()
+            out.append(
+                f'<image x="{cx + 14}" y="{cy + 14}" width="36" height="36" href="data:image/svg+xml;base64,{data}">'
+                f'<title>{escape(text(ext.get("name")))}</title></image>'
+            )
+        out.append("</g></g>")
+    out.append("</g>")
+    out.append('<rect x=".5" y=".5" width="1199" height="299" rx="14" fill="none" style="stroke:var(--line)"/></svg>')
+    return "\n".join(out)
+
+
+def hostwerk_block(user: str, token: str) -> str:
+    raw = fetch_raw(f"https://raw.githubusercontent.com/{user}/{HOSTWERK_REPO}/main/catalog/extensions.json")
+    exts = json.loads(raw) if raw else []
+    if isinstance(exts, dict):
+        exts = exts.get("extensions", [])
+    order = {key: i for i, (key, _) in enumerate(HOSTWERK_CATEGORIES)}
+    exts.sort(key=lambda e: (order.get(e.get("category"), 99), text(e.get("name")).lower()))
+
+    version, downloads = "", 0
+    try:
+        releases = request(f"{API}/repos/{user}/{HOSTWERK_REPO}/releases?per_page=100", token)
+        stable = [r for r in releases if not r["draft"] and not r["prerelease"] and r["tag_name"].startswith("v")]
+        version = stable[0]["tag_name"] if stable else ""
+        downloads = sum(a["download_count"] for r in releases for a in r["assets"])
+    except OSError:
+        pass
+
+    with open("assets/hostwerk.svg", "w", encoding="utf-8") as handle:
+        handle.write(spotlight(exts, version or "latest", downloads))
+
+    base = f"https://github.com/{user}/{HOSTWERK_REPO}"
+    lines = [
+        f'<a href="{base}"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>',
+        "",
+        '<p align="center">',
+        f'<a href="{base}/releases/latest"><b>⬇️ Download{" " + version if version else ""}</b></a> · ',
+        f'<a href="{base}#extensions"><b>🧩 Extension catalogue</b></a> · ',
+        f'<a href="{base}/blob/main/sdk/README.md"><b>🛠️ Build an extension</b></a> · ',
+        f'<a href="https://github.com/{user}?tab=repositories&amp;q=topic%3Ahostwerk-extension"><b>📦 All extension repos</b></a>',
+        "</p>",
+    ]
+    if exts:
+        lines += ["", "<details>", f"<summary><b>🧩 All {len(exts)} official Hostwerk extensions</b></summary>", ""]
+        for key, label in HOSTWERK_CATEGORIES + [(None, "More")]:
+            group = [e for e in exts if (e.get("category") if e.get("category") in order else None) == key]
+            if not group:
+                continue
+            lines += [f"**{label}**", "", "| | Extension | What it does |", "| :-: | :-- | :-- |"]
+            for ext in group:
+                name = escape(text(ext.get("name")))
+                part = " · <sub>*part of Hostwerk*</sub>" if ext.get("native") else ""
+                desc = text(ext.get("description")).replace("|", "/").replace("\n", " ")
+                lines.append(
+                    f'| <img src="{ext.get("icon", "")}" width="22" height="22" alt=""/> | '
+                    f'[{name}]({ext.get("homepage", base)}){part} | {desc} |'
+                )
+            lines.append("")
+        lines.append("</details>")
+    return "\n".join(lines)
+
+
 def repos_block(user: str, token: str) -> str:
     data = request(f"{API}/graphql", token, {"query": QUERY, "variables": {"login": user}})
     if "errors" in data:
@@ -208,19 +382,24 @@ def repos_block(user: str, token: str) -> str:
     node = data["data"]["user"]
     picked, names = [], set()
     for repo in node["pinnedItems"]["nodes"] + node["repositories"]["nodes"]:
-        if not repo or repo["isFork"] or repo["name"].lower() == user.lower() or repo["name"] in names:
+        if (
+            not repo
+            or repo["isFork"]
+            or repo["name"].lower() == user.lower()
+            or repo["name"].startswith("hostwerk")
+            or repo["name"] in names
+        ):
             continue
         picked.append(repo)
         names.add(repo["name"])
         if len(picked) == CARDS:
             break
-    if not picked:
-        return "_No public repositories yet._"
-
     os.makedirs(CARD_DIR, exist_ok=True)
     for stale in os.listdir(CARD_DIR):
         if stale.endswith(".svg") and stale[:-4] not in names:
             os.remove(os.path.join(CARD_DIR, stale))
+    if not picked:
+        return ""
     cells = []
     for index, repo in enumerate(picked):
         with open(os.path.join(CARD_DIR, f"{repo['name']}.svg"), "w", encoding="utf-8") as handle:
@@ -248,6 +427,7 @@ def main() -> None:
     path = sys.argv[2] if len(sys.argv) > 2 else "README.md"
     with open(path, encoding="utf-8") as handle:
         text = handle.read()
+    text = replace_block(text, "HOSTWERK", hostwerk_block(user, token))
     text = replace_block(text, "ACTIVITY", activity_block(user, token))
     text = replace_block(text, "REPOS", repos_block(user, token))
     with open(path, "w", encoding="utf-8") as handle:
