@@ -31,7 +31,7 @@
 <text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and an AI assistant.</text>
 <g class="f" style="animation-delay:0.45s"><rect x="48" y="212" width="130" height="32" rx="16" class="pill"/><text x="113" y="233" text-anchor="middle" class="p">33 extensions</text></g>
 <g class="f" style="animation-delay:0.55s"><rect x="188" y="212" width="82" height="32" rx="16" class="pill"/><text x="229" y="233" text-anchor="middle" class="p">v2.10.0</text></g>
-<g class="f" style="animation-delay:0.65s"><rect x="280" y="212" width="130" height="32" rx="16" class="pill"/><text x="345" y="233" text-anchor="middle" class="p">826 downloads</text></g>
+<g class="f" style="animation-delay:0.65s"><rect x="280" y="212" width="130" height="32" rx="16" class="pill"/><text x="345" y="233" text-anchor="middle" class="p">857 downloads</text></g>
 <g class="f" style="animation-delay:0.75s"><rect x="420" y="212" width="146" height="32" rx="16" class="pill"/><text x="493" y="233" text-anchor="middle" class="p">Windows · Linux</text></g>
 <circle cx="54" cy="268" r="3.5" fill="#22c55e" class="live"/>
 <text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/hostwerk-public</text>

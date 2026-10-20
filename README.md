@@ -119,14 +119,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
+🔀 Merged PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
+🔀 Opened PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🔀 Merged PR [#1](https://github.com/Passimoritz/Passimoritz/pull/1) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🔀 Opened PR [#1](https://github.com/Passimoritz/Passimoritz/pull/1) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
 🚀 Released [v2.10.0](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.0) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>19 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-passwords](https://github.com/Passimoritz/hostwerk-ext-passwords) · <sub>20 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-status-wall](https://github.com/Passimoritz/hostwerk-ext-status-wall) · <sub>21 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-server-card](https://github.com/Passimoritz/hostwerk-ext-server-card) · <sub>21 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>21 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-status-wall](https://github.com/Passimoritz/hostwerk-ext-status-wall) · <sub>21 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
