@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-label="Pascal Moritz – IT and Project Manager, Sales Manager, Software Enthusiast">
+  <style>
+    :root { --bg:#0d1117; --line:#30363d; --fg:#f0f6fc; --muted:#9198a1; --accent:#38bdf8; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#ffffff; --line:#d1d9e0; --fg:#1f2328; --muted:#59636e; --accent:#0969da; }
+    }
+    .t { font-family: -apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif; }
+  </style>
+  <rect x="0.5" y="0.5" width="1199" height="219" rx="12" fill="var(--bg)" stroke="var(--line)"/>
+  <rect x="48" y="52" width="4" height="116" rx="2" fill="var(--accent)"/>
+  <text x="76" y="94" class="t" font-size="56" font-weight="700" letter-spacing="-1" fill="var(--fg)">Pascal Moritz</text>
+  <text x="76" y="132" class="t" font-size="22" fill="var(--muted)">IT &amp; Project Manager  ·  Sales Manager  ·  Software Enthusiast</text>
+  <text x="76" y="166" class="t" font-size="16" fill="var(--accent)">Digital projects, IT security and AI-assisted building</text>
+</svg>
