@@ -5,8 +5,10 @@ Blocks (replaced in place):
   <!--ACTIVITY:START--> ... <!--ACTIVITY:END-->   recent public activity
   <!--HOSTWERK:START--> ... <!--HOSTWERK:END-->   Hostwerk spotlight card, links and the extension list
                                                   (from the public catalogue in hostwerk-public)
-  <!--REPOS:START-->    ... <!--REPOS:END-->      clickable, animated cards for the other repositories
+  <!--REPOS:START-->    ... <!--REPOS:END-->      optional: clickable, animated cards for other repositories
                                                   (pinned first, else most recently pushed; Hostwerk repos excluded)
+
+Only the blocks whose markers are in the README are filled.
 
 Cards are written to assets/cards/<repo>.svg, the spotlight to assets/hostwerk.svg.
 
@@ -269,10 +271,19 @@ def text(value, lang: str = "en") -> str:
 
 
 def spotlight(exts: list[dict], version: str, downloads: int) -> str:
+    """Hostwerk card. The icon wall shows every official extension and the card grows with the catalogue."""
+    cols, size, gap = 8, 52, 12
+    step = size + gap
+    rows = max(1, -(-len(exts) // cols))
+    wall_w, wall_h = cols * step - gap, rows * step - gap
+    h = max(300, wall_h + 72)
+    left, top = 1160 - wall_w, (h - wall_h) // 2
+    dy = (h - 300) // 2
+
     out = [
-        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="300" '
-        'viewBox="0 0 1200 300" role="img" aria-label="Hostwerk – the local server hub for Windows and Linux">',
-        '<defs><clipPath id="c"><rect width="1200" height="300" rx="14"/></clipPath>'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{h}" viewBox="0 0 1200 {h}" role="img" '
+        f'aria-label="Hostwerk – the local server hub for Windows and Linux, {len(exts)} official extensions">',
+        f'<defs><clipPath id="c"><rect width="1200" height="{h}" rx="14"/></clipPath>'
         '<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/>'
         '<stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/>'
         '<animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/>'
@@ -281,13 +292,13 @@ def spotlight(exts: list[dict], version: str, downloads: int) -> str:
         '<radialGradient id="r" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/>'
         '<stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient></defs>',
         SPOT_STYLE,
-        '<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/><rect width="1200" height="300" fill="url(#p)"/>',
-        '<circle cx="920" cy="150" r="300" fill="url(#r)"><animate attributeName="r" values="280;320;280" dur="7s" repeatCount="indefinite"/></circle>',
-        '<g class="t">',
+        f'<g clip-path="url(#c)"><rect width="1200" height="{h}" style="fill:var(--bg)"/><rect width="1200" height="{h}" fill="url(#p)"/>',
+        f'<circle cx="{left + wall_w // 2}" cy="{h // 2}" r="300" fill="url(#r)"><animate attributeName="r" values="280;320;280" dur="7s" repeatCount="indefinite"/></circle>',
+        f'<g class="t" transform="translate(0 {dy})">',
         '<text x="48" y="64" class="k f">FLAGSHIP PROJECT</text>',
         '<text x="46" y="128" class="h f" fill="url(#g)" style="animation-delay:.1s">Hostwerk</text>',
         '<text x="48" y="164" class="s f" style="animation-delay:.25s">The local server hub for Windows and Linux –</text>',
-        '<text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and an AI assistant.</text>',
+        '<text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and AI.</text>',
     ]
     pills = [f"{len(exts)} extensions", version, "Windows · Linux"]
     if downloads:
@@ -304,23 +315,24 @@ def spotlight(exts: list[dict], version: str, downloads: int) -> str:
     out.append(f'<text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/{HOSTWERK_REPO}</text>')
     out.append("</g>")
 
-    # icon wall of the official extensions
-    cols, size, gap, left, top = 6, 64, 14, 700, 36
-    for i, ext in enumerate(exts[: cols * 3]):
-        cx, cy = left + (i % cols) * (size + gap), top + (i // cols) * (size + gap)
-        delay = 0.3 + i * 0.06
-        out.append(f'<g class="fl" style="animation-delay:{-(i * 0.7) % 5:.1f}s"><g class="pop" style="animation-delay:{delay:.2f}s">')
-        out.append(f'<rect x="{cx}" y="{cy}" width="{size}" height="{size}" rx="14" class="tile"/>')
+    # icon wall: every official extension, row by row – new extensions simply add tiles
+    for i, ext in enumerate(exts):
+        tx, ty = left + (i % cols) * step, top + (i // cols) * step
+        name = escape(text(ext.get("name")))
+        out.append(f'<g class="fl" style="animation-delay:{-(i * 0.7) % 5:.1f}s"><g class="pop" style="animation-delay:{0.3 + i * 0.04:.2f}s">')
+        out.append(f'<rect x="{tx}" y="{ty}" width="{size}" height="{size}" rx="12" class="tile"><title>{name}</title></rect>')
         icon = fetch_raw(ext.get("icon") or "")
         if icon and icon.lstrip().startswith(b"<"):
             data = base64.b64encode(icon).decode()
             out.append(
-                f'<image x="{cx + 14}" y="{cy + 14}" width="36" height="36" href="data:image/svg+xml;base64,{data}">'
-                f'<title>{escape(text(ext.get("name")))}</title></image>'
+                f'<image x="{tx + 11}" y="{ty + 11}" width="30" height="30" href="data:image/svg+xml;base64,{data}">'
+                f"<title>{name}</title></image>"
             )
+        else:
+            out.append(f'<text x="{tx + size / 2}" y="{ty + 33}" text-anchor="middle" class="t p">{escape(name[:1])}</text>')
         out.append("</g></g>")
     out.append("</g>")
-    out.append('<rect x=".5" y=".5" width="1199" height="299" rx="14" fill="none" style="stroke:var(--line)"/></svg>')
+    out.append(f'<rect x=".5" y=".5" width="1199" height="{h - 1}" rx="14" fill="none" style="stroke:var(--line)"/></svg>')
     return "\n".join(out)
 
 
@@ -345,34 +357,10 @@ def hostwerk_block(user: str, token: str) -> str:
         handle.write(spotlight(exts, version or "latest", downloads))
 
     base = f"https://github.com/{user}/{HOSTWERK_REPO}"
-    lines = [
-        f'<a href="{base}"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>',
-        "",
-        '<p align="center">',
-        f'<a href="{base}/releases/latest"><b>⬇️ Download{" " + version if version else ""}</b></a> · ',
-        f'<a href="{base}#extensions"><b>🧩 Extension catalogue</b></a> · ',
-        f'<a href="{base}/blob/main/sdk/README.md"><b>🛠️ Build an extension</b></a> · ',
-        f'<a href="https://github.com/{user}?tab=repositories&amp;q=topic%3Ahostwerk-extension"><b>📦 All extension repos</b></a>',
-        "</p>",
-    ]
-    if exts:
-        lines += ["", "<details>", f"<summary><b>🧩 All {len(exts)} official Hostwerk extensions</b></summary>", ""]
-        for key, label in HOSTWERK_CATEGORIES + [(None, "More")]:
-            group = [e for e in exts if (e.get("category") if e.get("category") in order else None) == key]
-            if not group:
-                continue
-            lines += [f"**{label}**", "", "| | Extension | What it does |", "| :-: | :-- | :-- |"]
-            for ext in group:
-                name = escape(text(ext.get("name")))
-                part = " · <sub>*part of Hostwerk*</sub>" if ext.get("native") else ""
-                desc = text(ext.get("description")).replace("|", "/").replace("\n", " ")
-                lines.append(
-                    f'| <img src="{ext.get("icon", "")}" width="22" height="22" alt=""/> | '
-                    f'[{name}]({ext.get("homepage", base)}){part} | {desc} |'
-                )
-            lines.append("")
-        lines.append("</details>")
-    return "\n".join(lines)
+    return (
+        f'<a href="{base}"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>\n\n'
+        f'<p align="center"><a href="{base}/releases/latest"><b>⬇️ Download Hostwerk{" " + version if version else ""}</b></a></p>'
+    )
 
 
 def repos_block(user: str, token: str) -> str:
@@ -427,9 +415,9 @@ def main() -> None:
     path = sys.argv[2] if len(sys.argv) > 2 else "README.md"
     with open(path, encoding="utf-8") as handle:
         text = handle.read()
-    text = replace_block(text, "HOSTWERK", hostwerk_block(user, token))
-    text = replace_block(text, "ACTIVITY", activity_block(user, token))
-    text = replace_block(text, "REPOS", repos_block(user, token))
+    for name, build in (("HOSTWERK", hostwerk_block), ("ACTIVITY", activity_block), ("REPOS", repos_block)):
+        if f"<!--{name}:START-->" in text:
+            text = replace_block(text, name, build(user, token))
     with open(path, "w", encoding="utf-8") as handle:
         handle.write(text)
     print(f"updated {path}")

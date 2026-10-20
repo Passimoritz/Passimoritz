@@ -108,12 +108,6 @@ I work where **IT management, project leadership and sales** meet: steering digi
 </details>
 <!--HOSTWERK:END-->
 
-<!--REPOS:START-->
-<p align="center">
-<a href="https://github.com/Passimoritz/nuancescan-data"><img src="assets/cards/nuancescan-data.svg" alt="nuancescan-data" width="49%"/></a>
-</p>
-<!--REPOS:END-->
-
 <details open>
 <summary><b>⚡ Recent activity</b></summary>
 <br/>
