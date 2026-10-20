@@ -20,6 +20,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 ## Repositories
 
 <!--REPOS:START-->
+<p align="center">
+<a href="https://github.com/Passimoritz/hostwerk-ext-webhook-inbox"><img src="assets/cards/hostwerk-ext-webhook-inbox.svg" alt="hostwerk-ext-webhook-inbox" width="49%"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-api-tester"><img src="assets/cards/hostwerk-ext-api-tester.svg" alt="hostwerk-ext-api-tester" width="49%"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-public"><img src="assets/cards/hostwerk-public.svg" alt="hostwerk-public" width="49%"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-file-share"><img src="assets/cards/hostwerk-ext-file-share.svg" alt="hostwerk-ext-file-share" width="49%"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-static-publish"><img src="assets/cards/hostwerk-ext-static-publish.svg" alt="hostwerk-ext-static-publish" width="49%"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-cloud-backup"><img src="assets/cards/hostwerk-ext-cloud-backup.svg" alt="hostwerk-ext-cloud-backup" width="49%"/></a>
+</p>
 <!--REPOS:END-->
 
 <details open>
@@ -27,6 +35,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
+🚀 Released [v2.10.0](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.0) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>2 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-ticker](https://github.com/Passimoritz/hostwerk-ext-player-ticker) · <sub>2 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-passwords](https://github.com/Passimoritz/hostwerk-ext-passwords) · <sub>20 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-status-wall](https://github.com/Passimoritz/hostwerk-ext-status-wall) · <sub>21 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-server-card](https://github.com/Passimoritz/hostwerk-ext-server-card) · <sub>21 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>21 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
