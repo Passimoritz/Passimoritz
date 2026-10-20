@@ -35,8 +35,8 @@
 </style>
 <g clip-path="url(#clip)"><rect width="1200" height="620" style="fill:var(--bg)"/>
 <text x="40" y="48" class="t h f">Activity snapshot</text>
-<g class="f t" style="animation-delay:0.10s"><rect x="40" y="66" width="172" height="100" rx="12" class="tile"/><rect x="40" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="56" y="118" class="big">602</text><text x="56" y="146" class="lbl">CONTRIBUTIONS (12 MO)</text></g>
-<g class="f t" style="animation-delay:0.20s"><rect x="228" y="66" width="172" height="100" rx="12" class="tile"/><rect x="228" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="244" y="118" class="big">538</text><text x="244" y="146" class="lbl">COMMITS</text></g>
+<g class="f t" style="animation-delay:0.10s"><rect x="40" y="66" width="172" height="100" rx="12" class="tile"/><rect x="40" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="56" y="118" class="big">604</text><text x="56" y="146" class="lbl">CONTRIBUTIONS (12 MO)</text></g>
+<g class="f t" style="animation-delay:0.20s"><rect x="228" y="66" width="172" height="100" rx="12" class="tile"/><rect x="228" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="244" y="118" class="big">540</text><text x="244" y="146" class="lbl">COMMITS</text></g>
 <g class="f t" style="animation-delay:0.30s"><rect x="416" y="66" width="172" height="100" rx="12" class="tile"/><rect x="416" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="432" y="118" class="big">3</text><text x="432" y="146" class="lbl">PULL REQUESTS</text></g>
 <g class="f t" style="animation-delay:0.40s"><rect x="604" y="66" width="172" height="100" rx="12" class="tile"/><rect x="604" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="620" y="118" class="big">0</text><text x="620" y="146" class="lbl">ISSUES</text></g>
 <g class="f t" style="animation-delay:0.50s"><rect x="792" y="66" width="172" height="100" rx="12" class="tile"/><rect x="792" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="808" y="118" class="big">0</text><text x="808" y="146" class="lbl">STARS</text></g>
@@ -52,9 +52,9 @@
 <g class="f" style="animation-delay:0.80s">
 <circle cx="335" cy="249" r="5" fill="#f1e05a"/>
 <text x="348" y="254" class="t name">JavaScript</text>
-<text x="660" y="254" text-anchor="end" class="t lbl">91.5%</text></g>
+<text x="660" y="254" text-anchor="end" class="t lbl">91.4%</text></g>
 <rect x="330" y="262" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="262" width="302.0" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
+<rect x="330" y="262" width="301.5" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
 <g class="f" style="animation-delay:0.92s">
 <circle cx="335" cy="283" r="5" fill="#663399"/>
 <text x="348" y="288" class="t name">CSS</text>
@@ -70,9 +70,9 @@
 <g class="f" style="animation-delay:1.16s">
 <circle cx="335" cy="351" r="5" fill="#3572A5"/>
 <text x="348" y="356" class="t name">Python</text>
-<text x="660" y="356" text-anchor="end" class="t lbl">2.4%</text></g>
+<text x="660" y="356" text-anchor="end" class="t lbl">2.6%</text></g>
 <rect x="330" y="364" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="364" width="8.1" height="7" rx="3.5" fill="#3572A5" class="bar" style="animation-delay:1.26s"/>
+<rect x="330" y="364" width="8.6" height="7" rx="3.5" fill="#3572A5" class="bar" style="animation-delay:1.26s"/>
 <text x="720" y="222" class="t h f" style="animation-delay:.8s">Last 26 weeks</text>
 <rect x="720" y="240" width="14" height="14" rx="3" class="c l0" style="animation-delay:0.90s"><title>2026-04-26: 0</title></rect>
 <rect x="720" y="257" width="14" height="14" rx="3" class="c l0" style="animation-delay:0.92s"><title>2026-04-27: 0</title></rect>
@@ -251,7 +251,7 @@
 <rect x="1128" y="342" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.86s"><title>2026-10-17: 5</title></rect>
 <rect x="1145" y="240" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.78s"><title>2026-10-18: 56</title></rect>
 <rect x="1145" y="257" width="14" height="14" rx="3" class="c l4" style="animation-delay:1.80s"><title>2026-10-19: 156</title></rect>
-<rect x="1145" y="274" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.82s"><title>2026-10-20: 42</title></rect>
+<rect x="1145" y="274" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.82s"><title>2026-10-20: 44</title></rect>
 <g class="f" style="animation-delay:1.9s">
 <text x="720" y="392" class="t lbl">LESS</text>
 <rect x="758" y="381" width="14" height="14" rx="3" class="l0"/>
@@ -260,11 +260,11 @@
 <rect x="809" y="381" width="14" height="14" rx="3" class="l3"/>
 <rect x="826" y="381" width="14" height="14" rx="3" class="l4"/>
 <text x="848" y="392" class="t lbl">MORE</text>
-<text x="1162" y="392" text-anchor="end" class="t lbl">602 IN 26 WEEKS · BEST DAY 156</text></g>
+<text x="1162" y="392" text-anchor="end" class="t lbl">604 IN 26 WEEKS · BEST DAY 156</text></g>
 <text x="40" y="450" class="t h f" style="animation-delay:1.2s">Weekly contributions · 12 months</text>
 <line x1="40" y1="590" x2="1160" y2="590" style="stroke:var(--line)"/>
-<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,590.0 L772.3,568.7 L793.8,576.3 L815.4,588.1 L836.9,587.6 L858.5,582.4 L880.0,584.8 L901.5,590.0 L923.1,590.0 L944.6,590.0 L966.2,589.1 L987.7,590.0 L1009.2,587.6 L1030.8,560.2 L1052.3,590.0 L1073.8,590.0 L1095.4,590.0 L1116.9,569.2 L1138.5,531.4 L1160.0,470.0 L1160,590 L40,590 Z" fill="url(#fillg)" class="area"/>
-<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,590.0 L772.3,568.7 L793.8,576.3 L815.4,588.1 L836.9,587.6 L858.5,582.4 L880.0,584.8 L901.5,590.0 L923.1,590.0 L944.6,590.0 L966.2,589.1 L987.7,590.0 L1009.2,587.6 L1030.8,560.2 L1052.3,590.0 L1073.8,590.0 L1095.4,590.0 L1116.9,569.2 L1138.5,531.4 L1160.0,470.0" fill="none" stroke="url(#acc)" stroke-width="2.5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" class="draw"/>
+<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,590.0 L772.3,568.9 L793.8,576.4 L815.4,588.1 L836.9,587.7 L858.5,582.5 L880.0,584.8 L901.5,590.0 L923.1,590.0 L944.6,590.0 L966.2,589.1 L987.7,590.0 L1009.2,587.7 L1030.8,560.5 L1052.3,590.0 L1073.8,590.0 L1095.4,590.0 L1116.9,569.4 L1138.5,531.9 L1160.0,470.0 L1160,590 L40,590 Z" fill="url(#fillg)" class="area"/>
+<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,590.0 L772.3,568.9 L793.8,576.4 L815.4,588.1 L836.9,587.7 L858.5,582.5 L880.0,584.8 L901.5,590.0 L923.1,590.0 L944.6,590.0 L966.2,589.1 L987.7,590.0 L1009.2,587.7 L1030.8,560.5 L1052.3,590.0 L1073.8,590.0 L1095.4,590.0 L1116.9,569.4 L1138.5,531.9 L1160.0,470.0" fill="none" stroke="url(#acc)" stroke-width="2.5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" class="draw"/>
 <circle cx="1160.0" cy="470.0" r="4" style="fill:var(--accent)" class="live"/>
 <circle cx="1160.0" cy="470.0" r="4" style="fill:var(--accent)"/>
 <circle cx="514" cy="606" r="3" fill="#22c55e" class="live"/>
