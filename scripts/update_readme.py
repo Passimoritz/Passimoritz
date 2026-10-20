@@ -272,11 +272,11 @@ def text(value, lang: str = "en") -> str:
     return value or ""
 
 
-def spotlight(count: int, version: str, downloads: int) -> str:
-    """Hostwerk card: name, pitch, live numbers and the extension count (tiles with tooltips follow below it)."""
+def spotlight(version: str, released: str, downloads: int) -> str:
+    """Hostwerk card: name, pitch, live numbers and the latest release (extension tiles follow below it)."""
     out = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" '
-        f'aria-label="Hostwerk – the local server hub for Windows and Linux, {count} official extensions">',
+        f'aria-label="Hostwerk – the local server hub for Windows and Linux, latest release {escape(version)}">',
         '<defs><clipPath id="c"><rect width="1200" height="300" rx="14"/></clipPath>'
         '<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/>'
         '<stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/>'
@@ -294,9 +294,9 @@ def spotlight(count: int, version: str, downloads: int) -> str:
         '<text x="48" y="164" class="s f" style="animation-delay:.25s">The local server hub for Windows and Linux –</text>',
         '<text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and AI.</text>',
     ]
-    pills = [version, "Windows · Linux"]
+    pills = ["Windows · Linux"]
     if downloads:
-        pills.insert(1, f"{downloads:,} downloads")
+        pills.insert(0, f"{downloads:,} downloads")
     x = 48
     for i, label in enumerate(pills):
         w = 26 + len(label) * 8
@@ -308,9 +308,11 @@ def spotlight(count: int, version: str, downloads: int) -> str:
     out.append('<circle cx="54" cy="268" r="3.5" fill="#22c55e" class="live"/>')
     out.append(f'<text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/{HOSTWERK_REPO}</text>')
     # right side: live extension count
-    out.append(f'<text x="960" y="160" text-anchor="middle" class="n pop" fill="url(#g)" style="animation-delay:.4s">{count}</text>')
-    out.append('<text x="960" y="196" text-anchor="middle" class="k f" style="animation-delay:.6s">OFFICIAL EXTENSIONS</text>')
-    out.append('<text x="960" y="224" text-anchor="middle" class="u f" style="animation-delay:.8s">hover a tile below for a short explanation</text>')
+    # right side: latest release
+    out.append('<text x="960" y="96" text-anchor="middle" class="k f" style="animation-delay:.4s">LATEST RELEASE</text>')
+    out.append(f'<text x="960" y="186" text-anchor="middle" class="n pop" fill="url(#g)" style="animation-delay:.5s">{escape(version)}</text>')
+    if released:
+        out.append(f'<text x="960" y="224" text-anchor="middle" class="u f" style="animation-delay:.8s">released {escape(released)}</text>')
     out.append("</g></g>")
     out.append('<rect x=".5" y=".5" width="1199" height="299" rx="14" fill="none" style="stroke:var(--line)"/></svg>')
     return "\n".join(out)
@@ -357,17 +359,20 @@ def hostwerk_block(user: str, token: str) -> str:
     labels = dict(HOSTWERK_CATEGORIES)
     exts.sort(key=lambda e: (order.get(e.get("category"), 99), text(e.get("name")).lower()))
 
-    version, downloads = "", 0
+    version, released, downloads = "", "", 0
     try:
         releases = request(f"{API}/repos/{user}/{HOSTWERK_REPO}/releases?per_page=100", token)
         stable = [r for r in releases if not r["draft"] and not r["prerelease"] and r["tag_name"].startswith("v")]
         version = stable[0]["tag_name"] if stable else ""
+        if stable and stable[0].get("published_at"):
+            day = datetime.fromisoformat(stable[0]["published_at"].replace("Z", "+00:00"))
+            released = f"{day:%B} {day.day}, {day.year}"
         downloads = sum(a["download_count"] for r in releases for a in r["assets"])
     except OSError:
         pass
 
     with open("assets/hostwerk.svg", "w", encoding="utf-8") as handle:
-        handle.write(spotlight(len(exts), version or "latest", downloads))
+        handle.write(spotlight(version or "latest", released, downloads))
 
     # one tile per extension; the title attribute is the hover tooltip GitHub keeps
     os.makedirs(EXT_DIR, exist_ok=True)
