@@ -44,12 +44,22 @@ jobs:
   snake:
     runs-on: ubuntu-latest
     steps:
+      # Hostwerk is developed in a private repository, so most contributions are private. Only a
+      # personal access token (secret METRICS_TOKEN, scopes read:user + repo) sees them; the
+      # default Actions token would draw an almost empty graph. The action reads its token from
+      # the `github_token` input (not from env).
+      - name: Warn when only public contributions are visible
+        env:
+          PAT: ${{ secrets.METRICS_TOKEN }}
+        run: '[ -n "$PAT" ] || echo "::warning::METRICS_TOKEN is not set - the snake only sees public contributions."'
+
       - uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg?palette=github-light&color_snake=#0969da&color_dots=#ebeef2,#bae6fd,#7dd3fc,#0ea5e9,#0369a1
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#38bdf8&color_dots=#1b2230,#0c4a6e,#0369a1,#0ea5e9,#7dd3fc
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:

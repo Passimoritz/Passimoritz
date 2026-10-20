@@ -350,6 +350,129 @@ def summary(ext: dict) -> str:
     return desc
 
 
+BUTTON_STYLE = """<style>
+:root{--btn:#38bdf8;--btn-fg:#04202e;--btn-sub:#0b3b52;--btn-chip:#04202e}
+@media (prefers-color-scheme:light){:root{--btn:#0969da;--btn-fg:#ffffff;--btn-sub:#dbeafe;--btn-chip:#ffffff}}
+.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
+.b{font-size:16px;font-weight:700;fill:var(--btn-fg)}
+.s{font-size:13px;fill:var(--btn-sub)}
+.chip{fill:var(--btn-chip);fill-opacity:.14}
+.ic{fill:none;stroke:var(--btn-fg);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icf{fill:var(--btn-fg)}
+</style>"""
+
+# (key, label, file extensions in order of preference, name hints for generic archives)
+PLATFORMS = (
+    ("windows", "Windows", (".exe", ".msi"), ("win", "setup", "installer")),
+    ("linux", "Linux", (".appimage", ".deb", ".rpm", ".tar.gz", ".tgz", ".tar.xz"), ("linux", "ubuntu", "debian")),
+)
+# updater metadata, checksums, other operating systems and source archives are never offered as downloads
+SKIP_ASSET = ("sha", "checksum", ".sig", ".asc", ".blockmap", ".yml", ".yaml", ".txt", ".json", ".nupkg", ".md",
+              "source", "mac", "darwin", ".dmg", ".pkg", "video", ".mp4", ".webm")
+OTHER_OS = {"windows": ("linux", "appimage", ".deb", ".rpm"), "linux": ("win", ".exe", ".msi")}
+
+
+def pick_asset(assets: list[dict], extensions: tuple, hints: tuple, key: str = "") -> dict | None:
+    """Best installer for one platform.
+
+    Score: preferred extension (earlier = better), OS word in the name, installer over portable,
+    x64 over ARM; zip/tarballs only count when the name points at the platform.
+    """
+    best, best_score = None, 0
+    for asset in assets:
+        name = asset["name"].lower()
+        if any(s in name for s in SKIP_ASSET) or any(o in name for o in OTHER_OS.get(key, ())):
+            continue
+        score = 0
+        for index, ext in enumerate(extensions):
+            if name.endswith(ext):
+                score = 100 - index * 10
+                break
+        if not score and name.endswith((".zip", ".tar.gz", ".tgz", ".7z")) and any(h in name for h in hints):
+            score = 40
+        if not score:
+            continue
+        score += 5 * sum(h in name for h in hints)
+        score -= 15 if "portable" in name else 0
+        score -= 20 if any(t in name for t in ("arm", "aarch")) else 0
+        if score > best_score:
+            best, best_score = asset, score
+    return best
+
+
+def size_label(size: int) -> str:
+    return f"{size / 1024 / 1024:.0f} MB" if size >= 10 * 1024 * 1024 else f"{size / 1024 / 1024:.1f} MB"
+
+
+def file_kind(name: str) -> str:
+    lower = name.lower()
+    for ext in (".appimage", ".tar.gz", ".tgz", ".exe", ".msi", ".deb", ".rpm", ".zip"):
+        if lower.endswith(ext):
+            return ext.lstrip(".").upper() if ext != ".appimage" else "AppImage"
+    return "file"
+
+
+def platform_icon(key: str) -> str:
+    if key == "windows":
+        return ('<g class="icf"><rect x="-10" y="-10" width="9" height="9" rx="1.5"/><rect x="1" y="-10" width="9" height="9" rx="1.5"/>'
+                '<rect x="-10" y="1" width="9" height="9" rx="1.5"/><rect x="1" y="1" width="9" height="9" rx="1.5"/></g>')
+    if key == "linux":
+        return '<g class="ic"><rect x="-11" y="-10" width="22" height="20" rx="3"/><path d="M-6 -3l4 3-4 3M1 4h6"/></g>'
+    return '<g class="ic"><path d="M0 -10v14M-6 -2l6 6 6-6M-10 10h20"/></g>'
+
+
+def download_button(key: str, title: str, sub: str) -> str:
+    """Static, clickable-through-<a> button; follows the viewer's light/dark preference."""
+    width, height = 320, 72
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" '
+        f'aria-label="{escape(title)} – {escape(sub)}">{BUTTON_STYLE}'
+        f'<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" style="fill:var(--btn)"/>'
+        f'<rect x="14" y="14" width="44" height="44" rx="11" class="chip"/>'
+        f'<g transform="translate(36 36)">{platform_icon(key)}</g>'
+        f'<text x="72" y="33" class="t b">{escape(title)}</text>'
+        f'<text x="72" y="52" class="t s">{escape(sub)}</text>'
+        f'<g transform="translate(292 36)" class="ic"><path d="M0 -9v13M-6 -2l6 6 6-6"/></g>'
+        f"</svg>"
+    )
+
+
+def download_block(base: str, latest: dict | None, version: str, released: str, downloads: int) -> str:
+    """Direct per-OS download buttons plus a facts line; falls back to one generic button."""
+    assets = (latest or {}).get("assets", [])
+    buttons = []
+    for key, label, extensions, hints in PLATFORMS:
+        asset = pick_asset(assets, extensions, hints, key)
+        if not asset:
+            continue
+        sub = " · ".join(p for p in (file_kind(asset["name"]), size_label(asset["size"]), version) if p)
+        path = f"assets/dl-{key}.svg"
+        with open(path, "w", encoding="utf-8") as handle:
+            handle.write(download_button(key, f"Download for {label}", sub))
+        buttons.append(
+            f'<a href="{escape(asset["browser_download_url"])}"><img src="{path}" width="320" height="72" '
+            f'alt="Download Hostwerk for {label} ({escape(asset["name"])})"/></a>'
+        )
+    if len(buttons) < 2:
+        title = "All downloads" if buttons else "Download Hostwerk"
+        sub = " · ".join(p for p in ("Windows · Linux" if not buttons else "other platforms", version) if p)
+        with open("assets/dl-latest.svg", "w", encoding="utf-8") as handle:
+            handle.write(download_button("generic", title, sub))
+        buttons.append(
+            f'<a href="{base}/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>'
+        )
+    for stale in ("dl-windows.svg", "dl-linux.svg", "dl-latest.svg"):
+        used = any(f"assets/{stale}" in b for b in buttons)
+        if not used and os.path.exists(f"assets/{stale}"):
+            os.remove(f"assets/{stale}")
+
+    facts = [p for p in (version, released, f"{downloads:,} downloads" if downloads else "") if p]
+    notes_url = (latest or {}).get("html_url") or f"{base}/releases/latest"
+    links = [f'<a href="{notes_url}">Release notes &amp; all files</a>', f'<a href="{base}/releases">All releases</a>']
+    line = " · ".join(facts + links)
+    return f'<p align="center">\n{"&nbsp;&nbsp;".join(buttons)}\n<br/><sub>{line}</sub>\n</p>'
+
+
 def hostwerk_block(user: str, token: str) -> str:
     raw = fetch_raw(f"https://raw.githubusercontent.com/{user}/{HOSTWERK_REPO}/main/catalog/extensions.json")
     exts = json.loads(raw) if raw else []
@@ -360,9 +483,11 @@ def hostwerk_block(user: str, token: str) -> str:
     exts.sort(key=lambda e: (order.get(e.get("category"), 99), text(e.get("name")).lower()))
 
     version, released, downloads = "", "", 0
+    latest: dict | None = None
     try:
         releases = request(f"{API}/repos/{user}/{HOSTWERK_REPO}/releases?per_page=100", token)
-        stable = [r for r in releases if not r["draft"] and not r["prerelease"] and r["tag_name"].startswith("v")]
+        stable = [r for r in releases if not r["draft"] and not r["prerelease"] and re.match(r"^v\d", r["tag_name"])]
+        latest = stable[0] if stable else None
         version = stable[0]["tag_name"] if stable else ""
         if stable and stable[0].get("published_at"):
             day = datetime.fromisoformat(stable[0]["published_at"].replace("Z", "+00:00"))
@@ -402,7 +527,7 @@ def hostwerk_block(user: str, token: str) -> str:
     parts = [f'<a href="{base}"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>']
     if tiles:
         parts.append('<p align="center">\n' + "\n".join(tiles) + "\n</p>")
-    parts.append(f'<p align="center"><a href="{base}/releases/latest"><b>⬇️ Download Hostwerk{" " + version if version else ""}</b></a></p>')
+    parts.append(download_block(base, latest, version, released, downloads))
     return "\n\n".join(parts)
 
 
