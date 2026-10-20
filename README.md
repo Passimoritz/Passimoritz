@@ -36,13 +36,13 @@ I work where **IT management, project leadership and sales** meet: steering digi
 
 <!--ACTIVITY:START-->
 🚀 Released [v2.10.0](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.0) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>1 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>2 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-ticker](https://github.com/Passimoritz/hostwerk-ext-player-ticker) · <sub>2 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>19 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-passwords](https://github.com/Passimoritz/hostwerk-ext-passwords) · <sub>20 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-status-wall](https://github.com/Passimoritz/hostwerk-ext-status-wall) · <sub>21 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-server-card](https://github.com/Passimoritz/hostwerk-ext-server-card) · <sub>21 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>21 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>21 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-mail-stats](https://github.com/Passimoritz/hostwerk-ext-mail-stats) · <sub>21 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-disk-usage](https://github.com/Passimoritz/hostwerk-ext-disk-usage) · <sub>21 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
