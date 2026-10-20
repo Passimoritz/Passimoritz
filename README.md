@@ -13,21 +13,25 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <img src="https://skillicons.dev/icons?i=docker,nginx,linux,git,react,lua,bash&theme=dark" alt="Tech stack"/>
 </p>
 
-## Recent activity
+## Numbers
 
-<!--ACTIVITY:START-->
-<!--ACTIVITY:END-->
+<img src="assets/stats.svg" alt="GitHub statistics" width="100%"/>
 
 ## Repositories
 
 <!--REPOS:START-->
 <!--REPOS:END-->
 
-## Numbers
+<details open>
+<summary><b>⚡ Recent activity</b></summary>
+<br/>
 
-<img src="assets/stats.svg" alt="GitHub statistics" width="100%"/>
+<!--ACTIVITY:START-->
+<!--ACTIVITY:END-->
 
-<details>
+</details>
+
+<details open>
 <summary><b>🐍 Contribution snake</b></summary>
 <br/>
 <picture>
