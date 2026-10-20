@@ -363,24 +363,41 @@ BUTTON_STYLE = """<style>
 
 # (key, label, file extensions in order of preference, name hints for generic archives)
 PLATFORMS = (
-    ("windows", "Windows", (".exe", ".msi"), ("win",)),
-    ("linux", "Linux", (".appimage", ".deb", ".rpm", ".tar.gz", ".tgz"), ("linux",)),
+    ("windows", "Windows", (".exe", ".msi"), ("win", "setup", "installer")),
+    ("linux", "Linux", (".appimage", ".deb", ".rpm", ".tar.gz", ".tgz", ".tar.xz"), ("linux", "ubuntu", "debian")),
 )
-SKIP_ASSET = ("sha", "checksum", ".sig", ".asc", ".blockmap", ".yml", ".yaml", ".txt", ".json", "source")
+# updater metadata, checksums, other operating systems and source archives are never offered as downloads
+SKIP_ASSET = ("sha", "checksum", ".sig", ".asc", ".blockmap", ".yml", ".yaml", ".txt", ".json", ".nupkg", ".md",
+              "source", "mac", "darwin", ".dmg", ".pkg", "video", ".mp4", ".webm")
+OTHER_OS = {"windows": ("linux", "appimage", ".deb", ".rpm"), "linux": ("win", ".exe", ".msi")}
 
 
-def pick_asset(assets: list[dict], extensions: tuple, hints: tuple) -> dict | None:
-    """Best installer for one platform: preferred extension first, then a zip/tarball named after the OS."""
-    usable = [a for a in assets if not any(s in a["name"].lower() for s in SKIP_ASSET)]
-    for ext in extensions:
-        for asset in usable:
-            if asset["name"].lower().endswith(ext):
-                return asset
-    for asset in usable:
+def pick_asset(assets: list[dict], extensions: tuple, hints: tuple, key: str = "") -> dict | None:
+    """Best installer for one platform.
+
+    Score: preferred extension (earlier = better), OS word in the name, installer over portable,
+    x64 over ARM; zip/tarballs only count when the name points at the platform.
+    """
+    best, best_score = None, 0
+    for asset in assets:
         name = asset["name"].lower()
-        if name.endswith((".zip", ".tar.gz", ".tgz")) and any(h in name for h in hints):
-            return asset
-    return None
+        if any(s in name for s in SKIP_ASSET) or any(o in name for o in OTHER_OS.get(key, ())):
+            continue
+        score = 0
+        for index, ext in enumerate(extensions):
+            if name.endswith(ext):
+                score = 100 - index * 10
+                break
+        if not score and name.endswith((".zip", ".tar.gz", ".tgz", ".7z")) and any(h in name for h in hints):
+            score = 40
+        if not score:
+            continue
+        score += 5 * sum(h in name for h in hints)
+        score -= 15 if "portable" in name else 0
+        score -= 20 if any(t in name for t in ("arm", "aarch")) else 0
+        if score > best_score:
+            best, best_score = asset, score
+    return best
 
 
 def size_label(size: int) -> str:
@@ -425,7 +442,7 @@ def download_block(base: str, latest: dict | None, version: str, released: str, 
     assets = (latest or {}).get("assets", [])
     buttons = []
     for key, label, extensions, hints in PLATFORMS:
-        asset = pick_asset(assets, extensions, hints)
+        asset = pick_asset(assets, extensions, hints, key)
         if not asset:
             continue
         sub = " · ".join(p for p in (file_kind(asset["name"]), size_label(asset["size"]), version) if p)
@@ -436,10 +453,11 @@ def download_block(base: str, latest: dict | None, version: str, released: str, 
             f'<a href="{escape(asset["browser_download_url"])}"><img src="{path}" width="320" height="72" '
             f'alt="Download Hostwerk for {label} ({escape(asset["name"])})"/></a>'
         )
-    if not buttons:
-        sub = " · ".join(p for p in ("Windows · Linux", version) if p)
+    if len(buttons) < 2:
+        title = "All downloads" if buttons else "Download Hostwerk"
+        sub = " · ".join(p for p in ("Windows · Linux" if not buttons else "other platforms", version) if p)
         with open("assets/dl-latest.svg", "w", encoding="utf-8") as handle:
-            handle.write(download_button("generic", "Download Hostwerk", sub))
+            handle.write(download_button("generic", title, sub))
         buttons.append(
             f'<a href="{base}/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>'
         )
@@ -468,7 +486,7 @@ def hostwerk_block(user: str, token: str) -> str:
     latest: dict | None = None
     try:
         releases = request(f"{API}/repos/{user}/{HOSTWERK_REPO}/releases?per_page=100", token)
-        stable = [r for r in releases if not r["draft"] and not r["prerelease"] and r["tag_name"].startswith("v")]
+        stable = [r for r in releases if not r["draft"] and not r["prerelease"] and re.match(r"^v\d", r["tag_name"])]
         latest = stable[0] if stable else None
         version = stable[0]["tag_name"] if stable else ""
         if stable and stable[0].get("published_at"):
