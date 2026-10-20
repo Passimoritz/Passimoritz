@@ -58,7 +58,10 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes" title="Service notes – Notes and checklists for every service.&#10;Other · v1.1.0"><img src="assets/ext/service-notes.svg" width="56" height="56" alt="Service notes" title="Service notes – Notes and checklists for every service.&#10;Other · v1.1.0"/></a>
 </p>
 
-<p align="center"><a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><b>⬇️ Download Hostwerk v2.10.1</b></a></p>
+<p align="center">
+<a href="https://github.com/Passimoritz/hostwerk-public/releases/download/v2.10.1/Hostwerk-Setup-2.10.1.exe"><img src="assets/dl-windows.svg" width="320" height="72" alt="Download Hostwerk for Windows (Hostwerk-Setup-2.10.1.exe)"/></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public/releases/download/v2.10.1/Hostwerk-2.10.1-linux-x86_64.AppImage"><img src="assets/dl-linux.svg" width="320" height="72" alt="Download Hostwerk for Linux (Hostwerk-2.10.1-linux-x86_64.AppImage)"/></a>
+<br/><sub>v2.10.1 · October 20, 2026 · 1,166 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.1">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+</p>
 <!--HOSTWERK:END-->
 
 <details open>
@@ -66,14 +69,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>2 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-file-share](https://github.com/Passimoritz/hostwerk-ext-file-share) · <sub>2 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>2 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>2 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>3 h ago</sub><br/>
-🚀 Released [v2.10.1](https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.1) in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 h ago</sub><br/>
-🔀 Merged PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>3 h ago</sub><br/>
-🔀 Opened PR [#2](https://github.com/Passimoritz/Passimoritz/pull/2) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>3 h ago</sub>
+🔀 Merged PR [#3](https://github.com/Passimoritz/Passimoritz/pull/3) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
+🔀 Opened PR [#3](https://github.com/Passimoritz/Passimoritz/pull/3) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>just now</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-game-servers](https://github.com/Passimoritz/hostwerk-ext-game-servers) · <sub>just now</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>3 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-file-share](https://github.com/Passimoritz/hostwerk-ext-file-share) · <sub>3 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>4 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
