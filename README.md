@@ -59,8 +59,8 @@ I work where **IT management, project leadership and sales** meet: steering digi
 </p>
 
 <p align="center">
-<a href="https://github.com/Passimoritz/hostwerk-public/releases/download/v2.10.1/Hostwerk-Setup-2.10.1.exe"><img src="assets/dl-windows.svg" width="320" height="72" alt="Download Hostwerk for Windows (Hostwerk-Setup-2.10.1.exe)"/></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public/releases/download/v2.10.1/Hostwerk-2.10.1-linux-x86_64.AppImage"><img src="assets/dl-linux.svg" width="320" height="72" alt="Download Hostwerk for Linux (Hostwerk-2.10.1-linux-x86_64.AppImage)"/></a>
-<br/><sub>v2.10.1 · October 20, 2026 · 1,166 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/tag/v2.10.1">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
+<br/><sub>1,300 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -69,14 +69,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-🔀 Merged PR [#3](https://github.com/Passimoritz/Passimoritz/pull/3) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
-🔀 Opened PR [#3](https://github.com/Passimoritz/Passimoritz/pull/3) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-game-servers](https://github.com/Passimoritz/hostwerk-ext-game-servers) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-file-share](https://github.com/Passimoritz/hostwerk-ext-file-share) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>4 h ago</sub>
+🔀 Merged PR [#3](https://github.com/Passimoritz/Passimoritz/pull/3) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>6 h ago</sub><br/>
+🔀 Opened PR [#3](https://github.com/Passimoritz/Passimoritz/pull/3) in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>6 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>7 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-game-servers](https://github.com/Passimoritz/hostwerk-ext-game-servers) · <sub>7 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>9 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-file-share](https://github.com/Passimoritz/hostwerk-ext-file-share) · <sub>9 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>9 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>10 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
