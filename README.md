@@ -67,7 +67,7 @@ I work where **IT management, project leadership and sales** meet: steering digi
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>1,971 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>2,197 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -76,14 +76,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>5 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>5 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>9 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>9 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>9 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-discord-bot](https://github.com/Passimoritz/hostwerk-ext-discord-bot) · <sub>9 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>9 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>10 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>12 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>12 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>16 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>16 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>16 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-discord-bot](https://github.com/Passimoritz/hostwerk-ext-discord-bot) · <sub>16 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>16 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
