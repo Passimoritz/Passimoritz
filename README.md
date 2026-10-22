@@ -76,14 +76,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>17 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>19 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>19 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>23 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>23 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>23 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-discord-bot](https://github.com/Passimoritz/hostwerk-ext-discord-bot) · <sub>23 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>23 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>22 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-ticker](https://github.com/Passimoritz/hostwerk-ext-player-ticker) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-discord-bot](https://github.com/Passimoritz/hostwerk-ext-discord-bot) · <sub>1 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
