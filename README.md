@@ -34,7 +34,7 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <a href="https://github.com/Passimoritz/hostwerk-ext-file-share" title="File share (SFTP) – Share a folder over SFTP – e.g. so friends can upload worlds, mods or photos.&#10;Network &amp; machines · part of Hostwerk · v1.2.0"><img src="assets/ext/file-share.svg" width="56" height="56" alt="File share (SFTP)" title="File share (SFTP) – Share a folder over SFTP – e.g. so friends can upload worlds, mods or photos.&#10;Network &amp; machines · part of Hostwerk · v1.2.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-hostwerk-network" title="Hostwerk network – Several machines as one network.&#10;Network &amp; machines · part of Hostwerk · v1.2.0"><img src="assets/ext/hostwerk-network.svg" width="56" height="56" alt="Hostwerk network" title="Hostwerk network – Several machines as one network.&#10;Network &amp; machines · part of Hostwerk · v1.2.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-port-map" title="Port map – All ports of your services in one list.&#10;Network &amp; machines · v1.3.0"><img src="assets/ext/port-map.svg" width="56" height="56" alt="Port map" title="Port map – All ports of your services in one list.&#10;Network &amp; machines · v1.3.0"/></a>
-<a href="https://github.com/Passimoritz/hostwerk-ext-router" title="Router &amp; port forwarding – Makes your servers reachable from the internet.&#10;Network &amp; machines · part of Hostwerk · v1.2.0"><img src="assets/ext/router.svg" width="56" height="56" alt="Router &amp; port forwarding" title="Router &amp; port forwarding – Makes your servers reachable from the internet.&#10;Network &amp; machines · part of Hostwerk · v1.2.0"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-router" title="Router &amp; port forwarding – Makes your servers reachable from the internet.&#10;Network &amp; machines · part of Hostwerk · v1.2.1"><img src="assets/ext/router.svg" width="56" height="56" alt="Router &amp; port forwarding" title="Router &amp; port forwarding – Makes your servers reachable from the internet.&#10;Network &amp; machines · part of Hostwerk · v1.2.1"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-vpn" title="VPN access – WireGuard access for your devices and friends.&#10;Network &amp; machines · part of Hostwerk · v1.0.0"><img src="assets/ext/vpn.svg" width="56" height="56" alt="VPN access" title="VPN access – WireGuard access for your devices and friends.&#10;Network &amp; machines · part of Hostwerk · v1.0.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-cert-watch" title="Certificate watch – All certificates at a glance: Hostwerk’s own and any host (mail server, router, other sites).&#10;Security &amp; access · part of Hostwerk · v2.0.0"><img src="assets/ext/cert-watch.svg" width="56" height="56" alt="Certificate watch" title="Certificate watch – All certificates at a glance: Hostwerk’s own and any host (mail server, router, other sites).&#10;Security &amp; access · part of Hostwerk · v2.0.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-passwords" title="Password manager – Own encrypted vault or Bitwarden/Vaultwarden, 1Password, KeePass, pass and LastPass.&#10;Security &amp; access · part of Hostwerk · v1.1.0"><img src="assets/ext/passwords.svg" width="56" height="56" alt="Password manager" title="Password manager – Own encrypted vault or Bitwarden/Vaultwarden, 1Password, KeePass, pass and LastPass.&#10;Security &amp; access · part of Hostwerk · v1.1.0"/></a>
@@ -61,13 +61,13 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <a href="https://github.com/Passimoritz/hostwerk-ext-mail-server" title="Mail server – Real mailboxes with your own domain.&#10;Mail &amp; communication · part of Hostwerk · v1.3.0"><img src="assets/ext/mail-server.svg" width="56" height="56" alt="Mail server" title="Mail server – Real mailboxes with your own domain.&#10;Mail &amp; communication · part of Hostwerk · v1.3.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-mail-stats" title="Mail statistics – How many e-mails your projects send.&#10;Mail &amp; communication · v1.3.0"><img src="assets/ext/mail-stats.svg" width="56" height="56" alt="Mail statistics" title="Mail statistics – How many e-mails your projects send.&#10;Mail &amp; communication · v1.3.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-theme-pack" title="Themes – Three carefully tuned themes for Hostwerk.&#10;Other · v1.0.0"><img src="assets/ext/theme-pack.svg" width="56" height="56" alt="Themes" title="Themes – Three carefully tuned themes for Hostwerk.&#10;Other · v1.0.0"/></a>
-<a href="https://github.com/Passimoritz/hostwerk-ext-cloud-backup" title="Cloud backup – Hostwerk&#x27;s external backup to the cloud too.&#10;Extension · part of Hostwerk · v1.2.0"><img src="assets/ext/cloud-backup.svg" width="56" height="56" alt="Cloud backup" title="Cloud backup – Hostwerk&#x27;s external backup to the cloud too.&#10;Extension · part of Hostwerk · v1.2.0"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-cloud-backup" title="Cloud backup – Hostwerk&#x27;s external backup to the cloud too.&#10;Extension · part of Hostwerk · v1.3.0"><img src="assets/ext/cloud-backup.svg" width="56" height="56" alt="Cloud backup" title="Cloud backup – Hostwerk&#x27;s external backup to the cloud too.&#10;Extension · part of Hostwerk · v1.3.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes" title="Service notes – Notes and checklists for every service.&#10;Extension · v1.3.0"><img src="assets/ext/service-notes.svg" width="56" height="56" alt="Service notes" title="Service notes – Notes and checklists for every service.&#10;Extension · v1.3.0"/></a>
 </p>
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>2,197 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>2,201 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -76,14 +76,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>10 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>12 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>12 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>16 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>16 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>16 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-discord-bot](https://github.com/Passimoritz/hostwerk-ext-discord-bot) · <sub>16 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>16 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>17 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>19 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>19 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>23 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>23 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>23 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-discord-bot](https://github.com/Passimoritz/hostwerk-ext-discord-bot) · <sub>23 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>23 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
