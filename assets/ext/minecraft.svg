@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Minecraft servers">
+<style>
+:root{--bg:#0d1117;--line:#30363d;--fg:#f0f6fc;--muted:#9198a1;--accent:#38bdf8;--tile:#161b22;--grid:#ffffff}
+@media (prefers-color-scheme:light){:root{--bg:#ffffff;--line:#d1d9e0;--fg:#1f2328;--muted:#59636e;--accent:#0969da;--tile:#f6f8fa;--grid:#000000}}
+.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
+.k{font-size:13px;font-weight:700;letter-spacing:2px;fill:var(--accent)}
+.h{font-size:56px;font-weight:800;letter-spacing:-1.5px}
+.s{font-size:18px;fill:var(--fg);opacity:.85}
+.p{font-size:14px;font-weight:600;fill:var(--fg)}
+.pill{fill:var(--tile);stroke:var(--line)}
+.u{font-size:13px;fill:var(--muted)}
+.tile{fill:var(--tile);stroke:var(--line)}
+.grid{stroke:var(--grid);stroke-opacity:.04}
+.n{font-size:96px;font-weight:800;letter-spacing:-3px}
+.f{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
+.fl{animation:float 5s ease-in-out infinite}
+.live{transform-box:fill-box;transform-origin:center;animation:live 2s ease-in-out infinite}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.3)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.8)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g class="fl" style="animation-delay:2.9s"><g class="pop" style="animation-delay:0.35s">
+<rect x="3" y="3" width="58" height="58" rx="13" class="tile"/>
+<image x="15" y="15" width="34" height="34" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWhpZGRlbj0idHJ1ZSI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM2YWQxNWEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMzk2NGEiLz48L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9ImQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNhODc1NGEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2ZDQ0MjYiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjE0IiBmaWxsPSIjMTYyNTFiIi8+CjxwYXRoIGQ9Ik0zMiAxMCBMNTQgMjEgTDMyIDMyIEwxMCAyMSBaIiBmaWxsPSJ1cmwoI2cpIi8+CjxwYXRoIGQ9Ik0xMCAyMSBMMzIgMzIgVjU0IEwxMCA0MyBaIiBmaWxsPSJ1cmwoI2QpIi8+CjxwYXRoIGQ9Ik01NCAyMSBMMzIgMzIgVjU0IEw1NCA0MyBaIiBmaWxsPSIjN2Q1MTMwIi8+CjxwYXRoIGQ9Ik0xMCAyMSBMMzIgMzIgVjM3IEwxMCAyNiBaIiBmaWxsPSIjNGNhZjNjIi8+CjxwYXRoIGQ9Ik01NCAyMSBMMzIgMzIgVjM3IEw1NCAyNiBaIiBmaWxsPSIjM2E4ZjJkIi8+CjxwYXRoIGQ9Ik0xNCAzMCBsMyAxLjUgdjMgbC0zLTEuNXogTTIyIDM4IGwzIDEuNSB2MyBsLTMtMS41eiBNNDAgNDEgbDMtMS41IHYzIGwtMyAxLjV6IE00NyAzMyBsMy0xLjUgdjMgbC0zIDEuNXoiIGZpbGw9IiM1YTNhMjAiIG9wYWNpdHk9Ii44Ii8+Cjwvc3ZnPgo="/>
+</g></g></svg>

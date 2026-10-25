@@ -23,11 +23,12 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <a href="https://github.com/Passimoritz/hostwerk-public"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>
 
 <p align="center">
-<a href="https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge" title="Bedrock bridge – Friends on phones, consoles and the Windows edition play on your Java servers.&#10;Games &amp; Minecraft · part of Hostwerk · v1.1.1"><img src="assets/ext/bedrock-bridge.svg" width="56" height="56" alt="Bedrock bridge" title="Bedrock bridge – Friends on phones, consoles and the Windows edition play on your Java servers.&#10;Games &amp; Minecraft · part of Hostwerk · v1.1.1"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge" title="Bedrock bridge – Replaced by “Minecraft server network”.&#10;Games &amp; Minecraft · part of Hostwerk · v1.3.0"><img src="assets/ext/bedrock-bridge.svg" width="56" height="56" alt="Bedrock bridge" title="Bedrock bridge – Replaced by “Minecraft server network”.&#10;Games &amp; Minecraft · part of Hostwerk · v1.3.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-game-network" title="Game server network – Game and Minecraft servers as one network.&#10;Games &amp; Minecraft · part of Hostwerk · v1.1.0"><img src="assets/ext/game-network.svg" width="56" height="56" alt="Game server network" title="Game server network – Game and Minecraft servers as one network.&#10;Games &amp; Minecraft · part of Hostwerk · v1.1.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-game-servers" title="Game servers – Valheim, Palworld, Satisfactory, Rust, ARK and every other Steam server tool through SteamCMD.&#10;Games &amp; Minecraft · part of Hostwerk · v1.6.0"><img src="assets/ext/game-servers.svg" width="56" height="56" alt="Game servers" title="Game servers – Valheim, Palworld, Satisfactory, Rust, ARK and every other Steam server tool through SteamCMD.&#10;Games &amp; Minecraft · part of Hostwerk · v1.6.0"/></a>
-<a href="https://github.com/Passimoritz/hostwerk-ext-motd-studio" title="MOTD studio – Design your Minecraft server’s description in the server list with colours, formats and templates.&#10;Games &amp; Minecraft · v1.2.0"><img src="assets/ext/motd-studio.svg" width="56" height="56" alt="MOTD studio" title="MOTD studio – Design your Minecraft server’s description in the server list with colours, formats and templates.&#10;Games &amp; Minecraft · v1.2.0"/></a>
-<a href="https://github.com/Passimoritz/hostwerk-ext-player-leaderboard" title="Player leaderboard – Who plays, mines, kills or dies the most.&#10;Games &amp; Minecraft · v1.3.0"><img src="assets/ext/player-leaderboard.svg" width="56" height="56" alt="Player leaderboard" title="Player leaderboard – Who plays, mines, kills or dies the most.&#10;Games &amp; Minecraft · v1.3.0"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-minecraft" title="Minecraft servers – Minecraft servers with Paper, Purpur, Folia, Fabric, NeoForge, Forge, Velocity, Bedrock and modpacks.&#10;Games &amp; Minecraft · part of Hostwerk · v1.0.1"><img src="assets/ext/minecraft.svg" width="56" height="56" alt="Minecraft servers" title="Minecraft servers – Minecraft servers with Paper, Purpur, Folia, Fabric, NeoForge, Forge, Velocity, Bedrock and modpacks.&#10;Games &amp; Minecraft · part of Hostwerk · v1.0.1"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-motd-studio" title="MOTD studio – Design your Minecraft server’s description in the server list.&#10;Games &amp; Minecraft · v1.5.0"><img src="assets/ext/motd-studio.svg" width="56" height="56" alt="MOTD studio" title="MOTD studio – Design your Minecraft server’s description in the server list.&#10;Games &amp; Minecraft · v1.5.0"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-player-leaderboard" title="Player leaderboard – Who plays, mines, kills or dies the most.&#10;Games &amp; Minecraft · part of Hostwerk · v1.6.0"><img src="assets/ext/player-leaderboard.svg" width="56" height="56" alt="Player leaderboard" title="Player leaderboard – Who plays, mines, kills or dies the most.&#10;Games &amp; Minecraft · part of Hostwerk · v1.6.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-player-ticker" title="Player Ticker – Who is on your Minecraft servers right now? Live list with heads, TPS, a playtime ranking and who joined or left.&#10;Games &amp; Minecraft · v1.3.0"><img src="assets/ext/player-ticker.svg" width="56" height="56" alt="Player Ticker" title="Player Ticker – Who is on your Minecraft servers right now? Live list with heads, TPS, a playtime ranking and who joined or left.&#10;Games &amp; Minecraft · v1.3.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-schematics-3d" title="Schematics in 3D – Look at Minecraft builds in 3D before you place them.&#10;Games &amp; Minecraft · part of Hostwerk · v1.1.0"><img src="assets/ext/schematics-3d.svg" width="56" height="56" alt="Schematics in 3D" title="Schematics in 3D – Look at Minecraft builds in 3D before you place them.&#10;Games &amp; Minecraft · part of Hostwerk · v1.1.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-dns" title="DNS management – Set, change, delete and check the DNS records of your domains right at Cloudflare, Hetzner, INWX or IONOS (A, AAAA, CNAME, MX, TXT, SRV…&#10;Network &amp; machines · part of Hostwerk · v1.0.0"><img src="assets/ext/dns.svg" width="56" height="56" alt="DNS management" title="DNS management – Set, change, delete and check the DNS records of your domains right at Cloudflare, Hetzner, INWX or IONOS (A, AAAA, CNAME, MX, TXT, SRV…&#10;Network &amp; machines · part of Hostwerk · v1.0.0"/></a>
@@ -62,12 +63,13 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <a href="https://github.com/Passimoritz/hostwerk-ext-mail-stats" title="Mail statistics – How many e-mails your projects send.&#10;Mail &amp; communication · v1.3.0"><img src="assets/ext/mail-stats.svg" width="56" height="56" alt="Mail statistics" title="Mail statistics – How many e-mails your projects send.&#10;Mail &amp; communication · v1.3.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-theme-pack" title="Themes – Three carefully tuned themes for Hostwerk.&#10;Other · v1.0.0"><img src="assets/ext/theme-pack.svg" width="56" height="56" alt="Themes" title="Themes – Three carefully tuned themes for Hostwerk.&#10;Other · v1.0.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-cloud-backup" title="Cloud backup – Hostwerk&#x27;s external backup to the cloud too.&#10;Extension · part of Hostwerk · v1.3.0"><img src="assets/ext/cloud-backup.svg" width="56" height="56" alt="Cloud backup" title="Cloud backup – Hostwerk&#x27;s external backup to the cloud too.&#10;Extension · part of Hostwerk · v1.3.0"/></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-modes" title="Modes – Services for one job with one click.&#10;Extension · part of Hostwerk · v1.0.0"><img src="assets/ext/modes.svg" width="56" height="56" alt="Modes" title="Modes – Services for one job with one click.&#10;Extension · part of Hostwerk · v1.0.0"/></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes" title="Service notes – Notes and checklists for every service.&#10;Extension · v1.3.0"><img src="assets/ext/service-notes.svg" width="56" height="56" alt="Service notes" title="Service notes – Notes and checklists for every service.&#10;Extension · v1.3.0"/></a>
 </p>
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>2,848 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>3,043 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -76,14 +78,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-🌍 Made [Passimoritz/hostwerk-ext-modes](https://github.com/Passimoritz/hostwerk-ext-modes) public · <sub>8 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>7 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-motd-studio](https://github.com/Passimoritz/hostwerk-ext-motd-studio) · <sub>7 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>7 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>7 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-minecraft](https://github.com/Passimoritz/hostwerk-ext-minecraft) · <sub>7 h ago</sub><br/>
+🌍 Made [Passimoritz/hostwerk-ext-modes](https://github.com/Passimoritz/hostwerk-ext-modes) public · <sub>16 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-port-map](https://github.com/Passimoritz/hostwerk-ext-port-map) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-ticker](https://github.com/Passimoritz/hostwerk-ext-player-ticker) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-team](https://github.com/Passimoritz/hostwerk-ext-team) · <sub>3 d ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>3 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
