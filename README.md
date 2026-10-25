@@ -69,7 +69,7 @@ I work where **IT management, project leadership and sales** meet: steering digi
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>3,043 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>3,057 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -78,14 +78,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>7 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-motd-studio](https://github.com/Passimoritz/hostwerk-ext-motd-studio) · <sub>7 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>7 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>7 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-minecraft](https://github.com/Passimoritz/hostwerk-ext-minecraft) · <sub>7 h ago</sub><br/>
-🌍 Made [Passimoritz/hostwerk-ext-modes](https://github.com/Passimoritz/hostwerk-ext-modes) public · <sub>16 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cloud-backup](https://github.com/Passimoritz/hostwerk-ext-cloud-backup) · <sub>3 d ago</sub>
+🔀 Merged PR [#1](https://github.com/Passimoritz/MC-VillagerVoice/pull/1) in [Passimoritz/MC-VillagerVoice](https://github.com/Passimoritz/MC-VillagerVoice) · <sub>just now</sub><br/>
+⬆️ Pushed to `claude/magical-engelbart-7ebd6b` in [Passimoritz/MC-VillagerVoice](https://github.com/Passimoritz/MC-VillagerVoice) · <sub>just now</sub><br/>
+🔀 Opened PR [#1](https://github.com/Passimoritz/MC-VillagerVoice/pull/1) in [Passimoritz/MC-VillagerVoice](https://github.com/Passimoritz/MC-VillagerVoice) · <sub>1 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>14 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-motd-studio](https://github.com/Passimoritz/hostwerk-ext-motd-studio) · <sub>14 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-bedrock-bridge](https://github.com/Passimoritz/hostwerk-ext-bedrock-bridge) · <sub>14 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-minecraft](https://github.com/Passimoritz/hostwerk-ext-minecraft) · <sub>14 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>14 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
