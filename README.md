@@ -64,7 +64,7 @@ I work where **IT management, project leadership and sales** meet: steering digi
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>3,345 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>3,387 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -73,14 +73,14 @@ I work where **IT management, project leadership and sales** meet: steering digi
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-static-publish](https://github.com/Passimoritz/hostwerk-ext-static-publish) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-game-servers](https://github.com/Passimoritz/hostwerk-ext-game-servers) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-dns](https://github.com/Passimoritz/hostwerk-ext-dns) · <sub>3 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-disk-usage](https://github.com/Passimoritz/hostwerk-ext-disk-usage) · <sub>3 h ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>10 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>11 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) · <sub>11 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-static-publish](https://github.com/Passimoritz/hostwerk-ext-static-publish) · <sub>11 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>11 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>11 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>11 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-motd-studio](https://github.com/Passimoritz/hostwerk-ext-motd-studio) · <sub>11 h ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
