@@ -30,7 +30,7 @@
 <text x="46" y="128" class="h f" fill="url(#g)" style="animation-delay:.1s">Hostwerk</text>
 <text x="48" y="164" class="s f" style="animation-delay:.25s">The local server hub for Windows and Linux –</text>
 <text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and AI.</text>
-<g class="f" style="animation-delay:0.45s"><rect x="48" y="212" width="146" height="32" rx="16" class="pill"/><text x="121" y="233" text-anchor="middle" class="p">3,585 downloads</text></g>
+<g class="f" style="animation-delay:0.45s"><rect x="48" y="212" width="146" height="32" rx="16" class="pill"/><text x="121" y="233" text-anchor="middle" class="p">3,716 downloads</text></g>
 <g class="f" style="animation-delay:0.55s"><rect x="204" y="212" width="146" height="32" rx="16" class="pill"/><text x="277" y="233" text-anchor="middle" class="p">Windows · Linux</text></g>
 <circle cx="54" cy="268" r="3.5" fill="#22c55e" class="live"/>
 <text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/hostwerk-public</text>
