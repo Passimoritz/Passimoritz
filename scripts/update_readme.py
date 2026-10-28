@@ -284,9 +284,15 @@ def spotlight(version: str, released: str, downloads: int) -> str:
         '<animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/></linearGradient>'
         '<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="grid"/></pattern>'
         '<radialGradient id="r" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/>'
-        '<stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient></defs>',
+        '<stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>'
+        '<filter id="b" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="55"/></filter></defs>',
         SPOT_STYLE,
-        '<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/><rect width="1200" height="300" fill="url(#p)"/>',
+        '<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/>',
+        # aurora behind the grid, same palette as the header
+        '<g filter="url(#b)" opacity=".32"><ellipse cx="160" cy="300" rx="260" ry="90" fill="#0ea5e9">'
+        '<animate attributeName="cx" values="140;380;140" dur="19s" repeatCount="indefinite"/></ellipse>'
+        '<ellipse cx="1100" cy="20" rx="240" ry="110" fill="#a78bfa"><animate attributeName="cy" values="0;120;0" dur="15s" repeatCount="indefinite"/></ellipse></g>',
+        '<rect width="1200" height="300" fill="url(#p)"/>',
         '<circle cx="960" cy="150" r="280" fill="url(#r)"><animate attributeName="r" values="260;300;260" dur="7s" repeatCount="indefinite"/></circle>',
         '<g class="t">',
         '<text x="48" y="64" class="k f">FLAGSHIP PROJECT</text>',

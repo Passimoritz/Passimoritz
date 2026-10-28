@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="236" viewBox="0 0 1200 236" role="img" aria-label="What I do: IT and project management, sales management, AI-assisted building and self-hosting">
+  <style>
+    :root { --card:#161b22; --line:#30363d; --fg:#f0f6fc; --muted:#9198a1; }
+    @media (prefers-color-scheme: light) { :root { --card:#f6f8fa; --line:#d1d9e0; --fg:#1f2328; --muted:#59636e; } }
+    .t { font-family: -apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif; }
+    .card { fill: var(--card); stroke: var(--line); }
+    .h { font-size: 19px; font-weight: 700; fill: var(--fg); }
+    .d { font-size: 14px; fill: var(--muted); }
+    .ic { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .f { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
+    .fl { animation: fl 6s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: left center; animation: grow 1.2s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @keyframes fl { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes grow { from { transform: scaleX(0); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#ec4899"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+    <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  </defs>
+
+  <g class="t">
+    <g class="f">
+      <rect x="1" y="1" width="282" height="232" rx="16" class="card"/>
+      <g class="fl"><rect x="24" y="24" width="48" height="48" rx="13" fill="url(#g1)"/>
+        <g class="ic"><rect x="36" y="38" width="24" height="20" rx="3"/><path d="M36 44h24M42 38v-4h12v4"/></g></g>
+      <text x="24" y="106" class="h">IT &amp; Projects</text>
+      <text x="24" y="134" class="d">Digital initiatives, IT</text>
+      <text x="24" y="154" class="d">infrastructure and security</text>
+      <text x="24" y="174" class="d">governance – end to end.</text>
+      <rect x="24" y="204" width="236" height="4" rx="2" fill="url(#g1)" class="bar" style="animation-delay:.4s"/>
+    </g>
+    <g class="f" style="animation-delay:.1s">
+      <rect x="306" y="1" width="282" height="232" rx="16" class="card"/>
+      <g class="fl" style="animation-delay:-1.5s"><rect x="329" y="24" width="48" height="48" rx="13" fill="url(#g2)"/>
+        <g class="ic"><path d="M340 58l8-9 6 5 10-13"/><path d="M358 41h6v6"/></g></g>
+      <text x="329" y="106" class="h">Sales</text>
+      <text x="329" y="134" class="d">Turning technical solutions</text>
+      <text x="329" y="154" class="d">into clear, scalable</text>
+      <text x="329" y="174" class="d">business value.</text>
+      <rect x="329" y="204" width="236" height="4" rx="2" fill="url(#g2)" class="bar" style="animation-delay:.5s"/>
+    </g>
+    <g class="f" style="animation-delay:.2s">
+      <rect x="611" y="1" width="282" height="232" rx="16" class="card"/>
+      <g class="fl" style="animation-delay:-3s"><rect x="634" y="24" width="48" height="48" rx="13" fill="url(#g3)"/>
+        <g class="ic"><path d="M658 34l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><path d="M670 56l1 3 3 1-3 1-1 3-1-3-3-1 3-1z"/></g></g>
+      <text x="634" y="106" class="h">AI-assisted building</text>
+      <text x="634" y="134" class="d">Apps, internal tools, themes</text>
+      <text x="634" y="154" class="d">and automations – prototyped</text>
+      <text x="634" y="174" class="d">fast, shipped for real.</text>
+      <rect x="634" y="204" width="236" height="4" rx="2" fill="url(#g3)" class="bar" style="animation-delay:.6s"/>
+    </g>
+    <g class="f" style="animation-delay:.3s">
+      <rect x="916" y="1" width="282" height="232" rx="16" class="card"/>
+      <g class="fl" style="animation-delay:-4.5s"><rect x="939" y="24" width="48" height="48" rx="13" fill="url(#g4)"/>
+        <g class="ic"><rect x="951" y="36" width="24" height="9" rx="2"/><rect x="951" y="51" width="24" height="9" rx="2"/><path d="M956 40.5h.01M956 55.5h.01"/></g></g>
+      <text x="939" y="106" class="h">Self-hosting</text>
+      <text x="939" y="134" class="d">Docker, Nginx and Linux</text>
+      <text x="939" y="154" class="d">servers for my own</text>
+      <text x="939" y="174" class="d">projects and services.</text>
+      <rect x="939" y="204" width="236" height="4" rx="2" fill="url(#g4)" class="bar" style="animation-delay:.7s"/>
+    </g>
+  </g>
+</svg>

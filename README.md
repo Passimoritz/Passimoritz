@@ -1,23 +1,22 @@
 <img src="assets/header.svg" alt="Pascal Moritz – IT &amp; Project Manager, Sales Manager, Software Enthusiast" width="100%"/>
 
-I work where **IT management, project leadership and sales** meet: steering digital projects, aligning IT security with business value and translating technology into something people buy into. On the side I build apps, automations and self-hosted services with AI-assisted workflows.
-
-| | Area | What it means in practice |
-| :-: | :-- | :-- |
-| 🗂️ | **IT & Project Management** | Digital initiatives, IT infrastructure, security governance |
-| 💼 | **Sales Management** | Turning technical solutions into clear, scalable business value |
-| 🤖 | **AI-assisted building** | Mobile apps, internal tools and automations, prototyped fast |
-| 🖥️ | **Self-hosting** | Docker, Nginx and Linux servers for my own projects |
-
-<p>
-<img src="https://skillicons.dev/icons?i=docker,nginx,linux,git,react,lua,bash&theme=dark" alt="Tech stack"/>
+<p align="center">
+I work where <b>IT management, project leadership and sales</b> meet: steering digital projects, aligning IT security with business value and translating technology into something people buy into. On the side I build apps, automations, self-hosted services and Spotify themes with AI-assisted workflows.
 </p>
 
-## Numbers
+<p align="center">
+<img src="https://skillicons.dev/icons?i=docker,nginx,linux,git,react,electron,js,css,python,lua,bash&theme=dark" alt="Tech stack: Docker, Nginx, Linux, Git, React, Electron, JavaScript, CSS, Python, Lua, Bash"/>
+</p>
+
+<img src="assets/sec-focus.svg" alt="01 · What I do" width="100%"/>
+
+<img src="assets/focus.svg" alt="IT &amp; Projects: digital initiatives, IT infrastructure, security governance · Sales: technical solutions as clear, scalable business value · AI-assisted building: apps, tools, themes and automations · Self-hosting: Docker, Nginx and Linux servers" width="100%"/>
+
+<img src="assets/sec-numbers.svg" alt="02 · Numbers" width="100%"/>
 
 <img src="assets/stats.svg" alt="GitHub statistics" width="100%"/>
 
-## Projects
+<img src="assets/sec-projects.svg" alt="03 · Projects" width="100%"/>
 
 <!--HOSTWERK:START-->
 <a href="https://github.com/Passimoritz/hostwerk-public"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>
@@ -68,6 +67,40 @@ I work where **IT management, project leadership and sales** meet: steering digi
 </p>
 <!--HOSTWERK:END-->
 
+<br/>
+
+<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage.svg" alt="Mirage – a living Spicetify theme: Spotify as frosted glass, recoloured by every album cover, with five colour schemes" width="100%"/></a>
+
+<table>
+  <tr>
+    <td width="33%"><a href="https://github.com/Passimoritz/spicetify-mirage"><img src="https://raw.githubusercontent.com/Passimoritz/spicetify-mirage/main/assets/shots/playlist.png" alt="Mirage on a playlist page"/></a></td>
+    <td width="33%"><a href="https://github.com/Passimoritz/spicetify-mirage"><img src="https://raw.githubusercontent.com/Passimoritz/spicetify-mirage/main/assets/shots/album.png" alt="Mirage on an album page"/></a></td>
+    <td width="33%"><a href="https://github.com/Passimoritz/spicetify-mirage#-immersive-mode"><img src="https://raw.githubusercontent.com/Passimoritz/spicetify-mirage/main/assets/shots/visualizer.png" alt="Mirage immersive visualizer"/></a></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Playlists</b> · cover colours everywhere</sub></td>
+    <td align="center"><sub><b>Albums</b> · header melts into the glass</sub></td>
+    <td align="center"><sub><b>Immersive</b> · visualizer on the beat</sub></td>
+  </tr>
+</table>
+
+<p align="center">
+<a href="https://github.com/Passimoritz/spicetify-mirage#-install"><img src="assets/mirage-install.svg" width="320" height="72" alt="Get Mirage – Spicetify Marketplace"/></a>
+&nbsp;
+<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage-repo.svg" width="320" height="72" alt="Mirage source code and install guide"/></a>
+<br/><sub>Schemes: <b>Mirage</b> (live from the cover) · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> &nbsp;·&nbsp; plus the <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> desktop app</sub>
+</p>
+
+<details>
+<summary><b>🎧 What's playing in Mirage right now</b></summary>
+<br/>
+<a href="https://open.spotify.com/user/passimoritz">
+<img src="https://spotify-github-profile.kittinanx.com/api/view?uid=passimoritz&cover_image=true&theme=natemoo-re&show_offline=false&background_color=0d1117&interchange=true&bar_color=b69cff&bar_color_cover=true" alt="Spotify now playing" width="480"/>
+</a>
+</details>
+
+<img src="assets/sec-activity.svg" alt="04 · Lately" width="100%"/>
+
 <details open>
 <summary><b>⚡ Recent activity</b></summary>
 <br/>
@@ -96,15 +129,10 @@ I work where **IT management, project leadership and sales** meet: steering digi
 </details>
 
 <details>
-<summary><b>🎧 Currently listening</b></summary>
-<br/>
-<a href="https://open.spotify.com/user/passimoritz">
-<img src="https://spotify-github-profile.kittinanx.com/api/view?uid=passimoritz&cover_image=true&theme=natemoo-re&show_offline=false&background_color=0d1117&interchange=true&bar_color=38bdf8&bar_color_cover=false" alt="Spotify now playing" width="480"/>
-</a>
-</details>
-
-<details>
 <summary><b>🏋️ Beyond the desk</b></summary>
 <br/>
 Full-body gym sessions, custom AMD builds, AI audio prompting and competitive gaming.
 </details>
+
+<br/>
+<img src="assets/footer.svg" alt="Thanks for stopping by" width="100%"/>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="72" viewBox="0 0 320 72" role="img" aria-label="Mirage source code and install guide"><style>
+:root{--btn:#b69cff;--btn-fg:#140b33;--btn-sub:#3b2a7a;--ghost:#ffffff;--ghost-fg:#f0f6fc;--ghost-sub:#9198a1;--ghost-line:#30363d}
+@media (prefers-color-scheme:light){:root{--btn:#7c5cff;--btn-fg:#ffffff;--btn-sub:#e6deff;--ghost:#f6f8fa;--ghost-fg:#1f2328;--ghost-sub:#59636e;--ghost-line:#d1d9e0}}
+.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
+.sheen{animation:sheen 5s ease-in-out infinite}
+@keyframes sheen{0%{transform:translateX(-120px)}60%,100%{transform:translateX(420px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><defs><clipPath id="c"><rect x="1" y="1" width="318" height="70" rx="14"/></clipPath></defs><rect x="1" y="1" width="318" height="70" rx="14" style="fill:var(--ghost);stroke:var(--ghost-line)" fill-opacity=".04"/><rect x="14" y="14" width="44" height="44" rx="11" fill="#b69cff" fill-opacity=".16"/><g transform="translate(36 36)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke:#b69cff"><path d="M-4 -8l-7 8 7 8M4 -8l7 8-7 8"/></g><text x="72" y="33" class="t" font-size="16" font-weight="700" style="fill:var(--ghost-fg)">Source &amp; install guide</text><text x="72" y="52" class="t" font-size="13" style="fill:var(--ghost-sub)">Open source · MIT · manual setup</text><g transform="translate(292 36)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--ghost-fg)"><path d="M-5 -6l6 6-6 6"/></g></svg>

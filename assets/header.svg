@@ -1,95 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-label="Pascal Moritz – IT and Project Manager, Sales Manager, Software Enthusiast">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Pascal Moritz – IT and Project Manager, Sales Manager, Software Enthusiast">
   <style>
-    :root { --bg:#0d1117; --line:#30363d; --fg:#f0f6fc; --muted:#9198a1; --accent:#38bdf8; --node:#161b22; --grid:#ffffff; }
+    :root { --bg:#0d1117; --line:#30363d; --fg:#f0f6fc; --muted:#9198a1; --accent:#38bdf8; --node:#161b22; --glass:#ffffff; --glass-o:.04; --grid:#ffffff; --aurora:.55; }
     @media (prefers-color-scheme: light) {
-      :root { --bg:#ffffff; --line:#d1d9e0; --fg:#1f2328; --muted:#59636e; --accent:#0969da; --node:#f6f8fa; --grid:#000000; }
+      :root { --bg:#ffffff; --line:#d1d9e0; --fg:#1f2328; --muted:#59636e; --accent:#0969da; --node:#f6f8fa; --glass:#ffffff; --glass-o:.55; --grid:#000000; --aurora:.28; }
     }
     .t { font-family: -apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif; }
-    .f { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
-    .bar { transform-box: fill-box; transform-origin: center top; animation: drop 1s cubic-bezier(.2,.7,.2,1) both; }
+    .m { font-family: ui-monospace, 'Cascadia Code', Consolas, Menlo, monospace; }
+    .f { animation: up .9s cubic-bezier(.2,.7,.2,1) both; }
     .role { opacity: 0; animation: role 9s ease-in-out infinite; }
     .cursor { animation: blink 1s steps(1) infinite; }
-    .edge { stroke: var(--line); stroke-width: 1.4; stroke-dasharray: 4 6; animation: flow 3s linear infinite; }
+    .aur { opacity: var(--aurora); }
+    .orbit { fill: none; stroke: var(--line); stroke-width: 1.2; stroke-dasharray: 3 7; animation: flow 6s linear infinite; }
     .node { fill: var(--node); stroke: var(--accent); stroke-width: 1.6; }
-    .halo { fill: var(--accent); opacity: .18; transform-box: fill-box; transform-origin: center; animation: halo 3s ease-out infinite; }
-    .lbl { font-size: 12px; fill: var(--muted); letter-spacing: .6px; }
-    .grid { stroke: var(--grid); stroke-opacity: .04; }
-    @keyframes up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    @keyframes drop { from { transform: scaleY(0); } }
-    @keyframes role { 0% { opacity: 0; transform: translateY(8px); } 4%, 29% { opacity: 1; transform: none; } 33%, 100% { opacity: 0; transform: translateY(-8px); } }
+    .lbl { font-size: 11px; fill: var(--muted); letter-spacing: 1.6px; }
+    .halo { fill: var(--accent); opacity: .2; transform-box: fill-box; transform-origin: center; animation: halo 3s ease-out infinite; }
+    .chip { fill: var(--glass); fill-opacity: var(--glass-o); stroke: var(--line); }
+    .ct { font-size: 13px; fill: var(--fg); }
+    .star { fill: var(--fg); }
+    @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes role { 0% { opacity: 0; transform: translateY(10px); } 4%, 29% { opacity: 1; transform: none; } 33%, 100% { opacity: 0; transform: translateY(-10px); } }
     @keyframes blink { 50% { opacity: 0; } }
-    @keyframes flow { to { stroke-dashoffset: -20; } }
-    @keyframes halo { 0% { transform: scale(.6); opacity: .35; } 100% { transform: scale(2.2); opacity: 0; } }
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; }
-      .role { opacity: 0; } .r1 { opacity: 1; }
-    }
+    @keyframes flow { to { stroke-dashoffset: -40; } }
+    @keyframes halo { 0% { transform: scale(.6); opacity: .4; } 100% { transform: scale(2.4); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .role { opacity: 0; } .r1 { opacity: 1; } }
   </style>
   <defs>
-    <clipPath id="clip"><rect width="1200" height="240" rx="12"/></clipPath>
+    <clipPath id="clip"><rect width="1200" height="320" rx="18"/></clipPath>
+    <filter id="blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="55"/></filter>
     <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0ea5e9"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/>
-      <animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/>
+      <stop offset="0" stop-color="#0ea5e9"/><stop offset=".35" stop-color="#a78bfa"/><stop offset=".65" stop-color="#f472b6"/><stop offset="1" stop-color="#0ea5e9"/>
+      <animate attributeName="x1" values="0;-1;0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0;1" dur="10s" repeatCount="indefinite"/>
     </linearGradient>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="grid"/></pattern>
-    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="nameMask"><text x="70" y="150" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="80" font-weight="800" letter-spacing="-2.5" fill="#fff">Pascal Moritz</text></mask>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="star" fill-opacity=".1"/></pattern>
+    <radialGradient id="fade" cx=".3" cy=".5" r=".8"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <mask id="dotMask"><rect width="1200" height="320" fill="url(#fade)"/></mask>
+    <path id="o1" d="M790 160a170 58 0 1 0 340 0a170 58 0 1 0 -340 0"/>
+    <path id="o2" d="M850 160a110 104 0 1 1 220 0a110 104 0 1 1 -220 0"/>
   </defs>
 
   <g clip-path="url(#clip)">
-    <rect width="1200" height="240" fill="var(--bg)"/>
-    <rect width="1200" height="240" fill="url(#grid)"/>
-    <circle cx="980" cy="120" r="260" fill="url(#glow)">
-      <animate attributeName="r" values="240;280;240" dur="7s" repeatCount="indefinite"/>
-    </circle>
+    <rect width="1200" height="320" style="fill:var(--bg)"/>
 
-    <!-- left: identity -->
-    <rect x="48" y="56" width="4" height="128" rx="2" fill="var(--accent)" class="bar"/>
-    <text x="76" y="104" class="t f" font-size="58" font-weight="800" letter-spacing="-1.5" fill="url(#name)" style="animation-delay:.15s">Pascal Moritz</text>
-
-    <g class="t" font-size="24" font-weight="600" fill="var(--fg)">
-      <text x="76" y="146" class="role r1">IT &amp; Project Manager<tspan class="cursor" fill="var(--accent)"> ▍</tspan></text>
-      <text x="76" y="146" class="role r2" style="animation-delay:3s">Sales Manager<tspan class="cursor" fill="var(--accent)"> ▍</tspan></text>
-      <text x="76" y="146" class="role r3" style="animation-delay:6s">Software Enthusiast<tspan class="cursor" fill="var(--accent)"> ▍</tspan></text>
+    <!-- aurora -->
+    <g filter="url(#blur)" class="aur">
+      <ellipse cx="220" cy="40" rx="260" ry="120" fill="#0ea5e9"><animate attributeName="cx" values="180;420;180" dur="18s" repeatCount="indefinite"/></ellipse>
+      <ellipse cx="640" cy="300" rx="280" ry="110" fill="#a78bfa"><animate attributeName="cx" values="700;460;700" dur="21s" repeatCount="indefinite"/></ellipse>
+      <ellipse cx="1080" cy="60" rx="220" ry="130" fill="#f472b6" opacity=".7"><animate attributeName="cy" values="40;200;40" dur="15s" repeatCount="indefinite"/></ellipse>
+      <circle cx="960" cy="160" r="120" fill="#38bdf8" opacity=".6"><animate attributeName="r" values="100;150;100" dur="7s" repeatCount="indefinite"/></circle>
     </g>
-    <text x="76" y="182" class="t f" font-size="16" fill="var(--muted)" style="animation-delay:.5s">Digital projects · IT security · AI-assisted building · Self-hosting</text>
+    <rect width="1200" height="320" fill="url(#dots)" mask="url(#dotMask)"/>
 
-    <!-- right: what connects -->
-    <g>
-      <path id="e1" d="M820 70 L960 120" class="edge"/>
-      <path id="e2" d="M960 120 L1110 70" class="edge"/>
-      <path id="e3" d="M960 120 L860 190" class="edge"/>
-      <path id="e4" d="M960 120 L1080 190" class="edge"/>
-      <path d="M820 70 L860 190" class="edge"/>
-      <path d="M1110 70 L1080 190" class="edge"/>
+    <!-- stars -->
+    <g class="star">
+      <circle cx="620" cy="52" r="1.4"><animate attributeName="opacity" values=".1;.8;.1" dur="3.2s" repeatCount="indefinite"/></circle>
+      <circle cx="700" cy="250" r="1.1"><animate attributeName="opacity" values=".7;.1;.7" dur="4.1s" repeatCount="indefinite"/></circle>
+      <circle cx="660" cy="290" r="1.3"><animate attributeName="opacity" values=".1;.7;.1" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="1160" cy="270" r="1.2"><animate attributeName="opacity" values=".6;.1;.6" dur="3.6s" repeatCount="indefinite"/></circle>
+      <circle cx="760" cy="40" r="1"><animate attributeName="opacity" values=".1;.9;.1" dur="2.7s" repeatCount="indefinite"/></circle>
+      <circle cx="40" cy="296" r="1.2"><animate attributeName="opacity" values=".5;.1;.5" dur="4.6s" repeatCount="indefinite"/></circle>
+    </g>
 
-      <circle r="3.5" fill="var(--accent)"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
-      <circle r="3.5" fill="#a78bfa"><animateMotion dur="3.1s" begin=".7s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
-      <circle r="3.5" fill="var(--accent)"><animateMotion dur="2.9s" begin="1.3s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e3"/></animateMotion></circle>
-      <circle r="3.5" fill="#a78bfa"><animateMotion dur="3.4s" begin=".4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e4"/></animateMotion></circle>
+    <!-- identity -->
+    <g class="t">
+      <text x="72" y="76" class="m f" font-size="13" letter-spacing="3.5" style="fill:var(--muted)">HI, I'M</text>
+      <text x="70" y="150" font-size="80" font-weight="800" letter-spacing="-2.5" fill="url(#name)" class="f" style="animation-delay:.1s">Pascal Moritz</text>
+      <rect x="-300" y="80" width="220" height="90" fill="url(#shine)" mask="url(#nameMask)" opacity=".55">
+        <animate attributeName="x" values="-300;-300;760" keyTimes="0;.6;1" dur="7s" repeatCount="indefinite"/>
+      </rect>
 
-      <g class="t">
-        <circle cx="960" cy="120" r="14" class="halo"/>
-        <circle cx="960" cy="120" r="9" class="node"/>
-        <text x="960" y="152" text-anchor="middle" class="lbl">PROJECTS</text>
+      <g font-size="26" font-weight="600" style="fill:var(--fg)">
+        <text x="72" y="196" class="role r1">IT &amp; Project Manager<tspan class="cursor" style="fill:var(--accent)"> ▍</tspan></text>
+        <text x="72" y="196" class="role r2" style="animation-delay:3s">Sales Manager<tspan class="cursor" style="fill:var(--accent)"> ▍</tspan></text>
+        <text x="72" y="196" class="role r3" style="animation-delay:6s">Software Enthusiast<tspan class="cursor" style="fill:var(--accent)"> ▍</tspan></text>
+      </g>
 
-        <circle cx="820" cy="70" r="12" class="halo" style="animation-delay:.6s"/>
-        <circle cx="820" cy="70" r="7" class="node"/>
-        <text x="820" y="48" text-anchor="middle" class="lbl">IT</text>
-
-        <circle cx="1110" cy="70" r="12" class="halo" style="animation-delay:1.2s"/>
-        <circle cx="1110" cy="70" r="7" class="node"/>
-        <text x="1110" y="48" text-anchor="middle" class="lbl">SALES</text>
-
-        <circle cx="860" cy="190" r="12" class="halo" style="animation-delay:1.8s"/>
-        <circle cx="860" cy="190" r="7" class="node"/>
-        <text x="860" y="220" text-anchor="middle" class="lbl">AI</text>
-
-        <circle cx="1080" cy="190" r="12" class="halo" style="animation-delay:2.4s"/>
-        <circle cx="1080" cy="190" r="7" class="node"/>
-        <text x="1080" y="220" text-anchor="middle" class="lbl">SELF-HOSTING</text>
+      <g class="f" style="animation-delay:.5s">
+        <rect x="72" y="230" width="132" height="34" rx="17" class="chip"/><circle cx="92" cy="247" r="4" fill="#38bdf8"/><text x="104" y="252" class="ct">Digital projects</text>
+        <rect x="214" y="230" width="106" height="34" rx="17" class="chip"/><circle cx="234" cy="247" r="4" fill="#a78bfa"/><text x="246" y="252" class="ct">IT security</text>
+        <rect x="330" y="230" width="112" height="34" rx="17" class="chip"/><circle cx="350" cy="247" r="4" fill="#22c55e"/><text x="362" y="252" class="ct">Self-hosting</text>
+        <rect x="452" y="230" width="146" height="34" rx="17" class="chip"/><circle cx="472" cy="247" r="4" fill="#f472b6"/><text x="484" y="252" class="ct">Spicetify themes</text>
       </g>
     </g>
+
+    <!-- orbit system -->
+    <g class="t">
+      <use href="#o1" class="orbit"/>
+      <use href="#o2" class="orbit" style="animation-direction:reverse"/>
+      <circle cx="960" cy="160" r="40" class="halo"/>
+      <circle cx="960" cy="160" r="40" style="fill:var(--node)" stroke="url(#name)" stroke-width="2"/>
+      <text x="960" y="168" text-anchor="middle" font-size="22" font-weight="800" fill="url(#name)">PM</text>
+
+      <g><animateMotion dur="22s" repeatCount="indefinite"><mpath href="#o1"/></animateMotion>
+        <circle r="7" class="node"/><text y="-14" text-anchor="middle" class="lbl">IT</text></g>
+      <g><animateMotion dur="22s" begin="-11s" repeatCount="indefinite"><mpath href="#o1"/></animateMotion>
+        <circle r="7" class="node" style="stroke:#a78bfa"/><text y="-14" text-anchor="middle" class="lbl">SALES</text></g>
+      <g><animateMotion dur="16s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#o2"/></animateMotion>
+        <circle r="7" class="node" style="stroke:#22c55e"/><text y="-14" text-anchor="middle" class="lbl">HOSTING</text></g>
+      <g><animateMotion dur="16s" begin="-5.3s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#o2"/></animateMotion>
+        <circle r="7" class="node" style="stroke:#f472b6"/><text y="-14" text-anchor="middle" class="lbl">AI</text></g>
+      <g><animateMotion dur="16s" begin="-10.6s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#o2"/></animateMotion>
+        <circle r="7" class="node" style="stroke:#fbbf24"/><text y="-14" text-anchor="middle" class="lbl">MUSIC</text></g>
+    </g>
   </g>
-  <rect x="0.5" y="0.5" width="1199" height="239" rx="12" fill="none" stroke="var(--line)"/>
+  <rect x=".5" y=".5" width="1199" height="319" rx="18" fill="none" style="stroke:var(--line)"/>
 </svg>
