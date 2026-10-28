@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Hostwerk – the local server hub for Windows and Linux, latest release latest">
-<defs><clipPath id="c"><rect width="1200" height="300" rx="14"/></clipPath><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/><animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/><animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/></linearGradient><pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="grid"/></pattern><radialGradient id="r" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient></defs>
+<defs><clipPath id="c"><rect width="1200" height="300" rx="14"/></clipPath><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/><animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/><animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/></linearGradient><pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="grid"/></pattern><radialGradient id="r" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient><filter id="b" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="55"/></filter></defs>
 <style>
 :root{--bg:#0d1117;--line:#30363d;--fg:#f0f6fc;--muted:#9198a1;--accent:#38bdf8;--tile:#161b22;--grid:#ffffff}
 @media (prefers-color-scheme:light){:root{--bg:#ffffff;--line:#d1d9e0;--fg:#1f2328;--muted:#59636e;--accent:#0969da;--tile:#f6f8fa;--grid:#000000}}
@@ -23,14 +23,16 @@
 @keyframes live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.8)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
-<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/><rect width="1200" height="300" fill="url(#p)"/>
+<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/>
+<g filter="url(#b)" opacity=".32"><ellipse cx="160" cy="300" rx="260" ry="90" fill="#0ea5e9"><animate attributeName="cx" values="140;380;140" dur="19s" repeatCount="indefinite"/></ellipse><ellipse cx="1100" cy="20" rx="240" ry="110" fill="#a78bfa"><animate attributeName="cy" values="0;120;0" dur="15s" repeatCount="indefinite"/></ellipse></g>
+<rect width="1200" height="300" fill="url(#p)"/>
 <circle cx="960" cy="150" r="280" fill="url(#r)"><animate attributeName="r" values="260;300;260" dur="7s" repeatCount="indefinite"/></circle>
 <g class="t">
 <text x="48" y="64" class="k f">FLAGSHIP PROJECT</text>
 <text x="46" y="128" class="h f" fill="url(#g)" style="animation-delay:.1s">Hostwerk</text>
 <text x="48" y="164" class="s f" style="animation-delay:.25s">The local server hub for Windows and Linux –</text>
 <text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and AI.</text>
-<g class="f" style="animation-delay:0.45s"><rect x="48" y="212" width="146" height="32" rx="16" class="pill"/><text x="121" y="233" text-anchor="middle" class="p">4,073 downloads</text></g>
+<g class="f" style="animation-delay:0.45s"><rect x="48" y="212" width="146" height="32" rx="16" class="pill"/><text x="121" y="233" text-anchor="middle" class="p">4,081 downloads</text></g>
 <g class="f" style="animation-delay:0.55s"><rect x="204" y="212" width="146" height="32" rx="16" class="pill"/><text x="277" y="233" text-anchor="middle" class="p">Windows · Linux</text></g>
 <circle cx="54" cy="268" r="3.5" fill="#22c55e" class="live"/>
 <text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/hostwerk-public</text>
