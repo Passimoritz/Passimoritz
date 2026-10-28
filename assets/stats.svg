@@ -35,48 +35,48 @@
 </style>
 <g clip-path="url(#clip)"><rect width="1200" height="620" style="fill:var(--bg)"/>
 <text x="40" y="48" class="t h f">Activity snapshot</text>
-<g class="f t" style="animation-delay:0.10s"><rect x="40" y="66" width="172" height="100" rx="12" class="tile"/><rect x="40" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="56" y="118" class="big">1,633</text><text x="56" y="146" class="lbl">CONTRIBUTIONS (12 MO)</text></g>
-<g class="f t" style="animation-delay:0.20s"><rect x="228" y="66" width="172" height="100" rx="12" class="tile"/><rect x="228" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="244" y="118" class="big">1,545</text><text x="244" y="146" class="lbl">COMMITS</text></g>
+<g class="f t" style="animation-delay:0.10s"><rect x="40" y="66" width="172" height="100" rx="12" class="tile"/><rect x="40" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="56" y="118" class="big">1,652</text><text x="56" y="146" class="lbl">CONTRIBUTIONS (12 MO)</text></g>
+<g class="f t" style="animation-delay:0.20s"><rect x="228" y="66" width="172" height="100" rx="12" class="tile"/><rect x="228" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="244" y="118" class="big">1,563</text><text x="244" y="146" class="lbl">COMMITS</text></g>
 <g class="f t" style="animation-delay:0.30s"><rect x="416" y="66" width="172" height="100" rx="12" class="tile"/><rect x="416" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="432" y="118" class="big">5</text><text x="432" y="146" class="lbl">PULL REQUESTS</text></g>
 <g class="f t" style="animation-delay:0.40s"><rect x="604" y="66" width="172" height="100" rx="12" class="tile"/><rect x="604" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="620" y="118" class="big">0</text><text x="620" y="146" class="lbl">ISSUES</text></g>
 <g class="f t" style="animation-delay:0.50s"><rect x="792" y="66" width="172" height="100" rx="12" class="tile"/><rect x="792" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="808" y="118" class="big">0</text><text x="808" y="146" class="lbl">STARS</text></g>
-<g class="f t" style="animation-delay:0.60s"><rect x="980" y="66" width="172" height="100" rx="12" class="tile"/><rect x="980" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="996" y="118" class="big">77</text><text x="996" y="146" class="lbl">REPOS</text></g>
+<g class="f t" style="animation-delay:0.60s"><rect x="980" y="66" width="172" height="100" rx="12" class="tile"/><rect x="980" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="996" y="118" class="big">78</text><text x="996" y="146" class="lbl">REPOS</text></g>
 <text x="40" y="222" class="t h f" style="animation-delay:.6s">Streak</text>
 <circle cx="150" cy="312" r="62" fill="none" stroke-width="10" style="stroke:var(--track)"/>
-<circle cx="150" cy="312" r="62" fill="none" stroke="url(#acc)" stroke-width="10" stroke-linecap="round" stroke-dasharray="389.6 389.6" stroke-dashoffset="389.6" transform="rotate(-90 150 312)" class="ring" style="--c:389.6"/>
+<circle cx="150" cy="312" r="62" fill="none" stroke="url(#acc)" stroke-width="10" stroke-linecap="round" stroke-dasharray="389.6 389.6" stroke-dashoffset="361.7" transform="rotate(-90 150 312)" class="ring" style="--c:389.6"/>
 <style>@keyframes ring{from{stroke-dashoffset:389.6}}</style>
-<text x="150" y="325" text-anchor="middle" class="t big f" style="animation-delay:.8s">0</text>
+<text x="150" y="325" text-anchor="middle" class="t big f" style="animation-delay:.8s">1</text>
 <text x="150" y="410" text-anchor="middle" class="t lbl f" style="animation-delay:.9s">CURRENT STREAK (DAYS)</text>
 <text x="150" y="430" text-anchor="middle" class="t lbl f" style="animation-delay:1s">LONGEST: 14</text>
 <text x="330" y="222" class="t h f" style="animation-delay:.7s">Top languages</text>
 <g class="f" style="animation-delay:0.80s">
 <circle cx="335" cy="249" r="5" fill="#f1e05a"/>
 <text x="348" y="254" class="t name">JavaScript</text>
-<text x="660" y="254" text-anchor="end" class="t lbl">87.4%</text></g>
+<text x="660" y="254" text-anchor="end" class="t lbl">86.4%</text></g>
 <rect x="330" y="262" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="262" width="288.5" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
+<rect x="330" y="262" width="285.2" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
 <g class="f" style="animation-delay:0.92s">
 <circle cx="335" cy="283" r="5" fill="#b07219"/>
 <text x="348" y="288" class="t name">Java</text>
-<text x="660" y="288" text-anchor="end" class="t lbl">5.0%</text></g>
+<text x="660" y="288" text-anchor="end" class="t lbl">4.9%</text></g>
 <rect x="330" y="296" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="296" width="16.5" height="7" rx="3.5" fill="#b07219" class="bar" style="animation-delay:1.02s"/>
+<rect x="330" y="296" width="16.1" height="7" rx="3.5" fill="#b07219" class="bar" style="animation-delay:1.02s"/>
 <g class="f" style="animation-delay:1.04s">
-<circle cx="335" cy="317" r="5" fill="#3572A5"/>
-<text x="348" y="322" class="t name">Python</text>
-<text x="660" y="322" text-anchor="end" class="t lbl">3.4%</text></g>
+<circle cx="335" cy="317" r="5" fill="#663399"/>
+<text x="348" y="322" class="t name">CSS</text>
+<text x="660" y="322" text-anchor="end" class="t lbl">3.7%</text></g>
 <rect x="330" y="330" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="330" width="11.3" height="7" rx="3.5" fill="#3572A5" class="bar" style="animation-delay:1.14s"/>
+<rect x="330" y="330" width="12.2" height="7" rx="3.5" fill="#663399" class="bar" style="animation-delay:1.14s"/>
 <g class="f" style="animation-delay:1.16s">
-<circle cx="335" cy="351" r="5" fill="#663399"/>
-<text x="348" y="356" class="t name">CSS</text>
-<text x="660" y="356" text-anchor="end" class="t lbl">2.9%</text></g>
+<circle cx="335" cy="351" r="5" fill="#3572A5"/>
+<text x="348" y="356" class="t name">Python</text>
+<text x="660" y="356" text-anchor="end" class="t lbl">3.3%</text></g>
 <rect x="330" y="364" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="364" width="9.5" height="7" rx="3.5" fill="#663399" class="bar" style="animation-delay:1.26s"/>
+<rect x="330" y="364" width="11.0" height="7" rx="3.5" fill="#3572A5" class="bar" style="animation-delay:1.26s"/>
 <g class="f" style="animation-delay:1.28s">
 <circle cx="335" cy="385" r="5" fill="#e34c26"/>
 <text x="348" y="390" class="t name">HTML</text>
-<text x="660" y="390" text-anchor="end" class="t lbl">1.2%</text></g>
+<text x="660" y="390" text-anchor="end" class="t lbl">1.7%</text></g>
 <rect x="330" y="398" width="330" height="7" rx="3.5" class="trk"/>
 <rect x="330" y="398" width="7.0" height="7" rx="3.5" fill="#e34c26" class="bar" style="animation-delay:1.38s"/>
 <g class="f" style="animation-delay:1.40s">
@@ -264,7 +264,7 @@
 <rect x="1145" y="240" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.78s"><title>2026-10-25: 213</title></rect>
 <rect x="1145" y="257" width="14" height="14" rx="3" class="c l0" style="animation-delay:1.80s"><title>2026-10-26: 0</title></rect>
 <rect x="1145" y="274" width="14" height="14" rx="3" class="c l0" style="animation-delay:1.82s"><title>2026-10-27: 0</title></rect>
-<rect x="1145" y="291" width="14" height="14" rx="3" class="c l0" style="animation-delay:1.84s"><title>2026-10-28: 0</title></rect>
+<rect x="1145" y="291" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.84s"><title>2026-10-28: 19</title></rect>
 <g class="f" style="animation-delay:1.9s">
 <text x="720" y="392" class="t lbl">LESS</text>
 <rect x="758" y="381" width="14" height="14" rx="3" class="l0"/>
@@ -273,13 +273,13 @@
 <rect x="809" y="381" width="14" height="14" rx="3" class="l3"/>
 <rect x="826" y="381" width="14" height="14" rx="3" class="l4"/>
 <text x="848" y="392" class="t lbl">MORE</text>
-<text x="1162" y="392" text-anchor="end" class="t lbl">1,633 IN 26 WEEKS · BEST DAY 463</text></g>
+<text x="1162" y="392" text-anchor="end" class="t lbl">1,652 IN 26 WEEKS · BEST DAY 463</text></g>
 <text x="40" y="450" class="t h f" style="animation-delay:1.2s">Weekly contributions · 12 months</text>
 <line x1="40" y1="590" x2="1160" y2="590" style="stroke:var(--line)"/>
-<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,585.0 L772.3,586.8 L793.8,589.6 L815.4,589.4 L836.9,588.2 L858.5,588.8 L880.0,590.0 L901.5,590.0 L923.1,590.0 L944.6,589.8 L966.2,590.0 L987.7,589.4 L1009.2,582.9 L1030.8,590.0 L1052.3,590.0 L1073.8,590.0 L1095.4,585.1 L1116.9,576.1 L1138.5,470.0 L1160.0,566.2 L1160,590 L40,590 Z" fill="url(#fillg)" class="area"/>
-<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,585.0 L772.3,586.8 L793.8,589.6 L815.4,589.4 L836.9,588.2 L858.5,588.8 L880.0,590.0 L901.5,590.0 L923.1,590.0 L944.6,589.8 L966.2,590.0 L987.7,589.4 L1009.2,582.9 L1030.8,590.0 L1052.3,590.0 L1073.8,590.0 L1095.4,585.1 L1116.9,576.1 L1138.5,470.0 L1160.0,566.2" fill="none" stroke="url(#acc)" stroke-width="2.5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" class="draw"/>
-<circle cx="1160.0" cy="566.2" r="4" style="fill:var(--accent)" class="live"/>
-<circle cx="1160.0" cy="566.2" r="4" style="fill:var(--accent)"/>
+<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,585.0 L772.3,586.8 L793.8,589.6 L815.4,589.4 L836.9,588.2 L858.5,588.8 L880.0,590.0 L901.5,590.0 L923.1,590.0 L944.6,589.8 L966.2,590.0 L987.7,589.4 L1009.2,582.9 L1030.8,590.0 L1052.3,590.0 L1073.8,590.0 L1095.4,585.1 L1116.9,576.1 L1138.5,470.0 L1160.0,564.0 L1160,590 L40,590 Z" fill="url(#fillg)" class="area"/>
+<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,590.0 L686.2,590.0 L707.7,590.0 L729.2,590.0 L750.8,585.0 L772.3,586.8 L793.8,589.6 L815.4,589.4 L836.9,588.2 L858.5,588.8 L880.0,590.0 L901.5,590.0 L923.1,590.0 L944.6,589.8 L966.2,590.0 L987.7,589.4 L1009.2,582.9 L1030.8,590.0 L1052.3,590.0 L1073.8,590.0 L1095.4,585.1 L1116.9,576.1 L1138.5,470.0 L1160.0,564.0" fill="none" stroke="url(#acc)" stroke-width="2.5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" class="draw"/>
+<circle cx="1160.0" cy="564.0" r="4" style="fill:var(--accent)" class="live"/>
+<circle cx="1160.0" cy="564.0" r="4" style="fill:var(--accent)"/>
 <circle cx="514" cy="606" r="3" fill="#22c55e" class="live"/>
 <text x="600" y="610" text-anchor="middle" class="t lbl" style="font-size:11px">updated 2026-10-28 via GitHub Actions</text>
 <rect x="0" y="0" width="400" height="620" fill="url(#sh)" class="sheen"/>
