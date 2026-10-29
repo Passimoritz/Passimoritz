@@ -63,7 +63,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>4,136 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,139 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -106,7 +106,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <br/>
 
 <!--ACTIVITY:START-->
-🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>8 h ago</sub><br/>
+🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>15 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>3 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) · <sub>3 d ago</sub><br/>
