@@ -63,7 +63,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>4,139 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,165 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -106,14 +106,14 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <br/>
 
 <!--ACTIVITY:START-->
-🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>15 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-static-publish](https://github.com/Passimoritz/hostwerk-ext-static-publish) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>3 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>3 d ago</sub>
+🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>1 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>4 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-uptime-wall](https://github.com/Passimoritz/hostwerk-ext-uptime-wall) · <sub>4 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) · <sub>4 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-static-publish](https://github.com/Passimoritz/hostwerk-ext-static-publish) · <sub>4 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-router](https://github.com/Passimoritz/hostwerk-ext-router) · <sub>4 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-quick-tasks](https://github.com/Passimoritz/hostwerk-ext-quick-tasks) · <sub>4 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>4 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
