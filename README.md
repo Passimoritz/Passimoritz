@@ -63,7 +63,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>4,413 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,414 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -108,12 +108,12 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <!--ACTIVITY:START-->
 ⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>1 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>2 d ago</sub><br/>
-🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>2 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>5 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-player-leaderboard](https://github.com/Passimoritz/hostwerk-ext-player-leaderboard) · <sub>5 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-motd-studio](https://github.com/Passimoritz/hostwerk-ext-motd-studio) · <sub>5 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-mc-network](https://github.com/Passimoritz/hostwerk-ext-mc-network) · <sub>5 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-game-network](https://github.com/Passimoritz/hostwerk-ext-game-network) · <sub>5 d ago</sub>
+🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>3 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>6 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cert-watch](https://github.com/Passimoritz/hostwerk-ext-cert-watch) · <sub>6 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-modes](https://github.com/Passimoritz/hostwerk-ext-modes) · <sub>6 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>6 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-api-tester](https://github.com/Passimoritz/hostwerk-ext-api-tester) · <sub>6 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
