@@ -63,7 +63,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>4,414 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,420 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -107,7 +107,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 
 <!--ACTIVITY:START-->
 ⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>1 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>2 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>3 d ago</sub><br/>
 🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>3 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>6 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cert-watch](https://github.com/Passimoritz/hostwerk-ext-cert-watch) · <sub>6 d ago</sub><br/>
