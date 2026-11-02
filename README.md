@@ -106,14 +106,14 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>1 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>3 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>2 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>4 d ago</sub><br/>
 🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>4 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-public](https://github.com/Passimoritz/hostwerk-public) · <sub>7 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-cert-watch](https://github.com/Passimoritz/hostwerk-ext-cert-watch) · <sub>7 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-modes](https://github.com/Passimoritz/hostwerk-ext-modes) · <sub>7 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-claude](https://github.com/Passimoritz/hostwerk-ext-claude) · <sub>7 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-api-tester](https://github.com/Passimoritz/hostwerk-ext-api-tester) · <sub>7 d ago</sub>
+⬆️ Pushed to `main` in [Passimoritz/hostwerk-ext-template](https://github.com/Passimoritz/hostwerk-ext-template) · <sub>7 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
