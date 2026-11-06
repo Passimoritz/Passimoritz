@@ -63,7 +63,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>4,524 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,526 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -106,10 +106,10 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>just now</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/vigil](https://github.com/Passimoritz/vigil) · <sub>2 h ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>7 d ago</sub><br/>
-🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>7 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/vigil](https://github.com/Passimoritz/vigil) · <sub>6 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>10 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/Passimoritz](https://github.com/Passimoritz/Passimoritz) · <sub>8 d ago</sub><br/>
+🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>8 d ago</sub><br/>
 🌍 Made [Passimoritz/hostwerk-ext-vuln-watch](https://github.com/Passimoritz/hostwerk-ext-vuln-watch) public · <sub>11 d ago</sub><br/>
 🌍 Made [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) public · <sub>11 d ago</sub><br/>
 🌍 Made [Passimoritz/hostwerk-ext-mc-network](https://github.com/Passimoritz/hostwerk-ext-mc-network) public · <sub>11 d ago</sub><br/>
