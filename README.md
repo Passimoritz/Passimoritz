@@ -106,14 +106,14 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <br/>
 
 <!--ACTIVITY:START-->
+🐛 Closed issue [#2](https://github.com/Passimoritz/spicetify-mirage/issues/2) in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>9 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>9 h ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/vigil](https://github.com/Passimoritz/vigil) · <sub>7 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>7 d ago</sub><br/>
-🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>15 d ago</sub><br/>
+🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>16 d ago</sub><br/>
 🌍 Made [Passimoritz/hostwerk-ext-vuln-watch](https://github.com/Passimoritz/hostwerk-ext-vuln-watch) public · <sub>19 d ago</sub><br/>
 🌍 Made [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) public · <sub>19 d ago</sub><br/>
 🌍 Made [Passimoritz/hostwerk-ext-mc-network](https://github.com/Passimoritz/hostwerk-ext-mc-network) public · <sub>19 d ago</sub><br/>
-🌍 Made [Passimoritz/hostwerk-ext-mail-accounts](https://github.com/Passimoritz/hostwerk-ext-mail-accounts) public · <sub>19 d ago</sub><br/>
-🔀 Merged PR [#1](https://github.com/Passimoritz/MC-VillagerVoice/pull/1) in [Passimoritz/MC-VillagerVoice](https://github.com/Passimoritz/MC-VillagerVoice) · <sub>19 d ago</sub>
+🌍 Made [Passimoritz/hostwerk-ext-mail-accounts](https://github.com/Passimoritz/hostwerk-ext-mail-accounts) public · <sub>19 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
