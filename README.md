@@ -106,7 +106,7 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 <br/>
 
 <!--ACTIVITY:START-->
-⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>22 h ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>1 d ago</sub><br/>
 🐛 Closed issue [#2](https://github.com/Passimoritz/spicetify-mirage/issues/2) in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>1 d ago</sub><br/>
 ⬆️ Pushed to `main` in [Passimoritz/vigil](https://github.com/Passimoritz/vigil) · <sub>8 d ago</sub><br/>
 🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>17 d ago</sub><br/>
