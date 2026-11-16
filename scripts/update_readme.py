@@ -103,67 +103,64 @@ def ago(iso: str) -> str:
     return "just now"
 
 
-def describe(event: dict) -> str | None:
+def describe(event: dict) -> dict | None:
+    """One log entry: {kind, verb, repo, detail}."""
     repo = event["repo"]["name"]
-    link = f"[{repo}](https://github.com/{repo})"
     payload = event["payload"]
     kind = event["type"]
     if kind == "PushEvent":
         commits = payload.get("commits") or []
         branch = payload.get("ref", "").removeprefix("refs/heads/")
-        if commits:
-            message = commits[-1]["message"].splitlines()[0][:72]
-            count = payload.get("size", len(commits))
-            noun = "commit" if count == 1 else "commits"
-            return f"Pushed {count} {noun} to {link} – _{message}_"
-        # The events API no longer lists commits for pushes; fall back to the branch.
-        return f"Pushed to `{branch}` in {link}" if branch else f"Pushed to {link}"
+        detail = commits[-1]["message"].splitlines()[0] if commits else ""
+        verb = f"Pushed to {branch} in" if branch else "Pushed to"
+        return {"kind": "push", "verb": verb, "repo": repo, "detail": detail}
     if kind == "PullRequestEvent":
-        # Slim event payloads may lack html_url, title and merged – build what is missing.
         pr = payload.get("pull_request") or {}
         number = pr.get("number") or payload.get("number")
         if not number:
             return None
-        url = pr.get("html_url") or f"https://github.com/{repo}/pull/{number}"
         action = payload.get("action", "updated")
         action = "Merged" if action == "closed" and pr.get("merged") else action.capitalize()
-        title = pr.get("title")
-        suffix = f" – _{title[:72]}_" if title else ""
-        return f"{action} PR [#{number}]({url}) in {link}{suffix}"
+        return {"kind": "pr", "verb": f"{action} PR #{number} in", "repo": repo, "detail": pr.get("title") or ""}
     if kind == "IssuesEvent":
-        issue = payload.get("issue") or {}
-        number = issue.get("number")
+        number = (payload.get("issue") or {}).get("number")
         if not number:
             return None
-        url = issue.get("html_url") or f"https://github.com/{repo}/issues/{number}"
-        return f"{payload.get('action', 'updated').capitalize()} issue [#{number}]({url}) in {link}"
+        verb = f"{payload.get('action', 'updated').capitalize()} issue #{number} in"
+        return {"kind": "issue", "verb": verb, "repo": repo, "detail": ""}
     if kind == "CreateEvent" and payload.get("ref_type") == "repository":
-        return f"Created repository {link}"
+        return {"kind": "create", "verb": "Created", "repo": repo, "detail": ""}
     if kind == "ReleaseEvent":
-        release = payload.get("release") or {}
-        tag = release.get("tag_name")
-        if not tag:
-            return None
-        url = release.get("html_url") or f"https://github.com/{repo}/releases/tag/{tag}"
-        return f"Released [{tag}]({url}) in {link}"
+        tag = (payload.get("release") or {}).get("tag_name")
+        return {"kind": "release", "verb": f"Released {tag} in", "repo": repo, "detail": ""} if tag else None
     if kind == "PublicEvent":
-        return f"Made {link} public"
+        return {"kind": "public", "verb": "Made public:", "repo": repo, "detail": ""}
     return None
 
 
 def activity_block(user: str, token: str) -> str:
+    """The log as a themed comic card, followed by plain links to the same repositories."""
     events = request(f"{API}/users/{user}/events/public?per_page=100", token)
     events.sort(key=lambda event: event["created_at"], reverse=True)
-    lines, seen = [], set()
+    entries, seen = [], set()
     for event in events:
-        text = describe(event)
-        if not text or text in seen:
+        entry = describe(event)
+        if not entry:
             continue
-        seen.add(text)
-        lines.append(f"{ICONS.get(event['type'], '•')} {text} · <sub>{ago(event['created_at'])}</sub>")
-        if len(lines) == 8:
+        key = (entry["verb"], entry["repo"], entry["detail"])
+        if key in seen:
+            continue
+        seen.add(key)
+        entry["ago"] = ago(event["created_at"])
+        entries.append(entry)
+        if len(entries) == 7:
             break
-    return "<br/>\n".join(lines) if lines else "_No public activity yet._"
+    comic.write_themed("assets/activity", lambda t: comic.activity_card(t, entries))
+    card = (f'<a href="https://github.com/{user}?tab=overview">'
+            f'{comic.picture("assets/activity", "Recent public activity on GitHub")}</a>')
+    repos = list(dict.fromkeys(e["repo"] for e in entries))
+    links = " · ".join(f'<a href="https://github.com/{r}">{escape(r.split("/", 1)[-1])}</a>' for r in repos)
+    return card + (f'\n\n<p align="center"><sub>{links}</sub></p>' if links else "")
 
 
 def wrap(text: str, width: int, lines: int) -> list[str]:
@@ -252,31 +249,29 @@ def text(value, lang: str = "en") -> str:
     return value or ""
 
 
-def spotlight(version: str, released: str, downloads: int, extensions: int) -> str:
-    """Hostwerk splash panel – same comic layout as Mirage (comic.project_card)."""
+def spotlight(t: dict, version: str, released: str, downloads: int, extensions: int) -> str:
+    """Hostwerk panel – same layout as Mirage (comic.project_card)."""
     pills = [p for p in (f"{downloads:,} downloads" if downloads else "", "Windows · Linux",
                          f"{extensions} extensions" if extensions and version else "") if p]
     if version:
-        badge = ("LATEST RELEASE", version, f"released {released}" if released else "fresh off the press")
+        stat = ("Latest release", version, f"released {released}" if released else "fresh off the press")
     else:  # no stable release yet: show the extension count instead
-        badge = ("EXTENSIONS", str(extensions or "∞"), "and counting")
+        stat = ("Extensions", str(extensions or 0), "and counting")
     return comic.project_card(
-        "HOSTWERK", "ISSUE #1", "THE LOCAL SERVER HUB",
+        t, "Hostwerk", "Issue #1", "The local server hub",
         "Web servers, databases, mail, Minecraft and AI on your own machine – one app for Windows and Linux.",
-        pills, *badge,
-        f"github.com/Passimoritz/{HOSTWERK_REPO}", comic.CYAN, comic.GREEN, "BZZT!",
+        pills, *stat, f"github.com/Passimoritz/{HOSTWERK_REPO}", "teal",
     )
 
 
-def ext_tile(ext: dict, index: int) -> str:
-    """Comic sticker tile with the extension's own icon embedded (external images do not load inside <img>)."""
+def ext_tile(t: dict, ext: dict, index: int, icon: bytes | None) -> str:
+    """Sticker tile with the extension's own icon embedded (external images do not load inside <img>)."""
     name = text(ext.get("name"))
-    icon = fetch_raw(ext.get("icon") or "")
     if icon and icon.lstrip().startswith(b"<"):
-        inner = f'<image x="13" y="13" width="33" height="33" href="data:image/svg+xml;base64,{base64.b64encode(icon).decode()}"/>'
+        inner = f'<image x="13" y="13" width="34" height="34" href="data:image/svg+xml;base64,{base64.b64encode(icon).decode()}"/>'
     else:
-        inner = f'<text x="29.5" y="40" text-anchor="middle" class="bang" font-size="26" fill="{comic.INK}">{escape(name[:1])}</text>'
-    return comic.tile(inner, name, index)
+        inner = f'<text x="30" y="39" text-anchor="middle" class="d" font-size="22" fill="{t["ink"]}">{escape(name[:1])}</text>'
+    return comic.tile(t, inner, name, index)
 
 
 def summary(ext: dict) -> str:
@@ -344,43 +339,41 @@ def file_kind(name: str) -> str:
     return "file"
 
 
-def download_button(key: str, title: str, sub: str) -> str:
-    """Comic button, shared look with the Mirage buttons."""
-    return comic.button(title.upper(), sub, icon=key if key in comic.BUTTON_ICONS else "arrow")
+def download_button(stem: str, key: str, title: str, sub: str, primary: bool = True) -> None:
+    comic.write_themed(stem, lambda t: comic.button(t, title, sub, primary, icon=key))
+
+
+def button_link(href: str, stem: str, alt: str) -> str:
+    return f'<a href="{href}">{comic.picture(stem, alt, "320", 80)}</a>'
 
 
 def download_block(base: str, latest: dict | None, version: str, released: str, downloads: int) -> str:
     """Direct per-OS download buttons plus a facts line; falls back to one generic button."""
     assets = (latest or {}).get("assets", [])
-    buttons = []
+    buttons, used = [], set()
     for key, label, extensions, hints in PLATFORMS:
         asset = pick_asset(assets, extensions, hints, key)
         if not asset:
             continue
         sub = " · ".join(p for p in (file_kind(asset["name"]), size_label(asset["size"]), version) if p)
-        path = f"assets/dl-{key}.svg"
-        with open(path, "w", encoding="utf-8") as handle:
-            handle.write(download_button(key, f"Get it for {label}", sub))
-        buttons.append(
-            f'<a href="{escape(asset["browser_download_url"])}"><img src="{path}" width="320" height="80" '
-            f'alt="Download Hostwerk for {label} ({escape(asset["name"])})"/></a>'
-        )
+        download_button(f"assets/dl-{key}", key, f"Get it for {label}", sub)
+        used.add(f"dl-{key}")
+        buttons.append(button_link(escape(asset["browser_download_url"]), f"assets/dl-{key}",
+                                   f"Download Hostwerk for {label} ({escape(asset['name'])})"))
     if len(buttons) < 2:
         title = "All downloads" if buttons else "Download Hostwerk"
         sub = " · ".join(p for p in ("Windows · Linux" if not buttons else "other platforms", version) if p)
-        with open("assets/dl-latest.svg", "w", encoding="utf-8") as handle:
-            handle.write(download_button("generic", title, sub))
-        buttons.append(
-            f'<a href="{base}/releases/latest"><img src="assets/dl-latest.svg" width="320" height="80" alt="Download Hostwerk"/></a>'
-        )
+        download_button("assets/dl-latest", "arrow", title, sub)
+        used.add("dl-latest")
+        buttons.append(button_link(f"{base}/releases/latest", "assets/dl-latest", "Download Hostwerk"))
     if len(buttons) < 2:  # same two-button row as Mirage
-        with open("assets/dl-source.svg", "w", encoding="utf-8") as handle:
-            handle.write(comic.button("SOURCE & DOCS", "extensions, guides, catalogue", fill=comic.PAPER, icon="code"))
-        buttons.append(f'<a href="{base}"><img src="assets/dl-source.svg" width="320" height="80" alt="Hostwerk source and docs"/></a>')
-    for stale in ("dl-windows.svg", "dl-linux.svg", "dl-latest.svg", "dl-source.svg"):
-        used = any(f"assets/{stale}" in b for b in buttons)
-        if not used and os.path.exists(f"assets/{stale}"):
-            os.remove(f"assets/{stale}")
+        download_button("assets/dl-source", "code", "Source & docs", "extensions, guides, catalogue", primary=False)
+        used.add("dl-source")
+        buttons.append(button_link(base, "assets/dl-source", "Hostwerk source and docs"))
+    for name in os.listdir("assets"):
+        stem = re.sub(r"(-light|-dark)?\.svg$", "", name)
+        if name.startswith("dl-") and name.endswith(".svg") and stem not in used:
+            os.remove(os.path.join("assets", name))
 
     facts = [p for p in (version, released, f"{downloads:,} downloads" if downloads else "") if p]
     notes_url = (latest or {}).get("html_url") or f"{base}/releases/latest"
@@ -412,8 +405,7 @@ def hostwerk_block(user: str, token: str) -> str:
     except OSError:
         pass
 
-    with open("assets/hostwerk.svg", "w", encoding="utf-8") as handle:
-        handle.write(spotlight(version, released, downloads, len(exts)))
+    comic.write_themed("assets/hostwerk", lambda t: spotlight(t, version, released, downloads, len(exts)))
 
     # one tile per extension; the title attribute is the hover tooltip GitHub keeps
     os.makedirs(EXT_DIR, exist_ok=True)
@@ -422,8 +414,8 @@ def hostwerk_block(user: str, token: str) -> str:
     for index, ext in enumerate(exts):
         ext_id = re.sub(r"[^a-z0-9-]", "-", str(ext.get("id") or text(ext.get("name"))).lower())
         ids.add(ext_id)
-        with open(os.path.join(EXT_DIR, f"{ext_id}.svg"), "w", encoding="utf-8") as handle:
-            handle.write(ext_tile(ext, index))
+        icon = fetch_raw(ext.get("icon") or "")
+        comic.write_themed(f"{EXT_DIR}/{ext_id}", lambda t, e=ext, i=index, ic=icon: ext_tile(t, e, i, ic))
         facts = [labels.get(ext.get("category"), "Extension")]
         if ext.get("native"):
             facts.append("part of Hostwerk")
@@ -433,14 +425,15 @@ def hostwerk_block(user: str, token: str) -> str:
         tip = escape(tip).replace("\n", "&#10;")
         tiles.append(
             f'<a href="{ext.get("homepage") or f"https://github.com/{user}/{HOSTWERK_REPO}"}" title="{tip}">'
-            f'<img src="{EXT_DIR}/{ext_id}.svg" width="56" height="56" alt="{escape(text(ext.get("name")))}" title="{tip}"/></a>'
+            f'{comic.picture(f"{EXT_DIR}/{ext_id}", escape(text(ext.get("name"))), "56", 56, tip)}</a>'
         )
     for stale in os.listdir(EXT_DIR):
-        if stale.endswith(".svg") and stale[:-4] not in ids:
+        themed = re.match(r"(.+)-(light|dark)\.svg$", stale)
+        if stale.endswith(".svg") and (not themed or themed.group(1) not in ids):
             os.remove(os.path.join(EXT_DIR, stale))
 
     base = f"https://github.com/{user}/{HOSTWERK_REPO}"
-    parts = [f'<a href="{base}"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>']
+    parts = [f'<a href="{base}">{comic.picture("assets/hostwerk", "Hostwerk – the local server hub for Windows and Linux")}</a>']
     if tiles:
         parts.append('<p align="center">\n' + "\n".join(tiles) + "\n</p>")
     parts.append(download_block(base, latest, version, released, downloads))
@@ -449,7 +442,7 @@ def hostwerk_block(user: str, token: str) -> str:
 
 MIRAGE_REPO = "spicetify-mirage"
 # Mirage's own colour schemes: Mirage (live), Obsidian, Sakura, Abyss, Ember
-MIRAGE_SCHEMES = [comic.VIOLET, "#cbd5e1", comic.PINK, comic.CYAN, "#ff7a3d"]
+MIRAGE_SCHEMES = ["violet", "blue", "coral", "teal", "amber"]  # the stat band cycles like Mirage's colour schemes
 
 
 def mirage_block(user: str, token: str) -> str:
@@ -468,32 +461,28 @@ def mirage_block(user: str, token: str) -> str:
         pass
 
     pills = [p for p in ("5 colour schemes", "Spicetify Marketplace", f"{stars} ★" if stars else "") if p]
-    with open("assets/mirage.svg", "w", encoding="utf-8") as handle:
-        handle.write(comic.project_card(
-            "MIRAGE", "ISSUE #2", "A LIVING SPOTIFY THEME",
-            "Spotify as frosted glass, recoloured by every album cover – with lyrics, a visualizer and a party light show.",
-            pills, "LATEST RELEASE", version or "new", released or "fresh off the press",
-            f"github.com/Passimoritz/{MIRAGE_REPO}", comic.VIOLET, comic.PINK, "WUMM!", badge_colors=MIRAGE_SCHEMES,
-        ))
-    with open("assets/mirage-get.svg", "w", encoding="utf-8") as handle:
-        handle.write(comic.button("GET MIRAGE", "Spicetify Marketplace · free", fill=comic.YELLOW, icon="store"))
-    with open("assets/mirage-src.svg", "w", encoding="utf-8") as handle:
-        handle.write(comic.button("SOURCE & GUIDE", "install, schemes, overlay app", fill=comic.PAPER, icon="code"))
+    comic.write_themed("assets/mirage", lambda t: comic.project_card(
+        t, "Mirage", "Issue #2", "A living Spotify theme",
+        "Spotify as frosted glass, recoloured by every album cover – with lyrics, a visualizer and a party light show.",
+        pills, "Latest release", version or "new", f"released {released}" if released else "fresh off the press",
+        f"github.com/Passimoritz/{MIRAGE_REPO}", "violet", cycle=MIRAGE_SCHEMES,
+    ))
+    comic.write_themed("assets/mirage-get", lambda t: comic.button(t, "Get Mirage", "Spicetify Marketplace · free", icon="store"))
+    comic.write_themed("assets/mirage-src", lambda t: comic.button(t, "Source & guide", "install, schemes, overlay app", False, icon="code"))
 
     base = f"https://github.com/{user}/{MIRAGE_REPO}"
     facts = [p for p in (version, released, f"{stars} ★" if stars else "") if p]
     links = ["Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b>",
              f'<a href="{base}#-mirage-overlay">Mirage Overlay</a>', f'<a href="{base}/releases">All releases</a>']
     return "\n\n".join([
-        f'<a href="{base}"><img src="assets/mirage.svg" alt="Mirage – a living Spicetify theme: Spotify as frosted glass, '
-        f'recoloured by every album cover" width="100%"/></a>',
+        f'<a href="{base}">{comic.picture("assets/mirage", "Mirage – a living Spicetify theme: Spotify as frosted glass, recoloured by every album cover")}</a>',
         f'<a href="{base}"><img src="assets/mirage-reel.webp" alt="Mirage in action: playlists, albums, lyrics, visualizer '
         f'and party mode – one animated comic strip, rebuilt from the Mirage repository" width="100%"/></a>',
         '<p align="center">\n'
-        f'<a href="{base}#-install"><img src="assets/mirage-get.svg" width="320" height="80" alt="Get Mirage from the Spicetify Marketplace"/></a>'
-        "&nbsp;&nbsp;"
-        f'<a href="{base}"><img src="assets/mirage-src.svg" width="320" height="80" alt="Mirage source code and install guide"/></a>\n'
-        f'<br/><sub>{" · ".join(facts + links)}</sub>\n</p>',
+        + button_link(f"{base}#-install", "assets/mirage-get", "Get Mirage from the Spicetify Marketplace")
+        + "&nbsp;&nbsp;"
+        + button_link(base, "assets/mirage-src", "Mirage source code and install guide")
+        + f'\n<br/><sub>{" · ".join(facts + links)}</sub>\n</p>',
     ])
 
 

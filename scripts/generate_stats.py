@@ -50,15 +50,15 @@ query($login: String!) {
 
 W, H = 1200, 620
 
-STYLE = """<style>""" + comic.font_css("bang", "cn") + """
-:root{--bg:#fff7e3;--card:#ffffff;--line:#14121f;--fg:#14121f;--muted:#5b5570;--accent:#a78bfa;--track:#efe3c4;
---l0:#efe3c4;--l1:#c4b5fd;--l2:#a78bfa;--l3:#8b5cf6;--l4:#f472b6}
-.t{font-family:'Comic Neue','Comic Sans MS',sans-serif;font-weight:700}
-.h{font-family:'Bangers',Impact,sans-serif;font-size:20px;font-weight:400;letter-spacing:1px;fill:var(--fg)}
-.big{font-family:'Bangers',Impact,sans-serif;font-size:44px;font-weight:400;letter-spacing:1px;fill:var(--fg)}
-.lbl{font-size:13px;fill:var(--muted);letter-spacing:.4px}
+STYLE = """<style>%%FONTS%%
+:root{--bg:%%paper%%;--card:%%paper2%%;--line:%%line%%;--fg:%%ink%%;--muted:%%muted%%;--track:%%track%%;
+--l0:%%l0%%;--l1:%%l1%%;--l2:%%l2%%;--l3:%%l3%%;--l4:%%l4%%}
+.t{font-family:'PMText','Segoe UI',sans-serif;font-weight:500}
+.h{font-family:'PMDisplay','Segoe UI',sans-serif;font-size:21px;font-weight:800;letter-spacing:-.3px;fill:var(--fg)}
+.big{font-family:'PMDisplay','Segoe UI',sans-serif;font-size:40px;font-weight:800;letter-spacing:-1px;fill:var(--fg)}
+.lbl{font-family:'PMMono',Consolas,monospace;font-weight:700;font-size:11.5px;fill:var(--muted);letter-spacing:1.2px}
 .name{font-size:15px;fill:var(--fg)}
-.tile{fill:var(--card);stroke:var(--line);stroke-width:3}
+.tile{fill:var(--card);stroke:var(--line);stroke-width:2}
 .trk{fill:var(--track)}
 .l0{fill:var(--l0)}.l1{fill:var(--l1)}.l2{fill:var(--l2)}.l3{fill:var(--l3)}.l4{fill:var(--l4)}
 .f{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
@@ -68,14 +68,12 @@ STYLE = """<style>""" + comic.font_css("bang", "cn") + """
 .draw{animation:draw 2.4s ease-out .6s both}
 .area{animation:fade 1.2s ease-out 1.6s both}
 .live{transform-box:fill-box;transform-origin:center;animation:live 2s ease-in-out infinite}
-.sheen{animation:sheen 6s ease-in-out 1s infinite}
 @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes grow{from{transform:scaleX(0)}}
 @keyframes pop{from{opacity:0;transform:scale(.2)}}
 @keyframes fade{from{opacity:0}}
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.8)}}
-@keyframes sheen{0%{transform:translateX(-400px)}60%,100%{transform:translateX(1400px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>"""
 
@@ -123,7 +121,7 @@ def level(count: int, peak: int) -> str:
     return "l4"
 
 
-def render(user: dict) -> str:
+def render(user: dict, t: dict) -> str:
     cal = user["contributionsCollection"]["contributionCalendar"]
     days = [
         (date.fromisoformat(d["date"]), d["contributionCount"])
@@ -154,10 +152,10 @@ def render(user: dict) -> str:
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="GitHub statistics">',
         f"""<defs><clipPath id="clip"><rect width="{W}" height="{H}" rx="14"/></clipPath>
-<linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-<linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8" stop-opacity=".35"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></linearGradient>
-<linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>""",
-        STYLE,
+<linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{t['blue']}"/><stop offset="1" stop-color="{t['violet']}"/></linearGradient>
+<linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{t['violet']}" stop-opacity=".3"/><stop offset="1" stop-color="{t['violet']}" stop-opacity="0"/></linearGradient>
+</defs>""",
+        "%%STYLE%%",
         f'<g clip-path="url(#clip)"><rect width="{W}" height="{H}" style="fill:var(--bg)"/>',
     ]
 
@@ -249,14 +247,22 @@ def render(user: dict) -> str:
         out.append(f'<circle cx="{lx:.1f}" cy="{ly:.1f}" r="4" style="fill:var(--accent)"/>')
 
     # footer + sheen
-    out.append(f'<circle cx="514" cy="606" r="3" fill="#22c55e" class="live"/>')
+    out.append(f'<circle cx="514" cy="606" r="3" fill="{t["teal"]}" class="live"/>')
     out.append(
         f'<text x="600" y="610" text-anchor="middle" class="t lbl" style="font-size:11px">updated {date.today().isoformat()} via GitHub Actions</text>'
     )
-    out.append(f'<rect x="0" y="0" width="400" height="{H}" fill="url(#sh)" class="sheen"/>')
     out.append("</g>")
-    out.append(f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" style="stroke:var(--line)" stroke-width="5"/></svg>')
-    return "\n".join(out)
+    out.append(f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" style="stroke:var(--line)" stroke-width="2.5"/></svg>')
+    body = "\n".join(out)
+    levels = ([t["paper2"], "#d9d2f7", "#b3a6f2", t["violet"], "#4b3bb0"] if t is comic.LIGHT
+              else ["#222a35", "#3b3566", "#5b4fa8", t["violet"], "#d2c9ff"])
+    values = {"paper": t["paper"], "paper2": t["paper2"], "line": t["line"], "ink": t["ink"], "muted": t["muted"],
+              "track": t["paper2"] if t is comic.LIGHT else "#262d38"}
+    values.update({f"l{i}": c for i, c in enumerate(levels)})
+    style = STYLE.replace("%%FONTS%%", comic.font_faces(body, ("PMDisplay", "PMText", "PMMono")))
+    for key, value in values.items():
+        style = style.replace(f"%%{key}%%", value)
+    return body.replace("%%STYLE%%", style)
 
 
 def main() -> None:
@@ -266,11 +272,13 @@ def main() -> None:
     if not token:
         raise SystemExit("GITHUB_TOKEN is required")
     target = sys.argv[2] if len(sys.argv) > 2 else "assets/stats.svg"
-    svg = render(fetch(sys.argv[1], token))
+    data = fetch(sys.argv[1], token)
+    stem = target.removesuffix(".svg")
     os.makedirs(os.path.dirname(target) or ".", exist_ok=True)
-    with open(target, "w", encoding="utf-8") as handle:
-        handle.write(svg)
-    print(f"wrote {target}")
+    for t in comic.THEMES:
+        with open(f"{stem}-{t['name']}.svg", "w", encoding="utf-8") as handle:
+            handle.write(render(data, t))
+    print(f"wrote {stem}-light.svg and {stem}-dark.svg")
 
 
 if __name__ == "__main__":

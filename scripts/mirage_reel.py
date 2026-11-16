@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Build assets/mirage-reel.webp: ONE animated comic strip of every Mirage screenshot and clip.
+"""Build assets/mirage-reel.webp: ONE animated panel of every Mirage screenshot and clip.
 
 The pictures are read live from the public Mirage repository (assets/shots and assets/clips),
 so new or changed screenshots show up on the profile on the next workflow run. The reel is only
 rebuilt when the folders' git hashes change (stored in assets/mirage-reel.json).
 
-Screenshots are held still and change with a comic panel wipe; the party clips play as recorded
-(no zoom or camera move). German variants (*-de.*) are skipped.
+The panel has a neutral ink border and no paper around it, so it sits well on both the light and
+the dark GitHub theme. Screenshots hold still and cross-fade; the party clips play as
+recorded (no zoom or camera move). German variants (*-de.*) are skipped.
 
 Usage: [GITHUB_TOKEN=...] python scripts/mirage_reel.py [--force]
 Needs Pillow (pip install pillow).
@@ -26,36 +27,35 @@ import comic  # noqa: E402
 REPO = "Passimoritz/spicetify-mirage"
 OUT = "assets/mirage-reel.webp"
 STATE = "assets/mirage-reel.json"
-VERSION = 1  # bump to force a rebuild after changing this script
+VERSION = 3  # bump to force a rebuild after changing this script
 
 W, H = 960, 540
-PX, PY, PW, PH = 14, 14, 924, 504  # panel box (shadow +8 is drawn outside)
-HOLD_MS = 2000  # how long a screenshot stays
+BORDER = 4
+HOLD_MS = 2200  # how long a screenshot stays
 CLIP_MS = 2800  # how much of each clip is played
-WIPE_FRAMES, WIPE_MS = 6, 45
+FADE_FRAMES, FADE_MS = 3, 70
 
-# Known file names → comic caption; anything new gets a caption from its file name.
+# Known file names → caption; anything new gets a caption from its file name.
 CAPTIONS = {
-    "playlist": "PLAYLISTS · THE COVER PAINTS EVERYTHING",
-    "album": "ALBUMS · THE HEADER MELTS INTO GLASS",
-    "visualizer": "IMMERSIVE · A VISUALIZER ON THE BEAT",
-    "mode-cover": "NOW PLAYING · COVER MODE",
-    "mode-lyrics": "SING ALONG · LYRICS MODE",
-    "mode-mix": "LYRICS + VISUALIZER · MIX MODE",
-    "mode-viz": "VISUALIZER MODE",
-    "mode-party": "PARTY MODE · LIGHTS AND CROWD",
-    "venues": "PICK YOUR VENUE",
-    "instruments": "INSTRUMENTS ON STAGE",
-    "settings": "EVERYTHING ADJUSTABLE",
-    "phone": "REMOTE ON YOUR PHONE",
-    "edm": "PARTY · EDM",
-    "house": "PARTY · HOUSE",
-    "rock": "PARTY · ROCK",
-    "techno": "PARTY · TECHNO",
-    "karaoke": "PARTY · KARAOKE",
-    "finale": "PARTY · THE FINALE",
+    "playlist": "Playlists · the cover paints everything",
+    "album": "Albums · the header melts into glass",
+    "visualizer": "Immersive · a visualizer on the beat",
+    "mode-cover": "Now playing · cover mode",
+    "mode-lyrics": "Sing along · lyrics mode",
+    "mode-mix": "Lyrics + visualizer · mix mode",
+    "mode-viz": "Visualizer mode",
+    "mode-party": "Party mode · lights and crowd",
+    "venues": "Pick your venue",
+    "instruments": "Instruments on stage",
+    "settings": "Everything adjustable",
+    "phone": "Remote on your phone",
+    "edm": "Party · EDM",
+    "house": "Party · house",
+    "rock": "Party · rock",
+    "techno": "Party · techno",
+    "karaoke": "Party · karaoke",
+    "finale": "Party · the finale",
 }
-SFX = ["BOOM!", "WUMM!", "BAM!", "WHOOSH!", "POW!", "ZING!"]
 ORDER = ["playlist", "album", "edm", "mode-cover", "mode-lyrics", "house", "mode-mix", "mode-viz", "rock",
          "visualizer", "mode-party", "techno", "venues", "instruments", "karaoke", "settings", "phone", "finale"]
 
@@ -89,81 +89,54 @@ def source_items() -> tuple[str, list[dict]]:
     return key, items
 
 
-def font(key: str, size: int) -> ImageFont.FreeTypeFont:
-    return ImageFont.truetype(os.path.join(comic.FONT_DIR, comic.FONTS[key]), size)
-
-
 def hexrgb(value: str) -> tuple:
     value = value.lstrip("#")
     return tuple(int(value[i:i + 2], 16) for i in (0, 2, 4))
 
 
-INK, PAPER, YELLOW = hexrgb(comic.INK), hexrgb(comic.PAPER), hexrgb(comic.YELLOW)
-ACCENTS = [hexrgb(c) for c in (comic.VIOLET, comic.PINK, comic.CYAN, comic.GREEN, comic.ORANGE)]
+INK = hexrgb(comic.LIGHT["ink"])
+AMBER = hexrgb(comic.LIGHT["amber"])
+TINTS = [hexrgb(comic.LIGHT[k]) for k in ("violet", "coral", "blue", "teal", "amber")]
+MONO = ImageFont.truetype(os.path.join(comic.FONT_DIR, comic.FONTS["PMMono"][0]), 17)
+MONO_S = ImageFont.truetype(os.path.join(comic.FONT_DIR, comic.FONTS["PMMono"][0]), 13)
 
 
-def paper() -> Image.Image:
-    """Cream page with a halftone dot screen."""
-    page = Image.new("RGB", (W, H), PAPER)
-    d = ImageDraw.Draw(page)
-    for y in range(0, H, 12):
-        for x in range((y // 12 % 2) * 6, W, 12):
-            d.ellipse((x - 1.6, y - 1.6, x + 1.6, y + 1.6), fill=(240, 222, 186))
-    d.rectangle((PX + 8, PY + 8, PX + PW + 8, PY + PH + 8), fill=INK)  # hard shadow
-    return page
-
-
-PAGE = None
-
-
-def fit(img: Image.Image, w: int, h: int, accent: tuple) -> Image.Image:
+def fit(img: Image.Image, accent: tuple) -> Image.Image:
     """Contain-fit the screenshot on a blurred, tinted copy of itself (no crop, no distortion)."""
     img = img.convert("RGB")
-    bg = img.copy()
-    scale = max(w / bg.width, h / bg.height)
-    bg = bg.resize((int(bg.width * scale) + 1, int(bg.height * scale) + 1)).crop((0, 0, w, h))
-    bg = bg.filter(ImageFilter.GaussianBlur(24))
-    bg = Image.blend(bg, Image.new("RGB", (w, h), accent), .25)
-    scale = min(w / img.width, h / img.height)
+    scale = max(W / img.width, H / img.height)
+    bg = img.resize((int(img.width * scale) + 1, int(img.height * scale) + 1)).crop((0, 0, W, H))
+    bg = Image.blend(bg.filter(ImageFilter.GaussianBlur(28)), Image.new("RGB", (W, H), (16, 14, 24)), .45)
+    bg = Image.blend(bg, Image.new("RGB", (W, H), accent), .08)
+    scale = min(W / img.width, H / img.height)
     fg = img.resize((max(1, round(img.width * scale)), max(1, round(img.height * scale))), Image.LANCZOS)
-    bg.paste(fg, ((w - fg.width) // 2, (h - fg.height) // 2))
+    bg.paste(fg, ((W - fg.width) // 2, (H - fg.height) // 2))
     return bg
 
 
-def caption(d: ImageDraw.ImageDraw, x: int, y: int, text: str, size: int, fill: tuple, color: tuple) -> None:
-    f = font("bang", size)
-    tw = d.textlength(text, font=f)
-    w, h = tw + 24, size + 14
-    d.rectangle((x + 5, y + 5, x + w + 5, y + h + 5), fill=INK)
-    d.rectangle((x, y, x + w, y + h), fill=fill, outline=INK, width=4)
-    d.text((x + 12, y + 6), text, font=f, fill=color)
+def label(d: ImageDraw.ImageDraw, x: int, y: int, text: str) -> None:
+    """Amber narrator caption with a hard ink shadow – the same caption box as the SVG pages."""
+    text = text.upper()
+    tw = sum(d.textlength(ch, font=MONO) + 1.2 for ch in text)
+    w, h = tw + 24, 34
+    d.rounded_rectangle((x + 3, y + 3, x + w + 3, y + h + 3), 3, fill=INK)
+    d.rounded_rectangle((x, y, x + w, y + h), 3, fill=AMBER, outline=INK, width=2)
+    cx = x + 13
+    for ch in text:  # manual tracking, matches the SVG captions
+        d.text((cx, y + 8), ch, font=MONO, fill=INK)
+        cx += d.textlength(ch, font=MONO) + 1.2
 
 
-def sfx(page: Image.Image, text: str, x: int, y: int, size: int, fill: tuple, angle: float) -> None:
-    f = font("bang", size)
-    box = ImageDraw.Draw(page).textbbox((0, 0), text, font=f, stroke_width=6)
-    layer = Image.new("RGBA", (box[2] + 30, box[3] + 30), (0, 0, 0, 0))
-    d = ImageDraw.Draw(layer)
-    d.text((14, 14), text, font=f, fill=INK, stroke_width=6, stroke_fill=INK)
-    d.text((8, 8), text, font=f, fill=fill, stroke_width=6, stroke_fill=INK)
-    layer = layer.rotate(angle, expand=True, resample=Image.BICUBIC)
-    page.paste(layer, (x - layer.width // 2, y - layer.height // 2), layer)
-
-
-def scene_frame(content: Image.Image, label: str, index: int, total: int, is_clip: bool) -> Image.Image:
-    page = PAGE.copy()
-    page.paste(content, (PX, PY))
-    d = ImageDraw.Draw(page)
-    d.rectangle((PX, PY, PX + PW, PY + PH), outline=INK, width=6)
-    caption(d, PX + 18, PY + 16, label, 26, YELLOW, INK)
-    tag = f"PANEL {index + 1}/{total}"
-    tf = font("bang", 18)
-    tw = d.textlength(tag, font=tf)
-    d.rectangle((PX + PW - tw - 40, PY + PH - 44, PX + PW - 16, PY + PH - 16), fill=INK)
-    d.text((PX + PW - tw - 28, PY + PH - 42), tag, font=tf, fill=YELLOW)
-    if is_clip:
-        sfx(page, SFX[index % len(SFX)], PX + 120, PY + PH - 70, 64, ACCENTS[index % len(ACCENTS)], 10)
-    return page
+def scene_frame(content: Image.Image, text: str, index: int, total: int) -> Image.Image:
+    frame = content.convert("RGBA")
+    d = ImageDraw.Draw(frame)
+    label(d, 22, 20, text)
+    tag = f"{index + 1:02d} / {total:02d}"
+    tw = d.textlength(tag, font=MONO_S)
+    d.rounded_rectangle((W - tw - 44, H - 46, W - 20, H - 20), 3, fill=INK)
+    d.text((W - tw - 32, H - 41), tag, font=MONO_S, fill=AMBER)
+    d.rectangle((0, 0, W - 1, H - 1), outline=INK, width=BORDER)
+    return frame.convert("RGB")
 
 
 def clip_frames(data: bytes, accent: tuple) -> list[tuple[Image.Image, int]]:
@@ -172,7 +145,7 @@ def clip_frames(data: bytes, accent: tuple) -> list[tuple[Image.Image, int]]:
     for i in range(getattr(im, "n_frames", 1)):
         im.seek(i)
         dur = im.info.get("duration") or 80
-        frames.append((fit(im.copy(), PW, PH, accent), dur))
+        frames.append((fit(im.copy(), accent), dur))
         spent += dur
         if spent >= CLIP_MS:
             break
@@ -180,31 +153,23 @@ def clip_frames(data: bytes, accent: tuple) -> list[tuple[Image.Image, int]]:
 
 
 def build(items: list[dict]) -> tuple[list[Image.Image], list[int]]:
-    global PAGE
-    PAGE = paper()
     out, durs = [], []
     total = len(items)
     prev = None
     for index, item in enumerate(items):
         print(f"  {item['kind']:4} {item['name']}")
         data = get(item["url"], raw=True)
-        accent = ACCENTS[index % len(ACCENTS)]
-        label = CAPTIONS.get(item["name"], item["name"].replace("-", " ").replace("_", " ").upper())
+        accent = TINTS[index % len(TINTS)]
+        text = CAPTIONS.get(item["name"], item["name"].replace("-", " ").replace("_", " "))
         if item["kind"] == "clip":
-            scenes = [(scene_frame(fr, label, index, total, True), d) for fr, d in clip_frames(data, accent)]
+            scenes = [(scene_frame(fr, text, index, total), d) for fr, d in clip_frames(data, accent)]
         else:
-            scenes = [(scene_frame(fit(Image.open(io.BytesIO(data)), PW, PH, accent), label, index, total, False), HOLD_MS)]
-        if prev is not None:
-            # comic wipe: the new panel slides in from the right with an ink edge
+            scenes = [(scene_frame(fit(Image.open(io.BytesIO(data)), accent), text, index, total), HOLD_MS)]
+        if prev is not None:  # soft cross-fade between panels
             first = scenes[0][0]
-            for step in range(1, WIPE_FRAMES + 1):
-                t = 1 - (1 - step / (WIPE_FRAMES + 1)) ** 3
-                cut = int(W * (1 - t))
-                frame = prev.copy()
-                frame.paste(first.crop((cut, 0, W, H)), (cut, 0))
-                ImageDraw.Draw(frame).rectangle((cut - 6, 0, cut, H), fill=INK)
-                out.append(frame)
-                durs.append(WIPE_MS)
+            for step in range(1, FADE_FRAMES + 1):
+                out.append(Image.blend(prev, first, step / (FADE_FRAMES + 1)))
+                durs.append(FADE_MS)
         for frame, dur in scenes:
             out.append(frame)
             durs.append(dur)
@@ -228,11 +193,11 @@ def main() -> None:
     print(f"mirage reel: building from {len(items)} pictures")
     frames, durs = build(items)
     frames[0].save(OUT, save_all=True, append_images=frames[1:], duration=durs, loop=0,
-                   quality=72, method=6, minimize_size=True, allow_mixed=True)
+                   quality=62, method=4, minimize_size=True)
     with open(STATE, "w", encoding="utf-8") as handle:
         json.dump({"source": key, "pictures": [i["name"] for i in items], "frames": len(frames),
                    "seconds": round(sum(durs) / 1000, 1)}, handle, indent=2)
-    print(f"mirage reel: {OUT} – {len(frames)} frames, {sum(durs) / 1000:.1f}s, {os.path.getsize(OUT) / 1e6:.1f} MB")
+    print(f"mirage reel: {OUT} - {len(frames)} frames, {sum(durs) / 1000:.1f}s, {os.path.getsize(OUT) / 1e6:.1f} MB")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
-  "source": "v1:b3c590b7e518c099167a71327e2074260dc94aa0:87b0a9a445261d6adb261d0bd27dbe9cd824a2df",
+  "source": "v3:b3c590b7e518c099167a71327e2074260dc94aa0:87b0a9a445261d6adb261d0bd27dbe9cd824a2df",
   "pictures": [
     "playlist",
     "album",
@@ -20,6 +20,6 @@
     "phone",
     "finale"
   ],
-  "frames": 324,
-  "seconds": 45.4
+  "frames": 273,
+  "seconds": 46.8
 }
