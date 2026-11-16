@@ -1,22 +1,23 @@
-<img src="assets/header.svg" alt="Pascal Moritz – IT &amp; Project Manager, Sales Manager, Software Enthusiast" width="100%"/>
+<img src="assets/cover.svg" alt="Passimoritz Comics, issue 1: Pascal Moritz – IT &amp; Project Manager, Sales Manager, Software Enthusiast" width="100%"/>
 
 <p align="center">
-I work where <b>IT management, project leadership and sales</b> meet: steering digital projects, aligning IT security with business value and translating technology into something people buy into. On the side I build apps, automations, self-hosted services and Spotify themes with AI-assisted workflows.
+<i>Our hero works where <b>IT management, project leadership and sales</b> meet – steering digital projects, aligning IT security with business value and translating technology into something people buy into. When the office lights go out, he builds apps, automations, self-hosted services and Spotify themes with AI-assisted workflows.</i>
 </p>
 
+<img src="assets/ch-1.svg" alt="Chapter 1: Origin story" width="100%"/>
+
+<img src="assets/origin.svg" alt="By day: IT &amp; projects – digital initiatives, IT infrastructure and security governance. And then: sales – technical solutions as clear, scalable business value. By night: AI-assisted building – apps, tools, themes and automations. In the basement: self-hosting with Docker, Nginx and Linux." width="100%"/>
+
 <p align="center">
+<sub><b>💥 POWER-UPS COLLECTED ALONG THE WAY</b></sub><br/><br/>
 <img src="https://skillicons.dev/icons?i=docker,nginx,linux,git,react,electron,js,css,python,lua,bash&theme=dark" alt="Tech stack: Docker, Nginx, Linux, Git, React, Electron, JavaScript, CSS, Python, Lua, Bash"/>
 </p>
 
-<img src="assets/sec-focus.svg" alt="01 · What I do" width="100%"/>
-
-<img src="assets/focus.svg" alt="IT &amp; Projects: digital initiatives, IT infrastructure, security governance · Sales: technical solutions as clear, scalable business value · AI-assisted building: apps, tools, themes and automations · Self-hosting: Docker, Nginx and Linux servers" width="100%"/>
-
-<img src="assets/sec-numbers.svg" alt="02 · Numbers" width="100%"/>
+<img src="assets/ch-2.svg" alt="Chapter 2: Power levels" width="100%"/>
 
 <img src="assets/stats.svg" alt="GitHub statistics" width="100%"/>
 
-<img src="assets/sec-projects.svg" alt="03 · Projects" width="100%"/>
+<img src="assets/ch-3.svg" alt="Chapter 3: The Hostwerk saga" width="100%"/>
 
 <!--HOSTWERK:START-->
 <a href="https://github.com/Passimoritz/hostwerk-public"><img src="assets/hostwerk.svg" alt="Hostwerk – the local server hub for Windows and Linux" width="100%"/></a>
@@ -62,64 +63,53 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 </p>
 
 <p align="center">
-<a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>
-<br/><sub>4,697 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><img src="assets/dl-latest.svg" width="320" height="80" alt="Download Hostwerk"/></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public"><img src="assets/dl-source.svg" width="320" height="80" alt="Hostwerk source and docs"/></a>
+<br/><sub>4,713 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
-<br/>
+<img src="assets/ch-4.svg" alt="Chapter 4: Mirage" width="100%"/>
 
-<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage.svg" alt="Mirage – a living Spicetify theme: Spotify as frosted glass, recoloured by every album cover, with five colour schemes" width="100%"/></a>
+<!--MIRAGE:START-->
+<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage.svg" alt="Mirage – a living Spicetify theme: Spotify as frosted glass, recoloured by every album cover" width="100%"/></a>
 
-<table>
-  <tr>
-    <td width="33%"><a href="https://github.com/Passimoritz/spicetify-mirage"><img src="https://raw.githubusercontent.com/Passimoritz/spicetify-mirage/main/assets/shots/playlist.png" alt="Mirage on a playlist page"/></a></td>
-    <td width="33%"><a href="https://github.com/Passimoritz/spicetify-mirage"><img src="https://raw.githubusercontent.com/Passimoritz/spicetify-mirage/main/assets/shots/album.png" alt="Mirage on an album page"/></a></td>
-    <td width="33%"><a href="https://github.com/Passimoritz/spicetify-mirage#-immersive-mode"><img src="https://raw.githubusercontent.com/Passimoritz/spicetify-mirage/main/assets/shots/visualizer.png" alt="Mirage immersive visualizer"/></a></td>
-  </tr>
-  <tr>
-    <td align="center"><sub><b>Playlists</b> · cover colours everywhere</sub></td>
-    <td align="center"><sub><b>Albums</b> · header melts into the glass</sub></td>
-    <td align="center"><sub><b>Immersive</b> · visualizer on the beat</sub></td>
-  </tr>
-</table>
+<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage-reel.webp" alt="Mirage in action: playlists, albums, lyrics, visualizer and party mode – one animated comic strip, rebuilt from the Mirage repository" width="100%"/></a>
 
 <p align="center">
-<a href="https://github.com/Passimoritz/spicetify-mirage#-install"><img src="assets/mirage-install.svg" width="320" height="72" alt="Get Mirage – Spicetify Marketplace"/></a>
-&nbsp;
-<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage-repo.svg" width="320" height="72" alt="Mirage source code and install guide"/></a>
-<br/><sub>Schemes: <b>Mirage</b> (live from the cover) · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> &nbsp;·&nbsp; plus the <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> desktop app</sub>
+<a href="https://github.com/Passimoritz/spicetify-mirage#-install"><img src="assets/mirage-get.svg" width="320" height="80" alt="Get Mirage from the Spicetify Marketplace"/></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/spicetify-mirage"><img src="assets/mirage-src.svg" width="320" height="80" alt="Mirage source code and install guide"/></a>
+<br/><sub>v1.24.1 · November 15, 2026 · 9 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
 </p>
+<!--MIRAGE:END-->
 
 <details>
-<summary><b>🎧 What's playing in Mirage right now</b></summary>
+<summary><b>🎧 Meanwhile, on the hero's headphones…</b></summary>
 <br/>
 <a href="https://open.spotify.com/user/passimoritz">
 <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=passimoritz&cover_image=true&theme=natemoo-re&show_offline=false&background_color=0d1117&interchange=true&bar_color=b69cff&bar_color_cover=true" alt="Spotify now playing" width="480"/>
 </a>
 </details>
 
-<img src="assets/sec-activity.svg" alt="04 · Lately" width="100%"/>
+<img src="assets/ch-5.svg" alt="Chapter 5: Previously on GitHub" width="100%"/>
 
 <details open>
-<summary><b>⚡ Recent activity</b></summary>
+<summary><b>📰 The captain's log</b></summary>
 <br/>
 
 <!--ACTIVITY:START-->
 ⬆️ Pushed to `main` in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>2 d ago</sub><br/>
 🐛 Closed issue [#2](https://github.com/Passimoritz/spicetify-mirage/issues/2) in [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) · <sub>2 d ago</sub><br/>
-⬆️ Pushed to `main` in [Passimoritz/vigil](https://github.com/Passimoritz/vigil) · <sub>9 d ago</sub><br/>
+⬆️ Pushed to `main` in [Passimoritz/vigil](https://github.com/Passimoritz/vigil) · <sub>10 d ago</sub><br/>
 🌍 Made [Passimoritz/spicetify-mirage](https://github.com/Passimoritz/spicetify-mirage) public · <sub>18 d ago</sub><br/>
-🌍 Made [Passimoritz/hostwerk-ext-vuln-watch](https://github.com/Passimoritz/hostwerk-ext-vuln-watch) public · <sub>21 d ago</sub><br/>
-🌍 Made [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) public · <sub>21 d ago</sub><br/>
-🌍 Made [Passimoritz/hostwerk-ext-mc-network](https://github.com/Passimoritz/hostwerk-ext-mc-network) public · <sub>21 d ago</sub><br/>
-🌍 Made [Passimoritz/hostwerk-ext-mail-accounts](https://github.com/Passimoritz/hostwerk-ext-mail-accounts) public · <sub>21 d ago</sub>
+🌍 Made [Passimoritz/hostwerk-ext-vuln-watch](https://github.com/Passimoritz/hostwerk-ext-vuln-watch) public · <sub>22 d ago</sub><br/>
+🌍 Made [Passimoritz/hostwerk-ext-steam](https://github.com/Passimoritz/hostwerk-ext-steam) public · <sub>22 d ago</sub><br/>
+🌍 Made [Passimoritz/hostwerk-ext-mc-network](https://github.com/Passimoritz/hostwerk-ext-mc-network) public · <sub>22 d ago</sub><br/>
+🌍 Made [Passimoritz/hostwerk-ext-mail-accounts](https://github.com/Passimoritz/hostwerk-ext-mail-accounts) public · <sub>22 d ago</sub>
 <!--ACTIVITY:END-->
 
 </details>
 
 <details open>
-<summary><b>🐍 Contribution snake</b></summary>
+<summary><b>🐍 The contribution snake strikes again</b></summary>
 <br/>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Passimoritz/Passimoritz/output/github-snake-dark.svg"/>
@@ -129,10 +119,10 @@ I work where <b>IT management, project leadership and sales</b> meet: steering d
 </details>
 
 <details>
-<summary><b>🏋️ Beyond the desk</b></summary>
+<summary><b>🏋️ Bonus page: beyond the desk</b></summary>
 <br/>
 Full-body gym sessions, custom AMD builds, AI audio prompting and competitive gaming.
 </details>
 
 <br/>
-<img src="assets/footer.svg" alt="Thanks for stopping by" width="100%"/>
+<img src="assets/footer.svg" alt="To be continued – thanks for reading" width="100%"/>

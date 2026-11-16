@@ -5,6 +5,8 @@ Blocks (replaced in place):
   <!--ACTIVITY:START--> ... <!--ACTIVITY:END-->   recent public activity
   <!--HOSTWERK:START--> ... <!--HOSTWERK:END-->   Hostwerk spotlight card, links and the extension list
                                                   (from the public catalogue in hostwerk-public)
+  <!--MIRAGE:START-->   ... <!--MIRAGE:END-->     Mirage spotlight card (same comic layout), the reel built by
+                                                  mirage_reel.py, buttons and live release facts
   <!--REPOS:START-->    ... <!--REPOS:END-->      optional: clickable, animated cards for other repositories
                                                   (pinned first, else most recently pushed; Hostwerk repos excluded)
 
@@ -23,6 +25,9 @@ import sys
 import urllib.request
 from datetime import datetime, timezone
 from html import escape
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import comic  # noqa: E402
 
 API = "https://api.github.com"
 CARD_DIR = "assets/cards"
@@ -233,31 +238,6 @@ HOSTWERK_CATEGORIES = [
     ("other", "Other"),
 ]
 
-SPOT_STYLE = """<style>
-:root{--bg:#0d1117;--line:#30363d;--fg:#f0f6fc;--muted:#9198a1;--accent:#38bdf8;--tile:#161b22;--grid:#ffffff}
-@media (prefers-color-scheme:light){:root{--bg:#ffffff;--line:#d1d9e0;--fg:#1f2328;--muted:#59636e;--accent:#0969da;--tile:#f6f8fa;--grid:#000000}}
-.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
-.k{font-size:13px;font-weight:700;letter-spacing:2px;fill:var(--accent)}
-.h{font-size:56px;font-weight:800;letter-spacing:-1.5px}
-.s{font-size:18px;fill:var(--fg);opacity:.85}
-.p{font-size:14px;font-weight:600;fill:var(--fg)}
-.pill{fill:var(--tile);stroke:var(--line)}
-.u{font-size:13px;fill:var(--muted)}
-.tile{fill:var(--tile);stroke:var(--line)}
-.grid{stroke:var(--grid);stroke-opacity:.04}
-.n{font-size:96px;font-weight:800;letter-spacing:-3px}
-.f{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
-.pop{transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
-.fl{animation:float 5s ease-in-out infinite}
-.live{transform-box:fill-box;transform-origin:center;animation:live 2s ease-in-out infinite}
-@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.3)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes live{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.8)}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}}
-</style>"""
-
-
 def fetch_raw(url: str) -> bytes | None:
     try:
         with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "profile-readme"}), timeout=20) as resp:
@@ -272,74 +252,31 @@ def text(value, lang: str = "en") -> str:
     return value or ""
 
 
-def spotlight(version: str, released: str, downloads: int) -> str:
-    """Hostwerk card: name, pitch, live numbers and the latest release (extension tiles follow below it)."""
-    out = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" '
-        f'aria-label="Hostwerk – the local server hub for Windows and Linux, latest release {escape(version)}">',
-        '<defs><clipPath id="c"><rect width="1200" height="300" rx="14"/></clipPath>'
-        '<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9"/>'
-        '<stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#0ea5e9"/>'
-        '<animate attributeName="x1" values="0;-1;0" dur="8s" repeatCount="indefinite"/>'
-        '<animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/></linearGradient>'
-        '<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" class="grid"/></pattern>'
-        '<radialGradient id="r" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/>'
-        '<stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>'
-        '<filter id="b" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="55"/></filter></defs>',
-        SPOT_STYLE,
-        '<g clip-path="url(#c)"><rect width="1200" height="300" style="fill:var(--bg)"/>',
-        # aurora behind the grid, same palette as the header
-        '<g filter="url(#b)" opacity=".32"><ellipse cx="160" cy="300" rx="260" ry="90" fill="#0ea5e9">'
-        '<animate attributeName="cx" values="140;380;140" dur="19s" repeatCount="indefinite"/></ellipse>'
-        '<ellipse cx="1100" cy="20" rx="240" ry="110" fill="#a78bfa"><animate attributeName="cy" values="0;120;0" dur="15s" repeatCount="indefinite"/></ellipse></g>',
-        '<rect width="1200" height="300" fill="url(#p)"/>',
-        '<circle cx="960" cy="150" r="280" fill="url(#r)"><animate attributeName="r" values="260;300;260" dur="7s" repeatCount="indefinite"/></circle>',
-        '<g class="t">',
-        '<text x="48" y="64" class="k f">FLAGSHIP PROJECT</text>',
-        '<text x="46" y="128" class="h f" fill="url(#g)" style="animation-delay:.1s">Hostwerk</text>',
-        '<text x="48" y="164" class="s f" style="animation-delay:.25s">The local server hub for Windows and Linux –</text>',
-        '<text x="48" y="188" class="s f" style="animation-delay:.3s">web servers, databases, mail, Minecraft and AI.</text>',
-    ]
-    pills = ["Windows · Linux"]
-    if downloads:
-        pills.insert(0, f"{downloads:,} downloads")
-    x = 48
-    for i, label in enumerate(pills):
-        w = 26 + len(label) * 8
-        out.append(
-            f'<g class="f" style="animation-delay:{0.45 + i * 0.1:.2f}s"><rect x="{x}" y="212" width="{w}" height="32" rx="16" class="pill"/>'
-            f'<text x="{x + w / 2:.0f}" y="233" text-anchor="middle" class="p">{escape(label)}</text></g>'
-        )
-        x += w + 10
-    out.append('<circle cx="54" cy="268" r="3.5" fill="#22c55e" class="live"/>')
-    out.append(f'<text x="66" y="273" class="u f" style="animation-delay:.9s">github.com/Passimoritz/{HOSTWERK_REPO}</text>')
-    # right side: live extension count
-    # right side: latest release
-    out.append('<text x="960" y="96" text-anchor="middle" class="k f" style="animation-delay:.4s">LATEST RELEASE</text>')
-    out.append(f'<text x="960" y="186" text-anchor="middle" class="n pop" fill="url(#g)" style="animation-delay:.5s">{escape(version)}</text>')
-    if released:
-        out.append(f'<text x="960" y="224" text-anchor="middle" class="u f" style="animation-delay:.8s">released {escape(released)}</text>')
-    out.append("</g></g>")
-    out.append('<rect x=".5" y=".5" width="1199" height="299" rx="14" fill="none" style="stroke:var(--line)"/></svg>')
-    return "\n".join(out)
+def spotlight(version: str, released: str, downloads: int, extensions: int) -> str:
+    """Hostwerk splash panel – same comic layout as Mirage (comic.project_card)."""
+    pills = [p for p in (f"{downloads:,} downloads" if downloads else "", "Windows · Linux",
+                         f"{extensions} extensions" if extensions and version else "") if p]
+    if version:
+        badge = ("LATEST RELEASE", version, f"released {released}" if released else "fresh off the press")
+    else:  # no stable release yet: show the extension count instead
+        badge = ("EXTENSIONS", str(extensions or "∞"), "and counting")
+    return comic.project_card(
+        "HOSTWERK", "ISSUE #1", "THE LOCAL SERVER HUB",
+        "Web servers, databases, mail, Minecraft and AI on your own machine – one app for Windows and Linux.",
+        pills, *badge,
+        f"github.com/Passimoritz/{HOSTWERK_REPO}", comic.CYAN, comic.GREEN, "BZZT!",
+    )
 
 
 def ext_tile(ext: dict, index: int) -> str:
-    """One animated 64×64 tile with the extension's own icon embedded (external images do not load inside <img>)."""
-    name = escape(text(ext.get("name")))
+    """Comic sticker tile with the extension's own icon embedded (external images do not load inside <img>)."""
+    name = text(ext.get("name"))
     icon = fetch_raw(ext.get("icon") or "")
     if icon and icon.lstrip().startswith(b"<"):
-        inner = f'<image x="15" y="15" width="34" height="34" href="data:image/svg+xml;base64,{base64.b64encode(icon).decode()}"/>'
+        inner = f'<image x="13" y="13" width="33" height="33" href="data:image/svg+xml;base64,{base64.b64encode(icon).decode()}"/>'
     else:
-        inner = f'<text x="32" y="41" text-anchor="middle" class="t p" style="font-size:22px">{escape(name[:1])}</text>'
-    return "\n".join([
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="{name}">',
-        SPOT_STYLE,
-        f'<g class="fl" style="animation-delay:{-(index * 0.7) % 5:.1f}s"><g class="pop" style="animation-delay:{0.2 + index * 0.05:.2f}s">',
-        '<rect x="3" y="3" width="58" height="58" rx="13" class="tile"/>',
-        inner,
-        "</g></g></svg>",
-    ])
+        inner = f'<text x="29.5" y="40" text-anchor="middle" class="bang" font-size="26" fill="{comic.INK}">{escape(name[:1])}</text>'
+    return comic.tile(inner, name, index)
 
 
 def summary(ext: dict) -> str:
@@ -355,17 +292,6 @@ def summary(ext: dict) -> str:
         desc = desc[:139].rsplit(" ", 1)[0].rstrip(",;:–-") + "…"
     return desc
 
-
-BUTTON_STYLE = """<style>
-:root{--btn:#38bdf8;--btn-fg:#04202e;--btn-sub:#0b3b52;--btn-chip:#04202e}
-@media (prefers-color-scheme:light){:root{--btn:#0969da;--btn-fg:#ffffff;--btn-sub:#dbeafe;--btn-chip:#ffffff}}
-.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
-.b{font-size:16px;font-weight:700;fill:var(--btn-fg)}
-.s{font-size:13px;fill:var(--btn-sub)}
-.chip{fill:var(--btn-chip);fill-opacity:.14}
-.ic{fill:none;stroke:var(--btn-fg);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.icf{fill:var(--btn-fg)}
-</style>"""
 
 # (key, label, file extensions in order of preference, name hints for generic archives)
 PLATFORMS = (
@@ -418,29 +344,9 @@ def file_kind(name: str) -> str:
     return "file"
 
 
-def platform_icon(key: str) -> str:
-    if key == "windows":
-        return ('<g class="icf"><rect x="-10" y="-10" width="9" height="9" rx="1.5"/><rect x="1" y="-10" width="9" height="9" rx="1.5"/>'
-                '<rect x="-10" y="1" width="9" height="9" rx="1.5"/><rect x="1" y="1" width="9" height="9" rx="1.5"/></g>')
-    if key == "linux":
-        return '<g class="ic"><rect x="-11" y="-10" width="22" height="20" rx="3"/><path d="M-6 -3l4 3-4 3M1 4h6"/></g>'
-    return '<g class="ic"><path d="M0 -10v14M-6 -2l6 6 6-6M-10 10h20"/></g>'
-
-
 def download_button(key: str, title: str, sub: str) -> str:
-    """Static, clickable-through-<a> button; follows the viewer's light/dark preference."""
-    width, height = 320, 72
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" '
-        f'aria-label="{escape(title)} – {escape(sub)}">{BUTTON_STYLE}'
-        f'<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" style="fill:var(--btn)"/>'
-        f'<rect x="14" y="14" width="44" height="44" rx="11" class="chip"/>'
-        f'<g transform="translate(36 36)">{platform_icon(key)}</g>'
-        f'<text x="72" y="33" class="t b">{escape(title)}</text>'
-        f'<text x="72" y="52" class="t s">{escape(sub)}</text>'
-        f'<g transform="translate(292 36)" class="ic"><path d="M0 -9v13M-6 -2l6 6 6-6"/></g>'
-        f"</svg>"
-    )
+    """Comic button, shared look with the Mirage buttons."""
+    return comic.button(title.upper(), sub, icon=key if key in comic.BUTTON_ICONS else "arrow")
 
 
 def download_block(base: str, latest: dict | None, version: str, released: str, downloads: int) -> str:
@@ -454,9 +360,9 @@ def download_block(base: str, latest: dict | None, version: str, released: str, 
         sub = " · ".join(p for p in (file_kind(asset["name"]), size_label(asset["size"]), version) if p)
         path = f"assets/dl-{key}.svg"
         with open(path, "w", encoding="utf-8") as handle:
-            handle.write(download_button(key, f"Download for {label}", sub))
+            handle.write(download_button(key, f"Get it for {label}", sub))
         buttons.append(
-            f'<a href="{escape(asset["browser_download_url"])}"><img src="{path}" width="320" height="72" '
+            f'<a href="{escape(asset["browser_download_url"])}"><img src="{path}" width="320" height="80" '
             f'alt="Download Hostwerk for {label} ({escape(asset["name"])})"/></a>'
         )
     if len(buttons) < 2:
@@ -465,9 +371,13 @@ def download_block(base: str, latest: dict | None, version: str, released: str, 
         with open("assets/dl-latest.svg", "w", encoding="utf-8") as handle:
             handle.write(download_button("generic", title, sub))
         buttons.append(
-            f'<a href="{base}/releases/latest"><img src="assets/dl-latest.svg" width="320" height="72" alt="Download Hostwerk"/></a>'
+            f'<a href="{base}/releases/latest"><img src="assets/dl-latest.svg" width="320" height="80" alt="Download Hostwerk"/></a>'
         )
-    for stale in ("dl-windows.svg", "dl-linux.svg", "dl-latest.svg"):
+    if len(buttons) < 2:  # same two-button row as Mirage
+        with open("assets/dl-source.svg", "w", encoding="utf-8") as handle:
+            handle.write(comic.button("SOURCE & DOCS", "extensions, guides, catalogue", fill=comic.PAPER, icon="code"))
+        buttons.append(f'<a href="{base}"><img src="assets/dl-source.svg" width="320" height="80" alt="Hostwerk source and docs"/></a>')
+    for stale in ("dl-windows.svg", "dl-linux.svg", "dl-latest.svg", "dl-source.svg"):
         used = any(f"assets/{stale}" in b for b in buttons)
         if not used and os.path.exists(f"assets/{stale}"):
             os.remove(f"assets/{stale}")
@@ -503,7 +413,7 @@ def hostwerk_block(user: str, token: str) -> str:
         pass
 
     with open("assets/hostwerk.svg", "w", encoding="utf-8") as handle:
-        handle.write(spotlight(version or "latest", released, downloads))
+        handle.write(spotlight(version, released, downloads, len(exts)))
 
     # one tile per extension; the title attribute is the hover tooltip GitHub keeps
     os.makedirs(EXT_DIR, exist_ok=True)
@@ -535,6 +445,56 @@ def hostwerk_block(user: str, token: str) -> str:
         parts.append('<p align="center">\n' + "\n".join(tiles) + "\n</p>")
     parts.append(download_block(base, latest, version, released, downloads))
     return "\n\n".join(parts)
+
+
+MIRAGE_REPO = "spicetify-mirage"
+# Mirage's own colour schemes: Mirage (live), Obsidian, Sakura, Abyss, Ember
+MIRAGE_SCHEMES = [comic.VIOLET, "#cbd5e1", comic.PINK, comic.CYAN, "#ff7a3d"]
+
+
+def mirage_block(user: str, token: str) -> str:
+    """Mirage, laid out exactly like Hostwerk: splash panel, the live reel, two buttons and a facts line."""
+    version, released, stars = "", "", 0
+    try:
+        repo = request(f"{API}/repos/{user}/{MIRAGE_REPO}", token)
+        stars = repo.get("stargazers_count", 0)
+        releases = request(f"{API}/repos/{user}/{MIRAGE_REPO}/releases?per_page=20", token)
+        stable = [r for r in releases if not r["draft"] and not r["prerelease"]]
+        if stable:
+            version = stable[0]["tag_name"]
+            day = datetime.fromisoformat(stable[0]["published_at"].replace("Z", "+00:00"))
+            released = f"{day:%B} {day.day}, {day.year}"
+    except OSError:
+        pass
+
+    pills = [p for p in ("5 colour schemes", "Spicetify Marketplace", f"{stars} ★" if stars else "") if p]
+    with open("assets/mirage.svg", "w", encoding="utf-8") as handle:
+        handle.write(comic.project_card(
+            "MIRAGE", "ISSUE #2", "A LIVING SPOTIFY THEME",
+            "Spotify as frosted glass, recoloured by every album cover – with lyrics, a visualizer and a party light show.",
+            pills, "LATEST RELEASE", version or "new", released or "fresh off the press",
+            f"github.com/Passimoritz/{MIRAGE_REPO}", comic.VIOLET, comic.PINK, "WUMM!", badge_colors=MIRAGE_SCHEMES,
+        ))
+    with open("assets/mirage-get.svg", "w", encoding="utf-8") as handle:
+        handle.write(comic.button("GET MIRAGE", "Spicetify Marketplace · free", fill=comic.YELLOW, icon="store"))
+    with open("assets/mirage-src.svg", "w", encoding="utf-8") as handle:
+        handle.write(comic.button("SOURCE & GUIDE", "install, schemes, overlay app", fill=comic.PAPER, icon="code"))
+
+    base = f"https://github.com/{user}/{MIRAGE_REPO}"
+    facts = [p for p in (version, released, f"{stars} ★" if stars else "") if p]
+    links = ["Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b>",
+             f'<a href="{base}#-mirage-overlay">Mirage Overlay</a>', f'<a href="{base}/releases">All releases</a>']
+    return "\n\n".join([
+        f'<a href="{base}"><img src="assets/mirage.svg" alt="Mirage – a living Spicetify theme: Spotify as frosted glass, '
+        f'recoloured by every album cover" width="100%"/></a>',
+        f'<a href="{base}"><img src="assets/mirage-reel.webp" alt="Mirage in action: playlists, albums, lyrics, visualizer '
+        f'and party mode – one animated comic strip, rebuilt from the Mirage repository" width="100%"/></a>',
+        '<p align="center">\n'
+        f'<a href="{base}#-install"><img src="assets/mirage-get.svg" width="320" height="80" alt="Get Mirage from the Spicetify Marketplace"/></a>'
+        "&nbsp;&nbsp;"
+        f'<a href="{base}"><img src="assets/mirage-src.svg" width="320" height="80" alt="Mirage source code and install guide"/></a>\n'
+        f'<br/><sub>{" · ".join(facts + links)}</sub>\n</p>',
+    ])
 
 
 def repos_block(user: str, token: str) -> str:
@@ -589,7 +549,8 @@ def main() -> None:
     path = sys.argv[2] if len(sys.argv) > 2 else "README.md"
     with open(path, encoding="utf-8") as handle:
         text = handle.read()
-    for name, build in (("HOSTWERK", hostwerk_block), ("ACTIVITY", activity_block), ("REPOS", repos_block)):
+    for name, build in (("HOSTWERK", hostwerk_block), ("MIRAGE", mirage_block), ("ACTIVITY", activity_block),
+                        ("REPOS", repos_block)):
         if f"<!--{name}:START-->" in text:
             text = replace_block(text, name, build(user, token))
     with open(path, "w", encoding="utf-8") as handle:

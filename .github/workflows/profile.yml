@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
+  # Optional: the Mirage repo can trigger an instant refresh of the reel with
+  # `gh api repos/Passimoritz/Passimoritz/dispatches -f event_type=mirage-updated`
+  repository_dispatch:
+    types: [mirage-updated]
   push:
     branches: [main]
     paths: [scripts/**, .github/workflows/profile.yml]
@@ -20,6 +24,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install Pillow (Mirage reel)
+        run: python3 -m pip install --quiet pillow
+
+      - name: Build comic pages
+        run: python3 scripts/comic.py
+
+      - name: Rebuild Mirage reel when its screenshots changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/mirage_reel.py
 
       - name: Generate stats card
         env:

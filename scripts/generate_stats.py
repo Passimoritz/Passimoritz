@@ -15,6 +15,9 @@ from collections import defaultdict
 from datetime import date
 from html import escape
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import comic  # noqa: E402
+
 API = "https://api.github.com/graphql"
 
 QUERY = """
@@ -47,17 +50,15 @@ query($login: String!) {
 
 W, H = 1200, 620
 
-STYLE = """<style>
-:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--fg:#f0f6fc;--muted:#9198a1;--accent:#38bdf8;--track:#21262d;
---l0:#1b2230;--l1:#0c4a6e;--l2:#0369a1;--l3:#0ea5e9;--l4:#7dd3fc}
-@media (prefers-color-scheme:light){:root{--bg:#ffffff;--card:#f6f8fa;--line:#d1d9e0;--fg:#1f2328;--muted:#59636e;--accent:#0969da;--track:#eaeef2;
---l0:#ebeef2;--l1:#bae6fd;--l2:#7dd3fc;--l3:#0ea5e9;--l4:#0369a1}}
-.t{font-family:-apple-system,'Segoe UI',Inter,Ubuntu,Helvetica,Arial,sans-serif}
-.h{font-size:19px;font-weight:700;fill:var(--fg)}
-.big{font-size:38px;font-weight:800;fill:var(--fg)}
-.lbl{font-size:12px;fill:var(--muted);letter-spacing:.6px}
+STYLE = """<style>""" + comic.font_css("bang", "cn") + """
+:root{--bg:#fff7e3;--card:#ffffff;--line:#14121f;--fg:#14121f;--muted:#5b5570;--accent:#a78bfa;--track:#efe3c4;
+--l0:#efe3c4;--l1:#c4b5fd;--l2:#a78bfa;--l3:#8b5cf6;--l4:#f472b6}
+.t{font-family:'Comic Neue','Comic Sans MS',sans-serif;font-weight:700}
+.h{font-family:'Bangers',Impact,sans-serif;font-size:20px;font-weight:400;letter-spacing:1px;fill:var(--fg)}
+.big{font-family:'Bangers',Impact,sans-serif;font-size:44px;font-weight:400;letter-spacing:1px;fill:var(--fg)}
+.lbl{font-size:13px;fill:var(--muted);letter-spacing:.4px}
 .name{font-size:15px;fill:var(--fg)}
-.tile{fill:var(--card);stroke:var(--line)}
+.tile{fill:var(--card);stroke:var(--line);stroke-width:3}
 .trk{fill:var(--track)}
 .l0{fill:var(--l0)}.l1{fill:var(--l1)}.l2{fill:var(--l2)}.l3{fill:var(--l3)}.l4{fill:var(--l4)}
 .f{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
@@ -231,11 +232,11 @@ def render(user: dict) -> str:
     # weekly trend over 12 months
     totals = [sum(d["contributionCount"] for d in w["contributionDays"]) for w in cal["weeks"]]
     top_week = max(totals, default=0) or 1
-    x0, x1, y0, y1 = 40, 1160, 590, 470
+    x0, x1, y0, y1 = 40, 1160, 590, 488
     step = (x1 - x0) / max(len(totals) - 1, 1)
     pts = [(x0 + i * step, y0 - (t / top_week) * (y0 - y1)) for i, t in enumerate(totals)]
     line = " ".join(f"{'M' if i == 0 else 'L'}{x:.1f},{y:.1f}" for i, (x, y) in enumerate(pts))
-    out.append('<text x="40" y="450" class="t h f" style="animation-delay:1.2s">Weekly contributions · 12 months</text>')
+    out.append('<text x="40" y="468" class="t h f" style="animation-delay:1.2s">Weekly contributions · 12 months</text>')
     out.append(f'<line x1="{x0}" y1="{y0}" x2="{x1}" y2="{y0}" style="stroke:var(--line)"/>')
     if pts:
         out.append(f'<path d="{line} L{x1},{y0} L{x0},{y0} Z" fill="url(#fillg)" class="area"/>')
@@ -254,7 +255,7 @@ def render(user: dict) -> str:
     )
     out.append(f'<rect x="0" y="0" width="400" height="{H}" fill="url(#sh)" class="sheen"/>')
     out.append("</g>")
-    out.append(f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" style="stroke:var(--line)"/></svg>')
+    out.append(f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" style="stroke:var(--line)" stroke-width="5"/></svg>')
     return "\n".join(out)
 
 
