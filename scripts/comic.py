@@ -71,7 +71,8 @@ def _subset(family: str, chars: str) -> str:
     from fontTools import subset
     from fontTools.ttLib import TTFont
 
-    font = TTFont(os.path.join(FONT_DIR, FONTS[family][0]))
+    # recalcTimestamp=False keeps the output byte-identical between runs (no churn commits)
+    font = TTFont(os.path.join(FONT_DIR, FONTS[family][0]), recalcTimestamp=False)
     opts = subset.Options()
     opts.flavor = "woff2"
     opts.layout_features = ["kern", "liga", "calt"]
