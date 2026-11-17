@@ -64,7 +64,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-latest-dark.svg"/><img src="assets/dl-latest-light.svg" alt="Download Hostwerk" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-source-dark.svg"/><img src="assets/dl-source-light.svg" alt="Hostwerk source and docs" width="320" height="80"/></picture></a>
-<br/><sub>4,713 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,735 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
