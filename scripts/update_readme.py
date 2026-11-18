@@ -328,6 +328,8 @@ def pick_asset(assets: list[dict], extensions: tuple, hints: tuple, key: str = "
 
 
 def size_label(size: int) -> str:
+    if size < 1024 * 1024:  # small downloads such as browser extensions
+        return f"{max(size / 1024, 1):.0f} KB"
     return f"{size / 1024 / 1024:.0f} MB" if size >= 10 * 1024 * 1024 else f"{size / 1024 / 1024:.1f} MB"
 
 
@@ -486,6 +488,70 @@ def mirage_block(user: str, token: str) -> str:
     ])
 
 
+ADFREE_REPO = "yt-adfree"
+
+
+def adfree_block(user: str, token: str) -> str:
+    """YT AdFree, same layout as Hostwerk and Mirage: card with live stars and downloads, the
+    before/after picture straight from its repo (light + dark), one download button per browser."""
+    base = f"https://github.com/{user}/{ADFREE_REPO}"
+    raw = f"https://raw.githubusercontent.com/{user}/{ADFREE_REPO}/main"
+    desc, stars, version, released, downloads, latest = "", 0, "", "", 0, None
+    try:
+        repo = request(f"{API}/repos/{user}/{ADFREE_REPO}", token)
+        desc, stars = repo.get("description") or "", repo.get("stargazers_count", 0)
+        releases = request(f"{API}/repos/{user}/{ADFREE_REPO}/releases?per_page=100", token)
+        downloads = sum(a["download_count"] for r in releases for a in r["assets"])
+        stable = [r for r in releases if not r["draft"] and not r["prerelease"]]
+        if stable:
+            latest, version = stable[0], stable[0]["tag_name"]
+            day = datetime.fromisoformat(stable[0]["published_at"].replace("Z", "+00:00"))
+            released = f"{day:%B} {day.day}, {day.year}"
+    except OSError:
+        pass
+    pitch = desc or "Lean YouTube ad blocker for Chrome and Firefox – no popups, rules update themselves."
+    star_label = f"{stars} star" + ("" if stars == 1 else "s")
+    comic.write_themed("assets/adfree", lambda t: comic.project_card(
+        t, "YT AdFree", "Issue #3", "A lean ad blocker",
+        pitch, [f"★ {star_label}", "Chrome · Firefox", "Manifest V3"],
+        "Downloads", f"{downloads:,}", f"{version} · {released}" if version else "all releases",
+        f"github.com/Passimoritz/{ADFREE_REPO}", "coral",
+    ))
+
+    buttons, used = [], {"adfree"}  # the card itself (adfree-light/-dark.svg) is never stale
+    for key, label in (("chrome", "Chrome"), ("firefox", "Firefox")):
+        asset = next((a for a in (latest or {}).get("assets", []) if key in a["name"].lower()), None)
+        if not asset:
+            continue
+        stem = f"assets/adfree-{key}"
+        sub = " · ".join(p for p in ("ZIP", size_label(asset["size"]), version) if p)
+        comic.write_themed(stem, lambda t, lb=label, s=sub, k=key: comic.button(t, f"Get it for {lb}", s, k == "chrome"))
+        used.add(f"adfree-{key}")
+        buttons.append(button_link(escape(asset["browser_download_url"]), stem,
+                                   f"Download YT AdFree for {label} ({escape(asset['name'])})"))
+    if not buttons:
+        comic.write_themed("assets/adfree-src", lambda t: comic.button(t, "Source & install", "Chrome · Firefox", icon="code"))
+        used.add("adfree-src")
+        buttons.append(button_link(base, "assets/adfree-src", "YT AdFree source and install guide"))
+    for name in os.listdir("assets"):
+        stem = re.sub(r"(-light|-dark)?\.svg$", "", name)
+        if name.startswith("adfree-") and name.endswith(".svg") and stem not in used:
+            os.remove(os.path.join("assets", name))
+
+    facts = [p for p in (version, released, f"★ {star_label}", f"{downloads:,} downloads") if p]
+    links = [f'<a href="{base}#install">Install guide</a>', f'<a href="{base}/releases">All releases</a>']
+    compare = (
+        f'<a href="{base}"><picture><source media="(prefers-color-scheme: dark)" srcset="{raw}/docs/compare-dark.png"/>'
+        f'<img src="{raw}/docs/compare-light.png" alt="YouTube without and with YT AdFree: the ad and the sponsored slot are gone, '
+        f'the video plays right away" width="100%"/></picture></a>'
+    )
+    return "\n\n".join([
+        f'<a href="{base}">{comic.picture("assets/adfree", "YT AdFree – " + escape(pitch))}</a>',
+        compare,
+        '<p align="center">\n' + "&nbsp;&nbsp;".join(buttons) + f'\n<br/><sub>{" · ".join(facts + links)}</sub>\n</p>',
+    ])
+
+
 def repos_block(user: str, token: str) -> str:
     data = request(f"{API}/graphql", token, {"query": QUERY, "variables": {"login": user}})
     if "errors" in data:
@@ -538,7 +604,8 @@ def main() -> None:
     path = sys.argv[2] if len(sys.argv) > 2 else "README.md"
     with open(path, encoding="utf-8") as handle:
         text = handle.read()
-    for name, build in (("HOSTWERK", hostwerk_block), ("MIRAGE", mirage_block), ("ACTIVITY", activity_block),
+    for name, build in (("HOSTWERK", hostwerk_block), ("MIRAGE", mirage_block), ("ADFREE", adfree_block),
+                        ("ACTIVITY", activity_block),
                         ("REPOS", repos_block)):
         if f"<!--{name}:START-->" in text:
             text = replace_block(text, name, build(user, token))

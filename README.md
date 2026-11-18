@@ -48,7 +48,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 <a href="https://github.com/Passimoritz/hostwerk-ext-page-check" title="Page check – Checks pages of your web projects.&#10;Developer tools · part of Hostwerk · v1.1.2"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/page-check-dark.svg"/><img src="assets/ext/page-check-light.svg" alt="Page check" width="56" height="56" title="Page check – Checks pages of your web projects.&#10;Developer tools · part of Hostwerk · v1.1.2"/></picture></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-profiler" title="Profiler – Finds out why a page or app is slow.&#10;Developer tools · part of Hostwerk · v1.1.3"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/profiler-dark.svg"/><img src="assets/ext/profiler-light.svg" alt="Profiler" width="56" height="56" title="Profiler – Finds out why a page or app is slow.&#10;Developer tools · part of Hostwerk · v1.1.3"/></picture></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-static-publish" title="Publish static sites – Publish projects with one click.&#10;Developer tools · part of Hostwerk · v2.0.0"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/static-publish-dark.svg"/><img src="assets/ext/static-publish-light.svg" alt="Publish static sites" width="56" height="56" title="Publish static sites – Publish projects with one click.&#10;Developer tools · part of Hostwerk · v2.0.0"/></picture></a>
-<a href="https://github.com/Passimoritz/hostwerk-ext-vms" title="Virtual machines – Virtual machines like VirtualBox.&#10;Developer tools · part of Hostwerk · v1.0.3"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/vms-dark.svg"/><img src="assets/ext/vms-light.svg" alt="Virtual machines" width="56" height="56" title="Virtual machines – Virtual machines like VirtualBox.&#10;Developer tools · part of Hostwerk · v1.0.3"/></picture></a>
+<a href="https://github.com/Passimoritz/hostwerk-ext-vms" title="Virtual machines – Virtual machines like VirtualBox.&#10;Developer tools · part of Hostwerk · v1.0.4"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/vms-dark.svg"/><img src="assets/ext/vms-light.svg" alt="Virtual machines" width="56" height="56" title="Virtual machines – Virtual machines like VirtualBox.&#10;Developer tools · part of Hostwerk · v1.0.4"/></picture></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-webhook-inbox" title="Webhook inbox – An address for the webhooks of Stripe, GitHub, Shopify, Slack &amp; co. – public through Hostwerk&#x27;s tunnel if you like.&#10;Developer tools · part of Hostwerk · v1.4.1"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/webhook-inbox-dark.svg"/><img src="assets/ext/webhook-inbox-light.svg" alt="Webhook inbox" width="56" height="56" title="Webhook inbox – An address for the webhooks of Stripe, GitHub, Shopify, Slack &amp; co. – public through Hostwerk&#x27;s tunnel if you like.&#10;Developer tools · part of Hostwerk · v1.4.1"/></picture></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-claude" title="AI Connect – Connect any AI with Hostwerk – Cursor, VS Code, Windsurf, LM Studio, Claude, Codex, Gemini CLI and any other MCP app.&#10;AI &amp; media · part of Hostwerk · v1.5.1"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/claude-dark.svg"/><img src="assets/ext/claude-light.svg" alt="AI Connect" width="56" height="56" title="AI Connect – Connect any AI with Hostwerk – Cursor, VS Code, Windsurf, LM Studio, Claude, Codex, Gemini CLI and any other MCP app.&#10;AI &amp; media · part of Hostwerk · v1.5.1"/></picture></a>
 <a href="https://github.com/Passimoritz/hostwerk-ext-ai-media" title="Image &amp; video studio – Create pictures and short videos from a description.&#10;AI &amp; media · part of Hostwerk · v1.3.1"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ext/ai-media-dark.svg"/><img src="assets/ext/ai-media-light.svg" alt="Image &amp; video studio" width="56" height="56" title="Image &amp; video studio – Create pictures and short videos from a description.&#10;AI &amp; media · part of Hostwerk · v1.3.1"/></picture></a>
@@ -65,7 +65,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-latest-dark.svg"/><img src="assets/dl-latest-light.svg" alt="Download Hostwerk" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-source-dark.svg"/><img src="assets/dl-source-light.svg" alt="Hostwerk source and docs" width="320" height="80"/></picture></a>
-<br/><sub>4,778 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>4,824 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -90,12 +90,25 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 </a>
 </details>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/ch-5-dark.svg"/><img src="assets/ch-5-light.svg" alt="Chapter 05: Recent activity" width="100%"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/ch-5-dark.svg"/><img src="assets/ch-5-light.svg" alt="Chapter 05: YT AdFree" width="100%"/></picture>
+
+<!--ADFREE:START-->
+<a href="https://github.com/Passimoritz/yt-adfree"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/adfree-dark.svg"/><img src="assets/adfree-light.svg" alt="YT AdFree – Lean YouTube ad blocker for Chrome and Firefox – no popups, rules update themselves, no waiting penalty even when signed in" width="100%"/></picture></a>
+
+<a href="https://github.com/Passimoritz/yt-adfree"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Passimoritz/yt-adfree/main/docs/compare-dark.png"/><img src="https://raw.githubusercontent.com/Passimoritz/yt-adfree/main/docs/compare-light.png" alt="YouTube without and with YT AdFree: the ad and the sponsored slot are gone, the video plays right away" width="100%"/></picture></a>
+
+<p align="center">
+<a href="https://github.com/Passimoritz/yt-adfree/releases/download/v1.2.2/yt-adfree-1.2.2-chrome.zip"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/adfree-chrome-dark.svg"/><img src="assets/adfree-chrome-light.svg" alt="Download YT AdFree for Chrome (yt-adfree-1.2.2-chrome.zip)" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/yt-adfree/releases/download/v1.2.2/yt-adfree-1.2.2-firefox.zip"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/adfree-firefox-dark.svg"/><img src="assets/adfree-firefox-light.svg" alt="Download YT AdFree for Firefox (yt-adfree-1.2.2-firefox.zip)" width="320" height="80"/></picture></a>
+<br/><sub>v1.2.2 · November 18, 2026 · ★ 0 stars · 0 downloads · <a href="https://github.com/Passimoritz/yt-adfree#install">Install guide</a> · <a href="https://github.com/Passimoritz/yt-adfree/releases">All releases</a></sub>
+</p>
+<!--ADFREE:END-->
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/ch-6-dark.svg"/><img src="assets/ch-6-light.svg" alt="Chapter 06: Recent activity" width="100%"/></picture>
 
 <!--ACTIVITY:START-->
 <a href="https://github.com/Passimoritz?tab=overview"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"/><img src="assets/activity-light.svg" alt="Recent public activity on GitHub" width="100%"/></picture></a>
 
-<p align="center"><sub><a href="https://github.com/Passimoritz/spicetify-mirage">spicetify-mirage</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vms">hostwerk-ext-vms</a> · <a href="https://github.com/Passimoritz/Passimoritz">Passimoritz</a> · <a href="https://github.com/Passimoritz/vigil">vigil</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vuln-watch">hostwerk-ext-vuln-watch</a></sub></p>
+<p align="center"><sub><a href="https://github.com/Passimoritz/yt-adfree">yt-adfree</a> · <a href="https://github.com/Passimoritz/spicetify-mirage">spicetify-mirage</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vms">hostwerk-ext-vms</a> · <a href="https://github.com/Passimoritz/hostwerk-public">hostwerk-public</a> · <a href="https://github.com/Passimoritz/Passimoritz">Passimoritz</a> · <a href="https://github.com/Passimoritz/vigil">vigil</a></sub></p>
 <!--ACTIVITY:END-->
 
 <details>

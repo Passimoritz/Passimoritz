@@ -378,10 +378,10 @@ def cover(t: dict) -> str:
     body.append(f'<line x1="36" y1="312" x2="{W - 50}" y2="312" stroke="{t["line"]}" stroke-width="1.5" stroke-opacity=".2"/>')
     body.append(f'<text x="36" y="346" class="mo up" font-size="11.5" fill="{t["muted"]}" style="animation-delay:.5s">IN THIS ISSUE</text>')
     x = 36
-    for i, item in enumerate(["What I do", "In numbers", "Hostwerk", "Mirage", "Recent activity"]):
+    for i, (_, item, _, _) in enumerate(CHAPTERS):
         body.append(f'<g class="up" style="animation-delay:{.55 + i * .05:.2f}s"><text x="{x}" y="378" class="mo" font-size="12" fill="{t["coral"]}">{i + 1:02d}</text>'
                     f'<text x="{x + 28}" y="379" class="tx" font-size="17" fill="{t["ink"]}">{escape(item)}</text></g>')
-        x += 28 + width(item, 17, "tx") + 34
+        x += 28 + width(item, 17, "tx") + 30
     return svg(W, H, "Passimoritz Comics, issue 1: Pascal Moritz – IT & Project Manager, Sales Manager, Software Enthusiast", "".join(body), extra)
 
 
@@ -390,7 +390,8 @@ CHAPTERS = [
     ("02", "In numbers", "The last twelve months on GitHub.", "blue"),
     ("03", "Hostwerk", "The local server hub.", "teal"),
     ("04", "Mirage", "A living theme for Spotify.", "violet"),
-    ("05", "Recent activity", "Live from GitHub.", "coral"),
+    ("05", "YT AdFree", "A lean YouTube ad blocker.", "coral"),
+    ("06", "Recent activity", "Live from GitHub.", "blue"),
 ]
 
 
