@@ -66,7 +66,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/download/v3.3.0/Hostwerk-Setup-3.3.0.exe"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-windows-dark.svg"/><img src="assets/dl-windows-light.svg" alt="Download Hostwerk for Windows (Hostwerk-Setup-3.3.0.exe)" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-latest-dark.svg"/><img src="assets/dl-latest-light.svg" alt="Download Hostwerk" width="320" height="80"/></picture></a>
-<br/><sub>v3.3.0 · November 20, 2026 · 5,562 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/tag/v3.3.0">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>v3.3.0 · November 20, 2026 · 5,576 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/tag/v3.3.0">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
