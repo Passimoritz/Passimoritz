@@ -66,7 +66,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/download/v3.3.0/Hostwerk-Setup-3.3.0.exe"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-windows-dark.svg"/><img src="assets/dl-windows-light.svg" alt="Download Hostwerk for Windows (Hostwerk-Setup-3.3.0.exe)" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-latest-dark.svg"/><img src="assets/dl-latest-light.svg" alt="Download Hostwerk" width="320" height="80"/></picture></a>
-<br/><sub>v3.3.0 · November 20, 2026 · 5,578 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/tag/v3.3.0">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>v3.3.0 · November 20, 2026 · 5,902 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/tag/v3.3.0">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -79,7 +79,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/spicetify-mirage#-install"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/mirage-get-dark.svg"/><img src="assets/mirage-get-light.svg" alt="Get Mirage from the Spicetify Marketplace" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/spicetify-mirage"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/mirage-src-dark.svg"/><img src="assets/mirage-src-light.svg" alt="Mirage source code and install guide" width="320" height="80"/></picture></a>
-<br/><sub>v1.28.0 · November 20, 2026 · 10 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
+<br/><sub>v1.29.0 · November 22, 2026 · 10 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
 </p>
 <!--MIRAGE:END-->
 
@@ -109,7 +109,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 <!--ACTIVITY:START-->
 <a href="https://github.com/Passimoritz?tab=overview"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"/><img src="assets/activity-light.svg" alt="Recent public activity on GitHub" width="100%"/></picture></a>
 
-<p align="center"><sub><a href="https://github.com/Passimoritz/hostwerk-ext-office">hostwerk-ext-office</a> · <a href="https://github.com/Passimoritz/spicetify-mirage">spicetify-mirage</a> · <a href="https://github.com/Passimoritz/hostwerk-public">hostwerk-public</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-disk-health">hostwerk-ext-disk-health</a></sub></p>
+<p align="center"><sub><a href="https://github.com/Passimoritz/spicetify-mirage">spicetify-mirage</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-office">hostwerk-ext-office</a> · <a href="https://github.com/Passimoritz/hostwerk-public">hostwerk-public</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-disk-health">hostwerk-ext-disk-health</a></sub></p>
 <!--ACTIVITY:END-->
 
 <details>
