@@ -31,12 +31,12 @@
 </style>
 <g clip-path="url(#clip)"><rect width="1200" height="620" style="fill:var(--bg)"/>
 <text x="40" y="48" class="t h f">Activity snapshot</text>
-<g class="f t" style="animation-delay:0.10s"><rect x="40" y="66" width="172" height="100" rx="12" class="tile"/><rect x="40" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="56" y="118" class="big">2,259</text><text x="56" y="146" class="lbl">CONTRIBUTIONS (12 MO)</text></g>
-<g class="f t" style="animation-delay:0.20s"><rect x="228" y="66" width="172" height="100" rx="12" class="tile"/><rect x="228" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="244" y="118" class="big">2,143</text><text x="244" y="146" class="lbl">COMMITS</text></g>
+<g class="f t" style="animation-delay:0.10s"><rect x="40" y="66" width="172" height="100" rx="12" class="tile"/><rect x="40" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="56" y="118" class="big">2,220</text><text x="56" y="146" class="lbl">CONTRIBUTIONS (12 MO)</text></g>
+<g class="f t" style="animation-delay:0.20s"><rect x="228" y="66" width="172" height="100" rx="12" class="tile"/><rect x="228" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="244" y="118" class="big">2,114</text><text x="244" y="146" class="lbl">COMMITS</text></g>
 <g class="f t" style="animation-delay:0.30s"><rect x="416" y="66" width="172" height="100" rx="12" class="tile"/><rect x="416" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="432" y="118" class="big">5</text><text x="432" y="146" class="lbl">PULL REQUESTS</text></g>
 <g class="f t" style="animation-delay:0.40s"><rect x="604" y="66" width="172" height="100" rx="12" class="tile"/><rect x="604" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="620" y="118" class="big">0</text><text x="620" y="146" class="lbl">ISSUES</text></g>
 <g class="f t" style="animation-delay:0.50s"><rect x="792" y="66" width="172" height="100" rx="12" class="tile"/><rect x="792" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="808" y="118" class="big">11</text><text x="808" y="146" class="lbl">STARS</text></g>
-<g class="f t" style="animation-delay:0.60s"><rect x="980" y="66" width="172" height="100" rx="12" class="tile"/><rect x="980" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="996" y="118" class="big">90</text><text x="996" y="146" class="lbl">REPOS</text></g>
+<g class="f t" style="animation-delay:0.60s"><rect x="980" y="66" width="172" height="100" rx="12" class="tile"/><rect x="980" y="66" width="172" height="3" rx="1.5" fill="url(#acc)"/><text x="996" y="118" class="big">80</text><text x="996" y="146" class="lbl">REPOS</text></g>
 <text x="40" y="222" class="t h f" style="animation-delay:.6s">Streak</text>
 <circle cx="150" cy="312" r="62" fill="none" stroke-width="10" style="stroke:var(--track)"/>
 <circle cx="150" cy="312" r="62" fill="none" stroke="url(#acc)" stroke-width="10" stroke-linecap="round" stroke-dasharray="389.6 389.6" stroke-dashoffset="224.7" transform="rotate(-90 150 312)" class="ring" style="--c:389.6"/>
@@ -48,21 +48,21 @@
 <g class="f" style="animation-delay:0.80s">
 <circle cx="335" cy="249" r="5" fill="#f1e05a"/>
 <text x="348" y="254" class="t name">JavaScript</text>
-<text x="660" y="254" text-anchor="end" class="t lbl">61.2%</text></g>
+<text x="660" y="254" text-anchor="end" class="t lbl">61.3%</text></g>
 <rect x="330" y="262" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="262" width="202.1" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
+<rect x="330" y="262" width="202.3" height="7" rx="3.5" fill="#f1e05a" class="bar" style="animation-delay:0.90s"/>
 <g class="f" style="animation-delay:0.92s">
 <circle cx="335" cy="283" r="5" fill="#e34c26"/>
 <text x="348" y="288" class="t name">HTML</text>
-<text x="660" y="288" text-anchor="end" class="t lbl">33.3%</text></g>
+<text x="660" y="288" text-anchor="end" class="t lbl">33.1%</text></g>
 <rect x="330" y="296" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="296" width="109.8" height="7" rx="3.5" fill="#e34c26" class="bar" style="animation-delay:1.02s"/>
+<rect x="330" y="296" width="109.4" height="7" rx="3.5" fill="#e34c26" class="bar" style="animation-delay:1.02s"/>
 <g class="f" style="animation-delay:1.04s">
 <circle cx="335" cy="317" r="5" fill="#663399"/>
 <text x="348" y="322" class="t name">CSS</text>
-<text x="660" y="322" text-anchor="end" class="t lbl">3.1%</text></g>
+<text x="660" y="322" text-anchor="end" class="t lbl">3.2%</text></g>
 <rect x="330" y="330" width="330" height="7" rx="3.5" class="trk"/>
-<rect x="330" y="330" width="10.2" height="7" rx="3.5" fill="#663399" class="bar" style="animation-delay:1.14s"/>
+<rect x="330" y="330" width="10.5" height="7" rx="3.5" fill="#663399" class="bar" style="animation-delay:1.14s"/>
 <g class="f" style="animation-delay:1.16s">
 <circle cx="335" cy="351" r="5" fill="#b07219"/>
 <text x="348" y="356" class="t name">Java</text>
@@ -222,19 +222,19 @@
 <rect x="1043" y="308" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.65s"><title>2026-10-15: 15</title></rect>
 <rect x="1043" y="325" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.67s"><title>2026-10-16: 8</title></rect>
 <rect x="1043" y="342" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.69s"><title>2026-10-17: 5</title></rect>
-<rect x="1060" y="240" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.60s"><title>2026-10-18: 56</title></rect>
-<rect x="1060" y="257" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.62s"><title>2026-10-19: 162</title></rect>
-<rect x="1060" y="274" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.64s"><title>2026-10-20: 106</title></rect>
-<rect x="1060" y="291" width="14" height="14" rx="3" class="c l4" style="animation-delay:1.66s"><title>2026-10-21: 484</title></rect>
-<rect x="1060" y="308" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.68s"><title>2026-10-22: 89</title></rect>
-<rect x="1060" y="325" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.70s"><title>2026-10-23: 64</title></rect>
-<rect x="1060" y="342" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.72s"><title>2026-10-24: 138</title></rect>
-<rect x="1077" y="240" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.64s"><title>2026-10-25: 216</title></rect>
+<rect x="1060" y="240" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.60s"><title>2026-10-18: 50</title></rect>
+<rect x="1060" y="257" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.62s"><title>2026-10-19: 142</title></rect>
+<rect x="1060" y="274" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.64s"><title>2026-10-20: 99</title></rect>
+<rect x="1060" y="291" width="14" height="14" rx="3" class="c l4" style="animation-delay:1.66s"><title>2026-10-21: 448</title></rect>
+<rect x="1060" y="308" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.68s"><title>2026-10-22: 84</title></rect>
+<rect x="1060" y="325" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.70s"><title>2026-10-23: 63</title></rect>
+<rect x="1060" y="342" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.72s"><title>2026-10-24: 115</title></rect>
+<rect x="1077" y="240" width="14" height="14" rx="3" class="c l2" style="animation-delay:1.64s"><title>2026-10-25: 181</title></rect>
 <rect x="1077" y="257" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.66s"><title>2026-10-26: 11</title></rect>
 <rect x="1077" y="274" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.68s"><title>2026-10-27: 15</title></rect>
-<rect x="1077" y="291" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.70s"><title>2026-10-28: 37</title></rect>
-<rect x="1077" y="308" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.72s"><title>2026-10-29: 21</title></rect>
-<rect x="1077" y="325" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.74s"><title>2026-10-30: 23</title></rect>
+<rect x="1077" y="291" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.70s"><title>2026-10-28: 42</title></rect>
+<rect x="1077" y="308" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.72s"><title>2026-10-29: 38</title></rect>
+<rect x="1077" y="325" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.74s"><title>2026-10-30: 41</title></rect>
 <rect x="1077" y="342" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.76s"><title>2026-10-31: 3</title></rect>
 <rect x="1094" y="240" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.67s"><title>2026-11-01: 4</title></rect>
 <rect x="1094" y="257" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.69s"><title>2026-11-02: 44</title></rect>
@@ -252,12 +252,13 @@
 <rect x="1111" y="342" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.83s"><title>2026-11-14: 10</title></rect>
 <rect x="1128" y="240" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.74s"><title>2026-11-15: 11</title></rect>
 <rect x="1128" y="257" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.76s"><title>2026-11-16: 26</title></rect>
-<rect x="1128" y="274" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.78s"><title>2026-11-17: 28</title></rect>
+<rect x="1128" y="274" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.78s"><title>2026-11-17: 27</title></rect>
 <rect x="1128" y="291" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.80s"><title>2026-11-18: 67</title></rect>
 <rect x="1128" y="308" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.82s"><title>2026-11-19: 27</title></rect>
 <rect x="1128" y="325" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.84s"><title>2026-11-20: 61</title></rect>
 <rect x="1128" y="342" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.86s"><title>2026-11-21: 11</title></rect>
-<rect x="1145" y="240" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.78s"><title>2026-11-22: 31</title></rect>
+<rect x="1145" y="240" width="14" height="14" rx="3" class="c l1" style="animation-delay:1.78s"><title>2026-11-22: 86</title></rect>
+<rect x="1145" y="257" width="14" height="14" rx="3" class="c l0" style="animation-delay:1.80s"><title>2026-11-23: 0</title></rect>
 <g class="f" style="animation-delay:1.9s">
 <text x="720" y="392" class="t lbl">LESS</text>
 <rect x="758" y="381" width="14" height="14" rx="3" class="l0"/>
@@ -266,14 +267,14 @@
 <rect x="809" y="381" width="14" height="14" rx="3" class="l3"/>
 <rect x="826" y="381" width="14" height="14" rx="3" class="l4"/>
 <text x="848" y="392" class="t lbl">MORE</text>
-<text x="1162" y="392" text-anchor="end" class="t lbl">2,259 IN 26 WEEKS · BEST DAY 484</text></g>
+<text x="1162" y="392" text-anchor="end" class="t lbl">2,220 IN 26 WEEKS · BEST DAY 448</text></g>
 <text x="40" y="468" class="t h f" style="animation-delay:1.2s">Weekly contributions · 12 months</text>
 <line x1="40" y1="590" x2="1160" y2="590" style="stroke:var(--line)"/>
-<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,585.8 L686.2,587.3 L707.7,589.6 L729.2,589.5 L750.8,588.5 L772.3,589.0 L793.8,590.0 L815.4,590.0 L836.9,590.0 L858.5,589.8 L880.0,590.0 L901.5,589.5 L923.1,584.2 L944.6,590.0 L966.2,590.0 L987.7,590.0 L1009.2,585.9 L1030.8,578.5 L1052.3,488.0 L1073.8,559.7 L1095.4,579.9 L1116.9,579.3 L1138.5,568.6 L1160.0,587.1 L1160,590 L40,590 Z" fill="url(#fillg)" class="area"/>
-<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,585.8 L686.2,587.3 L707.7,589.6 L729.2,589.5 L750.8,588.5 L772.3,589.0 L793.8,590.0 L815.4,590.0 L836.9,590.0 L858.5,589.8 L880.0,590.0 L901.5,589.5 L923.1,584.2 L944.6,590.0 L966.2,590.0 L987.7,590.0 L1009.2,585.9 L1030.8,578.5 L1052.3,488.0 L1073.8,559.7 L1095.4,579.9 L1116.9,579.3 L1138.5,568.6 L1160.0,587.1" fill="none" stroke="url(#acc)" stroke-width="2.5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" class="draw"/>
-<circle cx="1160.0" cy="587.1" r="4" style="fill:var(--accent)" class="live"/>
-<circle cx="1160.0" cy="587.1" r="4" style="fill:var(--accent)"/>
+<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,585.4 L686.2,587.0 L707.7,589.6 L729.2,589.5 L750.8,588.4 L772.3,588.9 L793.8,590.0 L815.4,590.0 L836.9,590.0 L858.5,589.8 L880.0,590.0 L901.5,589.5 L923.1,583.6 L944.6,590.0 L966.2,590.0 L987.7,590.0 L1009.2,585.5 L1030.8,577.4 L1052.3,488.0 L1073.8,556.3 L1095.4,578.9 L1116.9,578.3 L1138.5,566.6 L1160.0,581.2 L1160,590 L40,590 Z" fill="url(#fillg)" class="area"/>
+<path d="M40.0,590.0 L61.5,590.0 L83.1,590.0 L104.6,590.0 L126.2,590.0 L147.7,590.0 L169.2,590.0 L190.8,590.0 L212.3,590.0 L233.8,590.0 L255.4,590.0 L276.9,590.0 L298.5,590.0 L320.0,590.0 L341.5,590.0 L363.1,590.0 L384.6,590.0 L406.2,590.0 L427.7,590.0 L449.2,590.0 L470.8,590.0 L492.3,590.0 L513.8,590.0 L535.4,590.0 L556.9,590.0 L578.5,590.0 L600.0,590.0 L621.5,590.0 L643.1,590.0 L664.6,585.4 L686.2,587.0 L707.7,589.6 L729.2,589.5 L750.8,588.4 L772.3,588.9 L793.8,590.0 L815.4,590.0 L836.9,590.0 L858.5,589.8 L880.0,590.0 L901.5,589.5 L923.1,583.6 L944.6,590.0 L966.2,590.0 L987.7,590.0 L1009.2,585.5 L1030.8,577.4 L1052.3,488.0 L1073.8,556.3 L1095.4,578.9 L1116.9,578.3 L1138.5,566.6 L1160.0,581.2" fill="none" stroke="url(#acc)" stroke-width="2.5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" class="draw"/>
+<circle cx="1160.0" cy="581.2" r="4" style="fill:var(--accent)" class="live"/>
+<circle cx="1160.0" cy="581.2" r="4" style="fill:var(--accent)"/>
 <circle cx="514" cy="606" r="3" fill="#3cc2b1" class="live"/>
-<text x="600" y="610" text-anchor="middle" class="t lbl" style="font-size:11px">updated 2026-11-22 via GitHub Actions</text>
+<text x="600" y="610" text-anchor="middle" class="t lbl" style="font-size:11px">updated 2026-11-23 via GitHub Actions</text>
 </g>
 <rect x="0.5" y="0.5" width="1199" height="619" rx="14" fill="none" style="stroke:var(--line)" stroke-width="2.5"/></svg>
