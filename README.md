@@ -66,7 +66,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-latest-dark.svg"/><img src="assets/dl-latest-light.svg" alt="Download Hostwerk" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-source-dark.svg"/><img src="assets/dl-source-light.svg" alt="Hostwerk source and docs" width="320" height="80"/></picture></a>
-<br/><sub>5,997 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>6,000 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -79,7 +79,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/spicetify-mirage#-install"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/mirage-get-dark.svg"/><img src="assets/mirage-get-light.svg" alt="Get Mirage from the Spicetify Marketplace" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/spicetify-mirage"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/mirage-src-dark.svg"/><img src="assets/mirage-src-light.svg" alt="Mirage source code and install guide" width="320" height="80"/></picture></a>
-<br/><sub>v1.31.0 · November 23, 2026 · 10 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
+<br/><sub>v1.32.0 · November 24, 2026 · 10 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
 </p>
 <!--MIRAGE:END-->
 
@@ -100,7 +100,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/yt-adfree/releases/download/v1.2.2/yt-adfree-1.2.2-chrome.zip"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/adfree-chrome-dark.svg"/><img src="assets/adfree-chrome-light.svg" alt="Download YT AdFree for Chrome (yt-adfree-1.2.2-chrome.zip)" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/yt-adfree/releases/download/v1.2.2/yt-adfree-1.2.2-firefox.zip"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/adfree-firefox-dark.svg"/><img src="assets/adfree-firefox-light.svg" alt="Download YT AdFree for Firefox (yt-adfree-1.2.2-firefox.zip)" width="320" height="80"/></picture></a>
-<br/><sub>v1.2.2 · November 18, 2026 · ★ 0 stars · 1 downloads · <a href="https://github.com/Passimoritz/yt-adfree#install">Install guide</a> · <a href="https://github.com/Passimoritz/yt-adfree/releases">All releases</a></sub>
+<br/><sub>v1.2.2 · November 18, 2026 · ★ 0 stars · 2 downloads · <a href="https://github.com/Passimoritz/yt-adfree#install">Install guide</a> · <a href="https://github.com/Passimoritz/yt-adfree/releases">All releases</a></sub>
 </p>
 <!--ADFREE:END-->
 
@@ -109,7 +109,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 <!--ACTIVITY:START-->
 <a href="https://github.com/Passimoritz?tab=overview"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"/><img src="assets/activity-light.svg" alt="Recent public activity on GitHub" width="100%"/></picture></a>
 
-<p align="center"><sub><a href="https://github.com/Passimoritz/hostwerk-ext-vms">hostwerk-ext-vms</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes">hostwerk-ext-service-notes</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-passwords">hostwerk-ext-passwords</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-mc-network">hostwerk-ext-mc-network</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-mail-accounts">hostwerk-ext-mail-accounts</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-file-share">hostwerk-ext-file-share</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vuln-watch">hostwerk-ext-vuln-watch</a></sub></p>
+<p align="center"><sub><a href="https://github.com/Passimoritz/hostwerk-ext-vms">hostwerk-ext-vms</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-static-publish">hostwerk-ext-static-publish</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes">hostwerk-ext-service-notes</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-player-ticker">hostwerk-ext-player-ticker</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-passwords">hostwerk-ext-passwords</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-page-check">hostwerk-ext-page-check</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-mc-network">hostwerk-ext-mc-network</a></sub></p>
 <!--ACTIVITY:END-->
 
 <details>
