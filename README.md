@@ -109,7 +109,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 <!--ACTIVITY:START-->
 <a href="https://github.com/Passimoritz?tab=overview"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg"/><img src="assets/activity-light.svg" alt="Recent public activity on GitHub" width="100%"/></picture></a>
 
-<p align="center"><sub><a href="https://github.com/Passimoritz/hostwerk-ext-service-notes">hostwerk-ext-service-notes</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-mail-accounts">hostwerk-ext-mail-accounts</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vuln-watch">hostwerk-ext-vuln-watch</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vpn">hostwerk-ext-vpn</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vms">hostwerk-ext-vms</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-team">hostwerk-ext-team</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-status-wall">hostwerk-ext-status-wall</a></sub></p>
+<p align="center"><sub><a href="https://github.com/Passimoritz/hostwerk-ext-vms">hostwerk-ext-vms</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-service-notes">hostwerk-ext-service-notes</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-passwords">hostwerk-ext-passwords</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-mc-network">hostwerk-ext-mc-network</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-mail-accounts">hostwerk-ext-mail-accounts</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-file-share">hostwerk-ext-file-share</a> · <a href="https://github.com/Passimoritz/hostwerk-ext-vuln-watch">hostwerk-ext-vuln-watch</a></sub></p>
 <!--ACTIVITY:END-->
 
 <details>
