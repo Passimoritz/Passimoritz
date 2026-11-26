@@ -66,7 +66,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-latest-dark.svg"/><img src="assets/dl-latest-light.svg" alt="Download Hostwerk" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/hostwerk-public"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dl-source-dark.svg"/><img src="assets/dl-source-light.svg" alt="Hostwerk source and docs" width="320" height="80"/></picture></a>
-<br/><sub>6,002 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
+<br/><sub>6,004 downloads · <a href="https://github.com/Passimoritz/hostwerk-public/releases/latest">Release notes &amp; all files</a> · <a href="https://github.com/Passimoritz/hostwerk-public/releases">All releases</a></sub>
 </p>
 <!--HOSTWERK:END-->
 
@@ -79,7 +79,7 @@ I work where <b>IT management, project leadership and sales</b> meet – steerin
 
 <p align="center">
 <a href="https://github.com/Passimoritz/spicetify-mirage#-install"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/mirage-get-dark.svg"/><img src="assets/mirage-get-light.svg" alt="Get Mirage from the Spicetify Marketplace" width="320" height="80"/></picture></a>&nbsp;&nbsp;<a href="https://github.com/Passimoritz/spicetify-mirage"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/mirage-src-dark.svg"/><img src="assets/mirage-src-light.svg" alt="Mirage source code and install guide" width="320" height="80"/></picture></a>
-<br/><sub>v1.33.0 · November 24, 2026 · 10 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
+<br/><sub>v1.33.0 · November 24, 2026 · 11 ★ · Schemes: <b>Mirage</b> · <b>Obsidian</b> · <b>Sakura</b> · <b>Abyss</b> · <b>Ember</b> · <a href="https://github.com/Passimoritz/spicetify-mirage#-mirage-overlay">Mirage Overlay</a> · <a href="https://github.com/Passimoritz/spicetify-mirage/releases">All releases</a></sub>
 </p>
 <!--MIRAGE:END-->
 
